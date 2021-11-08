@@ -1,0 +1,14 @@
+D:\OOP\QuanLySchool\QuanLySchool\bin\Debug\netcoreapp3.1\QuanLySchool.exe
+D:\OOP\QuanLySchool\QuanLySchool\bin\Debug\netcoreapp3.1\QuanLySchool.deps.json
+D:\OOP\QuanLySchool\QuanLySchool\bin\Debug\netcoreapp3.1\QuanLySchool.runtimeconfig.json
+D:\OOP\QuanLySchool\QuanLySchool\bin\Debug\netcoreapp3.1\QuanLySchool.runtimeconfig.dev.json
+D:\OOP\QuanLySchool\QuanLySchool\bin\Debug\netcoreapp3.1\QuanLySchool.dll
+D:\OOP\QuanLySchool\QuanLySchool\bin\Debug\netcoreapp3.1\QuanLySchool.pdb
+D:\OOP\QuanLySchool\QuanLySchool\obj\Debug\netcoreapp3.1\QuanLySchool.csproj.AssemblyReference.cache
+D:\OOP\QuanLySchool\QuanLySchool\obj\Debug\netcoreapp3.1\QuanLySchool.GeneratedMSBuildEditorConfig.editorconfig
+D:\OOP\QuanLySchool\QuanLySchool\obj\Debug\netcoreapp3.1\QuanLySchool.AssemblyInfoInputs.cache
+D:\OOP\QuanLySchool\QuanLySchool\obj\Debug\netcoreapp3.1\QuanLySchool.AssemblyInfo.cs
+D:\OOP\QuanLySchool\QuanLySchool\obj\Debug\netcoreapp3.1\QuanLySchool.csproj.CoreCompileInputs.cache
+D:\OOP\QuanLySchool\QuanLySchool\obj\Debug\netcoreapp3.1\QuanLySchool.dll
+D:\OOP\QuanLySchool\QuanLySchool\obj\Debug\netcoreapp3.1\QuanLySchool.pdb
+D:\OOP\QuanLySchool\QuanLySchool\obj\Debug\netcoreapp3.1\QuanLySchool.genruntimeconfig.cache
