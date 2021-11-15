@@ -6,23 +6,34 @@ namespace QuanLySchool.QLyGiangVien
 {
     public class KHOA
     {
-        private string MaKhoa;
-        private string TenKhoa;
-        List<GiangVien> listgv1 = new List<GiangVien>();
+        private string makhoa;
+        private string tenkhoa;
+        List<GiangVien> listgv1;
         public string MAKHOA
         {
-            set { MaKhoa = value; }
-            get { return MaKhoa; }
+            set { makhoa = value; }
+            get { return makhoa; }
         }
         public string TENKHOA
         {
-            set { TenKhoa = value; }
-            get { return TenKhoa; }
+            set { tenkhoa = value; }
+            get { return tenkhoa; }
         }
         internal List<GiangVien> Listgv1
         {
             set { listgv1 = value; }
             get { return listgv1; }
+        }
+
+        public KHOA(string makhoa, string tenkhoa, List<GiangVien> listgv1)
+        {
+            this.makhoa = makhoa;
+            this.tenkhoa = tenkhoa;
+            this.listgv1 = listgv1;
+        }
+        public KHOA()
+        {
+
         }
     }
 }

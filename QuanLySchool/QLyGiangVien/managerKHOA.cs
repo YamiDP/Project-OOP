@@ -4,26 +4,26 @@ using System.Text;
 
 namespace QuanLySchool.QLyGiangVien
 {
-    class managerKHOA
+    public class managerKHOA : KHOA
     {
         public static List<KHOA> listkhoa = new List<KHOA>();
         public static KHOA checkkhoa(string MaKhoa)
         {   
             foreach (KHOA khoa in listkhoa)
             {
-                if (String.Compare(khoa.MAKHOA, MaKhoa, false) == 0) // so sánh tính cả chữ hoa và thường
+                if (String.Compare(khoa.MAKHOA, MaKhoa, false) == 0)
                     return khoa;
             }
             return null;
         }
-        public static void add(string makhoa)
+        public void add(string makhoa)
         {
-            //KHOA k;
-            KHOA khoa = new KHOA();
-            khoa.MAKHOA = makhoa;
+            KHOA k;
+            MAKHOA = makhoa;
             Console.Write("Ten Khoa: ");
-            khoa.TENKHOA = Convert.ToString(Console.ReadLine());
-            listkhoa.Add(khoa);
+            TENKHOA = Convert.ToString(Console.ReadLine());
+            k = new KHOA(MAKHOA, TENKHOA, new List<GiangVien>());
+            listkhoa.Add(k);
             Console.WriteLine("Them Khoa thanh cong!");
         }
         public static void xuat()

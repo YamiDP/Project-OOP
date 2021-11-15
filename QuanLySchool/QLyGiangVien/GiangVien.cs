@@ -6,42 +6,61 @@ namespace QuanLySchool.QLyGiangVien
 {
     public class GiangVien : thuoctinhCB
     {
-        private string MaKhoa;
-        private string ChNganh;
-        private string Bomon;
-        private string Luong;
-        private string Lopday;
-        private string Mahocvi; // thạc sĩ, tiến sĩ
+        private string chnganh;
+        private string bomon;
+        private string luong;
+        private string lopday;
+        private string hocvi;
 
-        public string MAKHOA
-        {
-            set { MaKhoa = value; }
-            get { return MaKhoa; }
-        }
         public string CHNGANG
         {
-            set { ChNganh = value; }
-            get { return ChNganh; }
+            set { chnganh = value; }
+            get { return chnganh; }
         }
         public string BOMON
         {
-            set { Bomon = value; }
-            get { return Bomon; }
+            set { bomon = value; }
+            get { return bomon; }
         }
         public string LUONG
         {
-            set { Luong = value; }
-            get { return Luong; }
+            set { luong = value; }
+            get { return luong; }
         }
         public string LOPDAY
         {
-            set { Lopday = value; }
-            get { return Lopday; }
+            set { lopday = value; }
+            get { return lopday; }
         }
-        public string MAHOCVI
+        public string HOCVI
         {
-            set { Mahocvi = value; }
-            get { return Mahocvi; }
+            set { hocvi = value; }
+            get { return hocvi; }
+        }
+        public override void xuat()
+        {
+
+        }
+        public override void sort()
+        {
+
+        }
+        public override void search()
+        {
+
+        }
+        public GiangVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string chnganh, string bomon, string luong, string lopday, string hocvi)
+            : base (ma, ten, ngsinh, gtinh, diachi, sdt)
+        {
+            this.chnganh = chnganh;
+            this.bomon = bomon;
+            this.luong = luong;
+            this.lopday = lopday;
+            this.hocvi = hocvi;
+        }
+        public GiangVien()
+        {
+
         }
     }
 }

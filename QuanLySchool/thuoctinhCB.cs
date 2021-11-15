@@ -4,49 +4,73 @@ using System.Text;
 
 namespace QuanLySchool
 {
-    public class thuoctinhCB
+    public abstract class thuoctinhCB
     {
-        private string MaGV;
-        private string TenGV;
-        private string NgSinh;
-        private string GTinh;
-        private string DiaChi;
+        private string ma;
+        private string ten;
+        private string ngsinh;
+        private string gtinh;
+        private string diachi;
+        private string sdt;
 
-        public string MAGV
+        public string MA
         {
-            set { MaGV = value; }
-            get { return MaGV; }
+            set { ma = value; }
+            get { return ma; }
         }
-        public string TENGV
+        public string SDT
         {
-            set { TenGV = value; }
-            get { return TenGV; }
+            set { sdt = value; }
+            get { return sdt; }
+        }
+        public string TEN
+        {
+            set { ten = value; }
+            get { return ten; }
         }
         public string NGSINH
         {
-            set { NgSinh = value; }
-            get { return NgSinh; }
+            set { ngsinh = value; }
+            get { return ngsinh; }
         }
         public string GTINH
         {
-            set { GTinh = value; }
-            get { return GTinh; }
+            set { gtinh = value; }
+            get { return gtinh; }
         }
         public string DIACHI
         {
-            set { DiaChi = value; }
-            get { return DiaChi; }
+            set { diachi = value; }
+            get { return diachi; }
         }
 
-        /*public thuoctinhCB(string maGV, string tenGV, string ngSinh, string gTinh, string diaChi)
+        public thuoctinhCB(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt)
         {
-            MaGV = maGV;
-            TenGV = tenGV;
-            NgSinh = ngSinh;
-            GTinh = gTinh;
-            DiaChi = diaChi;
+            this.ma = ma;
+            this.ten = ten;
+            this.ngsinh = ngsinh;
+            this.gtinh = gtinh;
+            this.diachi = diachi;
+            this.sdt = sdt;
         }
+
         public thuoctinhCB()
-        { }*/
+        { }
+        public virtual void input()
+        {
+            Console.Write("Ten: ");
+            TEN = Convert.ToString(Console.ReadLine());
+            Console.Write("Ngay Sinh: ");
+            NGSINH = Convert.ToString(Console.ReadLine());
+            Console.Write("Gioi Tinh: ");
+            GTINH = Convert.ToString(Console.ReadLine());
+            Console.Write("Dia Chi: ");
+            DIACHI = Convert.ToString(Console.ReadLine());
+            Console.Write("So dien thoai: ");
+            SDT = Convert.ToString(Console.ReadLine());
+        }
+        public abstract void xuat();
+        public abstract void sort();
+        public abstract void search();
     }
 }
