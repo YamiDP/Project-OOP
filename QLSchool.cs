@@ -6,7 +6,7 @@ using SchoolManager.QLTuyenSinh;
 namespace SchoolManager
 {
     class QLSchool
-    {
+    {   //Hello Tuan, hell Dat
         static void Main(string[] args)
         {
             int chon;
