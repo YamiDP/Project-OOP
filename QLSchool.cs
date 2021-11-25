@@ -5,6 +5,7 @@ using SchoolManager.QLSinhVien;
 using SchoolManager.QLTuyenSinh;
 namespace SchoolManager
 {       //Hello PHUONG, TTUAN, DAT
+    // Chào 2 bợn nha
     class QLSchool
     {   
         static void Main(string[] args)
