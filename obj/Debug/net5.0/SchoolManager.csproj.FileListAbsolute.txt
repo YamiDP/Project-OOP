@@ -1,0 +1,16 @@
+C:\Users\Yami\ForWork\Program\Project\C# Project\SchoolManager\bin\Debug\net5.0\SchoolManager.exe
+C:\Users\Yami\ForWork\Program\Project\C# Project\SchoolManager\bin\Debug\net5.0\SchoolManager.deps.json
+C:\Users\Yami\ForWork\Program\Project\C# Project\SchoolManager\bin\Debug\net5.0\SchoolManager.runtimeconfig.json
+C:\Users\Yami\ForWork\Program\Project\C# Project\SchoolManager\bin\Debug\net5.0\SchoolManager.runtimeconfig.dev.json
+C:\Users\Yami\ForWork\Program\Project\C# Project\SchoolManager\bin\Debug\net5.0\SchoolManager.dll
+C:\Users\Yami\ForWork\Program\Project\C# Project\SchoolManager\bin\Debug\net5.0\ref\SchoolManager.dll
+C:\Users\Yami\ForWork\Program\Project\C# Project\SchoolManager\bin\Debug\net5.0\SchoolManager.pdb
+C:\Users\Yami\ForWork\Program\Project\C# Project\SchoolManager\obj\Debug\net5.0\SchoolManager.csproj.AssemblyReference.cache
+C:\Users\Yami\ForWork\Program\Project\C# Project\SchoolManager\obj\Debug\net5.0\SchoolManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yami\ForWork\Program\Project\C# Project\SchoolManager\obj\Debug\net5.0\SchoolManager.AssemblyInfoInputs.cache
+C:\Users\Yami\ForWork\Program\Project\C# Project\SchoolManager\obj\Debug\net5.0\SchoolManager.AssemblyInfo.cs
+C:\Users\Yami\ForWork\Program\Project\C# Project\SchoolManager\obj\Debug\net5.0\SchoolManager.csproj.CoreCompileInputs.cache
+C:\Users\Yami\ForWork\Program\Project\C# Project\SchoolManager\obj\Debug\net5.0\SchoolManager.dll
+C:\Users\Yami\ForWork\Program\Project\C# Project\SchoolManager\obj\Debug\net5.0\ref\SchoolManager.dll
+C:\Users\Yami\ForWork\Program\Project\C# Project\SchoolManager\obj\Debug\net5.0\SchoolManager.pdb
+C:\Users\Yami\ForWork\Program\Project\C# Project\SchoolManager\obj\Debug\net5.0\SchoolManager.genruntimeconfig.cache
