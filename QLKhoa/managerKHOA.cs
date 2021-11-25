@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 using SchoolManager.QLGiangVien;
+using SchoolManager.QLCuuSinhVien;
+using SchoolManager.QLSinhVien;
+
 namespace SchoolManager.QLKhoa
 {
-    public class managerKHOA : KHOA
+   public class managerKhoa :KHOA
     {
         public static List<KHOA> listkhoa = new List<KHOA>();
         public static KHOA checkkhoa(string MaKhoa)
-        {   
+        {
             foreach (KHOA khoa in listkhoa)
             {
                 if (String.Compare(khoa.MAKHOA, MaKhoa, false) == 0)
@@ -22,7 +25,7 @@ namespace SchoolManager.QLKhoa
             MAKHOA = makhoa;
             Console.Write("Ten Khoa: ");
             TENKHOA = Convert.ToString(Console.ReadLine());
-            k = new KHOA(MAKHOA, TENKHOA, new List<GiangVien>());
+            k = new KHOA(MAKHOA, TENKHOA, new List<GiangVien>(), new List<SinhVien>(), new List<CuuSinhVien>());
             listkhoa.Add(k);
             Console.WriteLine("Them Khoa thanh cong!");
         }

@@ -1,29 +1,26 @@
-﻿using System.ComponentModel.Design;
-using System.Diagnostics;
-using System.Globalization;
-using System.Threading.Tasks.Dataflow;
-using System;
-using System.Text;
+﻿using System;
 using System.Collections.Generic;
+using System.Text;
+using SchoolManager.QLKhoa;
+using SchoolManager.QLCuuSinhVien;
 
 namespace SchoolManager.QLSinhVien
 {
-    public class MENU_QLSV
+    class menuQLySinhVien
     {
         public static void MENU()
         {
-            managerSINHVIEN sv = new managerSINHVIEN();
-            managerKHOA k = new managerKHOA();
-            managerCSV c = new managerCSV();
+            managerSinhVien sv = new managerSinhVien();
+            managerKhoa k = new managerKhoa();
             int select;
             string MaKhoa;
             do
             {
                 Console.WriteLine("--------QUAN LY SINH VIEN--------");
-                Console.WriteLine("1.Sinh Vien dang ki hoc theo khoa");  //Thêm Sinh viên vào Danh của khoa
+                Console.WriteLine("1.Sinh Vien dang ki hoc theo khoa");
                 Console.WriteLine("2.Danh sach sinh vien");
                 Console.WriteLine("3.Tim kiem sinh vien theo khoa");
-                Console.WriteLine("4.Huy sinh vien");  //Xóa sinh viên khỏi danh sách của khoa
+                Console.WriteLine("4.Huy sinh vien");
                 Console.WriteLine("5.Sap xep sinh vien theo khoa");
                 Console.WriteLine("6.Danh sach so luong sinh vien");
                 Console.WriteLine("7.Thoat");
@@ -35,10 +32,10 @@ namespace SchoolManager.QLSinhVien
                     case 1:
                         Console.Write("Nhap Ma Khoa: ");
                         MaKhoa = Console.ReadLine();
-                        KHOA khoa = managerKHOA.checkkhoa(MaKhoa);
+                        KHOA khoa = managerKhoa.checkkhoa(MaKhoa);
                         if (khoa != null)
                         {
-                            sv.nhap(khoa);
+                            sv.inputSV(khoa);
                         }
                         else
                         {
@@ -57,7 +54,7 @@ namespace SchoolManager.QLSinhVien
                                     break;
                                 case 2:
                                     break;
-                            }    
+                            }
                         }
                         break;
                     case 2:
@@ -72,10 +69,10 @@ namespace SchoolManager.QLSinhVien
                             case 1:
                                 Console.Write("Nhap Ma Khoa: ");
                                 MaKhoa = Console.ReadLine();
-                                KHOA khoa1 = managerKHOA.checkkhoa(MaKhoa);
+                                KHOA khoa1 = managerKhoa.checkkhoa(MaKhoa);
                                 if (khoa1 != null)
                                 {
-                                    managerSINHVIEN.print(khoa1);
+                                    managerSinhVien.printSV(khoa1);
                                 }
                                 else
                                     Console.WriteLine("Ma Khoa khong hop le!");
@@ -97,10 +94,10 @@ namespace SchoolManager.QLSinhVien
                             case 1:
                                 Console.Write("Nhap Ma Khoa: ");
                                 MaKhoa = Console.ReadLine();
-                                KHOA khoa2 = managerKHOA.checkkhoa(MaKhoa);
+                                KHOA khoa2 = managerKhoa.checkkhoa(MaKhoa);
                                 if (khoa2 != null)
                                 {
-                                    managerSINHVIEN.searchID(khoa2);
+                                    managerSinhVien.searchIDSV(khoa2);
                                 }
                                 else
                                     Console.WriteLine("Ma Khoa khong hop le!");
@@ -113,10 +110,10 @@ namespace SchoolManager.QLSinhVien
                     case 4:
                         Console.Write("Nhap Ma Khoa: ");
                         MaKhoa = Console.ReadLine();
-                        KHOA khoa3 = managerKHOA.checkkhoa(MaKhoa);
+                        KHOA khoa3 = managerKhoa.checkkhoa(MaKhoa);
                         if (khoa3 != null)
                         {
-                            managerSINHVIEN.delete(khoa3);
+                            managerSinhVien.deleteSV(khoa3);
                         }
                         else
                             Console.WriteLine("Ma Khoa khong hop le!");
@@ -133,10 +130,10 @@ namespace SchoolManager.QLSinhVien
                             case 1:
                                 Console.Write("Nhap Ma Khoa: ");
                                 MaKhoa = Console.ReadLine();
-                                KHOA khoa4 = managerKHOA.checkkhoa(MaKhoa);
+                                KHOA khoa4 = managerKhoa.checkkhoa(MaKhoa);
                                 if (khoa4 != null)
                                 {
-                                    managerSINHVIEN.sortID(khoa4);
+                                    managerSinhVien.sortIDSV(khoa4);
                                 }
                                 else
                                     Console.WriteLine("Ma Khoa khong hop le!");
@@ -158,18 +155,18 @@ namespace SchoolManager.QLSinhVien
                             case 1:
                                 Console.Write("Nhap Ma Khoa: ");
                                 MaKhoa = Console.ReadLine();
-                                KHOA khoa5 = managerKHOA.checkkhoa(MaKhoa);
+                                KHOA khoa5 = managerKhoa.checkkhoa(MaKhoa);
                                 if (khoa5 != null)
                                 {
                                     Console.Write("So luong: ");
-                                    Console.WriteLine(managerSINHVIEN.sl_khoa(khoa5));
+                                    Console.WriteLine(managerSinhVien.slSV_khoa(khoa5));
                                 }
                                 else
                                     Console.WriteLine("Ma Khoa khong hop le!");
                                 break;
                             case 2:
                                 Console.Write("So luong: ");
-                                Console.WriteLine(managerSINHVIEN.sl());
+                                Console.WriteLine(managerSinhVien.slSV());
                                 break;
                         }
                         break;
@@ -179,7 +176,7 @@ namespace SchoolManager.QLSinhVien
                         Console.WriteLine("Chi duoc nhap tu 1-6!");
                         break;
                 }
-            }while (select != 7);
+            } while (select != 7);
             Console.WriteLine();
         }
     }

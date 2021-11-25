@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SchoolManager;
+
 namespace SchoolManager.QLGiangVien
 {
     public class GiangVien : Person
@@ -64,7 +64,7 @@ namespace SchoolManager.QLGiangVien
         {
             this.chnganh = "";
             this.bomon = "";
-            this.luong = "00000000";
+            this.luong = "0";
             this.lopday = "";
             this.hocvi = "";
         }

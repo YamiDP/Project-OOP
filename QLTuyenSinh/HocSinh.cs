@@ -1,11 +1,11 @@
 using System;
-using SchoolManager;
-
+using System.Collections.Generic;
+using System.Text;
 
 namespace SchoolManager.QLTuyenSinh
 {
     public class HocSinh : Person
-    {   
+    {
         private double diemthi;
         private string khoithi;
         private string nganh;
@@ -44,40 +44,37 @@ namespace SchoolManager.QLTuyenSinh
         }
         public override void sort()
         {
-        
         }
         public override void search()
         {
-
         }
         public override void print()
         {
-
         }
- 
 
-        public HocSinh(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, 
+
+        public HocSinh(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt,
         double diemthi, string khoithi, string nganh, int dienUT, int soluongNV, string phuongthucxettuyen)
-            : base (ma, ten, ngsinh, gtinh, diachi, sdt)
+            : base(ma, ten, ngsinh, gtinh, diachi, sdt)
         {
             this.diemthi = diemthi;
             this.khoithi = khoithi;
-            this.nganh  = nganh;
+            this.nganh = nganh;
             this.dienUT = dienUT;
             this.soluongNV = soluongNV;
             this.phuongthucxettuyen = phuongthucxettuyen;
         }
-        public HocSinh(HocSinh hs): this(hs.MA, hs.TEN, hs.NGSINH, hs.GTINH, hs.DIACHI, hs.SDT,
+        public HocSinh(HocSinh hs) : this(hs.MA, hs.TEN, hs.NGSINH, hs.GTINH, hs.DIACHI, hs.SDT,
         hs.Diemthi, hs.Khoithi, hs.Nganh, hs.DienUT, hs.SoluongNV, hs.Phuongthucxettuyen)
         {
-
         }
-        public HocSinh(): base()
+        public HocSinh() 
+            : base()
         {
             diemthi = 0.0;
             khoithi = "N/A";
-            nganh   = "N/A";
-            dienUT  = 0;
+            nganh = "N/A";
+            dienUT = 0;
             soluongNV = 0;
             phuongthucxettuyen = "N/A";
         }
