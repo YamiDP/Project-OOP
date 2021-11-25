@@ -2,27 +2,44 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace QuanLySchool.QLyNhanVienHanhChinh
+namespace SchoolManager.QLyNhanVienHanhChinh
 {
     class Pban
     {
-        private string MaPb;
-        private string TenPb;
-        List<NhanVien> listgv2 = new List<NhanVien>();
+        private string mapb;
+        private string tenpb;
+        List<NhanVien> listnv1;
         public string MAPB
         {
-            set { MaPb = value; }
-            get { return MaPb; }
+            set { mapb = value; }
+            get { return mapb; }
         }
         public string TENPB
         {
-            set { TenPb = value; }
-            get { return TenPb; }
+            set { tenpb = value; }
+            get { return tenpb; }
         }
-        internal List<NhanVien> Listgv2
+        public List<NhanVien> Listnv1
         {
-            set { listgv2 = value; }
-            get { return listgv2; }
+            set { listnv1 = value; }
+            get { return listnv1; }
+        }
+
+        public Pban(string mapb, string tenpb, List<NhanVien> listnv2)
+        {
+            this.mapb = mapb;
+            this.tenpb = tenpb;
+            this.listnv1 = listnv2;
+        }
+        public Pban(Pban phongban)
+            : this(phongban.MAPB, phongban.TENPB, phongban.Listnv1)
+        {
+        }
+        public Pban()
+        {
+            this.mapb = "";
+            this.tenpb = "";
+            this.listnv1 = null;
         }
     }
 }

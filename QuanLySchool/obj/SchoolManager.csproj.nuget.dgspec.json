@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "D:\\OOP\\QuanLySchool\\QuanLySchool\\QuanLySchool.csproj": {}
+    "D:\\OOP\\QuanLySchool\\QuanLySchool\\SchoolManager.csproj": {}
   },
   "projects": {
-    "D:\\OOP\\QuanLySchool\\QuanLySchool\\QuanLySchool.csproj": {
+    "D:\\OOP\\QuanLySchool\\QuanLySchool\\SchoolManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\OOP\\QuanLySchool\\QuanLySchool\\QuanLySchool.csproj",
-        "projectName": "QuanLySchool",
-        "projectPath": "D:\\OOP\\QuanLySchool\\QuanLySchool\\QuanLySchool.csproj",
+        "projectUniqueName": "D:\\OOP\\QuanLySchool\\QuanLySchool\\SchoolManager.csproj",
+        "projectName": "SchoolManager",
+        "projectPath": "D:\\OOP\\QuanLySchool\\QuanLySchool\\SchoolManager.csproj",
         "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
         "outputPath": "D:\\OOP\\QuanLySchool\\QuanLySchool\\obj\\",
         "projectStyle": "PackageReference",

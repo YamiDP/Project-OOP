@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SchoolManager.QLyKHOA;
 
-namespace QuanLySchool.QLyGiangVien
+namespace SchoolManager.QLyGiangVien
 {
     public class managerGiangVien : GiangVien
     {
         public static List<GiangVien> listgv = new List<GiangVien>();
-        public static GiangVien check(string MaGV)
+        public static GiangVien checkGV(string MaGV)
         {
             foreach (GiangVien gv in listgv)
             {
@@ -16,14 +17,21 @@ namespace QuanLySchool.QLyGiangVien
             }
             return null;
         }
-        public void nhap(KHOA h)
+        public void eventprint(GiangVien gv)
+        {
+            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10} {10, -10}",
+                                  gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.LOPDAY, gv.HOCVI);
+        }
+        public delegate void printDel(GiangVien gv);
+        public event printDel printgv;
+        public void inputGV(KHOA h)
         {
             GiangVien gv;         
             do
             {
                 Console.Write("Ma Giao Vien: ");
                 MA = Convert.ToString(Console.ReadLine());
-                gv = check(MA);
+                gv = checkGV(MA);
                 if (gv != null)
                 {
                     Console.WriteLine("Ma Giao Vien da ton tai!");
@@ -46,12 +54,12 @@ namespace QuanLySchool.QLyGiangVien
             h.Listgv1.Add(gv);
             Console.WriteLine("Them Giang Vien thanh cong!");
         }
-        public static void delete(KHOA h)
+        public static void deleteGV(KHOA h)
         {
             GiangVien k;
             Console.Write("Nhap Ma Giang Vien: ");
             string MaGV = Console.ReadLine();
-            k = check(MaGV);
+            k = checkGV(MaGV);
             if (k == null)
             {
                 Console.WriteLine("Khong tim thay giang vien!");
@@ -63,15 +71,15 @@ namespace QuanLySchool.QLyGiangVien
                 Console.WriteLine("Da xoa thanh cong!");
             }
         }
-        public static void xuat(KHOA k)
+
+        public static void printGV(KHOA k)
         {
             Console.WriteLine("Khoa {0}", k.TENKHOA);
             Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10} {10, -10}",
                   "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Lop Day" , "Hoc Vi");
             foreach (GiangVien gv in k.Listgv1)
             {
-                Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10} {10, -10}",
-                                  gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.LOPDAY, gv.HOCVI);
+                printgv?.Invoke(gv);
             }
             if(k.Listgv1.Count == 0)
             {
@@ -79,7 +87,7 @@ namespace QuanLySchool.QLyGiangVien
             }    
             Console.WriteLine();
         }
-        public override void xuat()
+        public override void print()
         {
             Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10} {10, -10}",
                   "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Lop Day", "Hoc Vi");
@@ -94,7 +102,8 @@ namespace QuanLySchool.QLyGiangVien
             }
             Console.WriteLine();
         }
-        public static void searchID(KHOA k)
+
+        public static void searchIDGV(KHOA k)
         {
 
             Console.Write("Nhap Ma Giang Vien: ");
@@ -133,41 +142,66 @@ namespace QuanLySchool.QLyGiangVien
                 Console.WriteLine("Khong co Giang Vien!");
             }
         }
-        public static void sortID(KHOA k)
+
+        public delegate bool DelSort(GiangVien gv1, GiangVien gv2);
+        public static bool compareRise(GiangVien gv1, GiangVien gv2)
         {
-            if(k.Listgv1.Count == 0)
+            if (String.Compare(gv1.TEN, gv2.TEN, false) > 0)
+                return false;
+            return true;
+        }
+        public static void sortIDGV(KHOA k)
+        {
+            DelSort d = new DelSort(compareRise);
+            if (k.Listgv1.Count == 0)   
             {
                 Console.WriteLine("Danh sach rong!");
             }
             else
             {
-                k.Listgv1.Sort(delegate (GiangVien gv1, GiangVien gv2)
-                {
-                    return gv1.TEN.CompareTo(gv2.TEN);
-                });
+                GiangVien gv;
+                for(int i = 0; i < k.Listgv1.Count - 1; i++)
+                    for (int j = i + 1; j < k.Listgv1.Count; j++)
+                        if (!d(k.Listgv1[i], k.Listgv1[j])) 
+                        {
+                            gv = k.Listgv1[i];
+                            k.Listgv1[i] = k.Listgv1[j];
+                            k.Listgv1[j] = gv;
+                        }
             }
         }
         public override void sort()
         {
+            DelSort d1 = new DelSort(compareRise);
             if (listgv.Count == 0)
             {
                 Console.WriteLine("Danh sach rong!");
             }
             else
             {
-                listgv.Sort(delegate (GiangVien gv1, GiangVien gv2)
-                {
-                    return gv1.TEN.CompareTo(gv2.TEN);
-                });
+                GiangVien gv;
+                for (int i = 0; i < listgv.Count - 1; i++)
+                    for (int j = i + 1; j < listgv.Count; j++)
+                        if (!d1(listgv[i], listgv[j]))
+                        {
+                            gv = listgv[i];
+                            listgv[i] = listgv[j];
+                            listgv[j] = gv;
+                        }
             }
         }
-        public static int sl_khoa(KHOA k)
+
+        public static int slGV_khoa(KHOA k)
         {
             return k.Listgv1.Count;
         }
-        public static int sl()
+        public static int slGV() 
         {
             return listgv.Count;
+        }
+        public void dkimolop()
+        {
+
         }
     }
 }

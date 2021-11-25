@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\OOP\\QuanLySchool\\QuanLySchool\\QuanLySchool.csproj",
-      "projectName": "QuanLySchool",
-      "projectPath": "D:\\OOP\\QuanLySchool\\QuanLySchool\\QuanLySchool.csproj",
+      "projectUniqueName": "D:\\OOP\\QuanLySchool\\QuanLySchool\\SchoolManager.csproj",
+      "projectName": "SchoolManager",
+      "projectPath": "D:\\OOP\\QuanLySchool\\QuanLySchool\\SchoolManager.csproj",
       "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
       "outputPath": "D:\\OOP\\QuanLySchool\\QuanLySchool\\obj\\",
       "projectStyle": "PackageReference",
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

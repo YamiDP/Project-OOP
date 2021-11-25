@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace QuanLySchool
+namespace SchoolManager
 {
-    public abstract class thuoctinhCB
+    public abstract class Person
     {
         private string ma;
         private string ten;
@@ -44,7 +44,7 @@ namespace QuanLySchool
             get { return diachi; }
         }
 
-        public thuoctinhCB(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt)
+        public Person(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt)
         {
             this.ma = ma;
             this.ten = ten;
@@ -53,10 +53,20 @@ namespace QuanLySchool
             this.diachi = diachi;
             this.sdt = sdt;
         }
-
-        public thuoctinhCB()
-        { }
-        public virtual void input()
+        public Person(Person ps) 
+            : this(ps.MA, ps.TEN, ps.NGSINH, ps.GTINH, ps.DIACHI, ps.SDT)
+        {
+        }
+        public Person()
+        {
+            this.ma = "";
+            this.ten = "";
+            this.ngsinh = "dd/mm/yyyy";
+            this.gtinh = "unknown";
+            this.diachi = "";
+            this.sdt = "0xxxxxxxxx";
+        }
+        public virtual void input()  // đăng kí
         {
             Console.Write("Ten: ");
             TEN = Convert.ToString(Console.ReadLine());
@@ -69,7 +79,7 @@ namespace QuanLySchool
             Console.Write("So dien thoai: ");
             SDT = Convert.ToString(Console.ReadLine());
         }
-        public abstract void xuat();
+        public abstract void print();
         public abstract void sort();
         public abstract void search();
     }

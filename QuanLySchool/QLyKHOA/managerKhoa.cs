@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SchoolManager.QLyGiangVien;
+using SchoolManager.QLyCuuSinhVien;
+using SchoolManager.QLySinhVien;
 
-namespace QuanLySchool.QLyGiangVien
+namespace SchoolManager.QLyKHOA
 {
-    public class managerKHOA : KHOA
+   public class managerKhoa :KHOA
     {
         public static List<KHOA> listkhoa = new List<KHOA>();
         public static KHOA checkkhoa(string MaKhoa)
-        {   
+        {
             foreach (KHOA khoa in listkhoa)
             {
                 if (String.Compare(khoa.MAKHOA, MaKhoa, false) == 0)
@@ -22,22 +25,20 @@ namespace QuanLySchool.QLyGiangVien
             MAKHOA = makhoa;
             Console.Write("Ten Khoa: ");
             TENKHOA = Convert.ToString(Console.ReadLine());
-            k = new KHOA(MAKHOA, TENKHOA, new List<GiangVien>());
+            k = new KHOA(MAKHOA, TENKHOA, new List<GiangVien>(), new List<SinhVien>(), new List<CuuSinhVien>());
             listkhoa.Add(k);
             Console.WriteLine("Them Khoa thanh cong!");
         }
         public static void xuat()
         {
-            int check = 0;
             Console.WriteLine("{0, -7} {1, -20}",
                   "MaKhoa", "TenKhoa");
             foreach (KHOA khoa in listkhoa)
             {
-                check++;
                 Console.WriteLine("{0, -7} {1, -20}",
                                   khoa.MAKHOA, khoa.TENKHOA);
             }
-            if (check == 0)
+            if (listkhoa.Count == 0)
             {
                 Console.WriteLine("Khong co Khoa de hien thi!");
             }

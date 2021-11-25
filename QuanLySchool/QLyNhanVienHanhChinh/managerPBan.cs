@@ -2,41 +2,40 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace QuanLySchool.QLyNhanVienHanhChinh
+namespace SchoolManager.QLyNhanVienHanhChinh
 {
-    class managerPBan
+    class managerPBan : Pban
     {
         public static List<Pban> listpban = new List<Pban>();
         public static Pban checkkhoa(string MaPban)
         {
             foreach (Pban pb in listpban)
             {
-                if (String.Compare(pb.MAPB, MaPban, false) == 0) // so sánh tính cả chữ hoa và thường
+                if (String.Compare(pb.MAPB, MaPban, false) == 0)
                     return pb;
             }
             return null;
         }
-        public static void add(string mapban)
+        public void add(string mapban)
         {
-            Pban pb = new Pban();
-            pb.MAPB = mapban;
+            Pban pb;
+            MAPB = mapban;
             Console.Write("Ten Phong Ban: ");
-            pb.MAPB = Convert.ToString(Console.ReadLine());
+            TENPB = Convert.ToString(Console.ReadLine());
+            pb = new Pban(MAPB, TENPB, new List<NhanVien>());
             listpban.Add(pb);
             Console.WriteLine("Them Phong Ban thanh cong!");
         }
         public static void xuat()
         {
-            int check = 0;
             Console.WriteLine("{0, -7} {1, -20}",
-                  "MaKhoa", "TenKhoa");
+                  "MaPB", "TenPB");
             foreach (Pban pb in listpban)
             {
-                check++;
                 Console.WriteLine("{0, -7} {1, -20}",
                                   pb.MAPB, pb.TENPB);
             }
-            if (check == 0)
+            if (listpban.Count == 0)
             {
                 Console.WriteLine("Khong co Phong Ban de hien thi!");
             }
