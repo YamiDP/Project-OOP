@@ -8,24 +8,31 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Yami\\.nuget\\packages\\": {}
+    "C:\\Users\\datvu\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Yami\\ForWork\\Program\\Project\\C# Project\\SchoolManager\\SchoolManager.csproj",
+      "projectUniqueName": "C:\\Users\\datvu\\Desktop\\OOP\\Project-OOP\\SchoolManager.csproj",
       "projectName": "SchoolManager",
-      "projectPath": "C:\\Users\\Yami\\ForWork\\Program\\Project\\C# Project\\SchoolManager\\SchoolManager.csproj",
-      "packagesPath": "C:\\Users\\Yami\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Yami\\ForWork\\Program\\Project\\C# Project\\SchoolManager\\obj\\",
+      "projectPath": "C:\\Users\\datvu\\Desktop\\OOP\\Project-OOP\\SchoolManager.csproj",
+      "packagesPath": "C:\\Users\\datvu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\datvu\\Desktop\\OOP\\Project-OOP\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Yami\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\datvu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
