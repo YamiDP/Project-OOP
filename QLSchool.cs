@@ -4,7 +4,7 @@ using SchoolManager.QLKhoa;
 using SchoolManager.QLSinhVien;
 using SchoolManager.QLTuyenSinh;
 namespace SchoolManager
-{       //Hello PHUONG
+{       //Hello PHUONG, TTUAN, DAT
     class QLSchool
     {   
         static void Main(string[] args)
