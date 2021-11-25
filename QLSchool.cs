@@ -11,9 +11,7 @@ namespace SchoolManager
         {
             int chon;
             do
-            {   //test lan cuoi
-                // test lan cuoi +1
-                // test lan cuoi +2
+            {   
                 Console.WriteLine("------------QUAN LY TRUONG HOC------------");
                 Console.WriteLine("1.Quan ly giang vien");
                 Console.WriteLine("2.Quan ly sinh vien");
