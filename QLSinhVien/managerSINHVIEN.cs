@@ -1,3 +1,4 @@
+using System.Net.Mime;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -36,6 +37,7 @@ namespace SchoolManager.QLSinhVien
             NGANH = Convert.ToString(Console.ReadLine());
             Console.Write("Nhap khoa hoc cua sinh vien: ");
             KHOAHOC = Convert.ToString(Console.ReadLine());
+            sv = new SinhVien(MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, KHOAHOC);
             listsv.Add(sv);
             Console.WriteLine("Them Sinh Vien thanh cong !");
         }
@@ -59,12 +61,12 @@ namespace SchoolManager.QLSinhVien
         public static void printSV(KHOA k)
         {
             Console.WriteLine("Khoa {0}", k.TENKHOA);
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15}",
-                  "MaSV", "TenSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi");
+            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -15} {6, -15} {7, -15}",
+                  "MaSV", "TenSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh", "Khoa hoc");
             foreach (SinhVien sv in k.Listsv1)
             {
-                Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15}",
-                                  sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI);
+                Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -15} {6, -15} {7, -15}",
+                                  sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.KHOAHOC);
             }
             if (k.Listsv1.Count == 0)
             {
@@ -79,14 +81,14 @@ namespace SchoolManager.QLSinhVien
             {
                 Console.Write("Nhap Ma Sinh Vien: ");
                 string MaSV = Console.ReadLine();
-                Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15}",
-                  "MaSV", "TenSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi");
+                Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -15} {6, -15} {7, -15}",
+                  "MaSV", "TenSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh", "Khoa hoc");
                 foreach (SinhVien sv in k.Listsv1)
                 {
                     if (String.Compare(sv.MA, MaSV, false) == 0)
                     {
-                        Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15}",
-                                      sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI);
+                        Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -15} {6, -15} {7, -15}",
+                                      sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.KHOAHOC);
                     }
                 }
                 if (k.Listsv1.Count == 0)
@@ -103,14 +105,14 @@ namespace SchoolManager.QLSinhVien
             {
                 Console.Write("Nhap Ma Sinh Vien: ");
                 string MaSV = Console.ReadLine();
-                Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20}",
-                  "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai");
+                Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {5, -15} {6, -15} {7, -15}",
+                  "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh", "Khoa hoc");
                 foreach (SinhVien sv in listsv)
                 {
                     if (String.Compare(sv.MA, MaSV, false) == 0)
                     {
-                        Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20}",
-                                      sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT);
+                        Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20}{5, -15} {6, -15} {7, -15}",
+                                      sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.KHOAHOC);
                     }
                 }
                 if (listsv.Count == 0)

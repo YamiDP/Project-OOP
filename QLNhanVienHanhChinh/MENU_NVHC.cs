@@ -1,28 +1,26 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using SchoolManager.QLGiangVien;
-using SchoolManager.QLKhoa;
 
-namespace SchoolManager.QLGiangVien
+namespace SchoolManager.QLNhanVienHanhChinh
 {
-    public class menuQlyGiangVien
+    public class MENU_NVHC
     {
         public static void MENU()
         {
-            managerGiangVien gv = new managerGiangVien();
-            managerKhoa k = new managerKhoa();
+            managerNhanVien nv = new managerNhanVien();
+            managerPhongBan pb = new managerPhongBan();
             int chon;
-            string MaKhoa;
+            string MaPB;
             do
             {
                 Console.WriteLine("--------QUAN LY GIANG VIEN--------");
-                Console.WriteLine("1.Ky hop dong voi giang vien");  //Thêm giảng viên vào danh sách của khoa
-                Console.WriteLine("2.Danh sach giang vien");
-                Console.WriteLine("3.Tim kiem giang vien");
-                Console.WriteLine("4.Huy hop dong giang vien");  //Xóa giảng viên khỏi danh sách của khoa
-                Console.WriteLine("5.Sap xep giang vien");
-                Console.WriteLine("6.So luong giang vien");
+                Console.WriteLine("1.Ky hop dong voi nhan vien");  
+                Console.WriteLine("2.Danh sach nhan vien");
+                Console.WriteLine("3.Tim kiem nhan vien");
+                Console.WriteLine("4.Huy hop dong nhan vien");  
+                Console.WriteLine("5.Sap xep nhan vien");
+                Console.WriteLine("6.So luong nhan vien");
                 Console.WriteLine("7.Thoat");
                 Console.WriteLine("----------------------------------");
                 Console.Write("Chon tinh nang: ");
@@ -30,17 +28,17 @@ namespace SchoolManager.QLGiangVien
                 switch (chon)
                 {
                     case 1:
-                        Console.Write("Nhap Ma Khoa: ");
-                        MaKhoa = Console.ReadLine();
-                        KHOA khoa = managerKhoa.checkkhoa(MaKhoa);
-                        if (khoa != null)
+                        Console.Write("Nhap Ma Phong Ban: ");
+                        MaPB = Console.ReadLine();
+                        PhongBan pban = managerPhongBan.checkPB(MaPB);
+                        if (pban != null)
                         {
-                            gv.inputGV(khoa);
+                            nv.inputNV(pban);
                         }
                         else
                         {
-                            Console.WriteLine("Khong tim thay Khoa!");
-                            Console.WriteLine("Ban co muon them vao danh sach Khoa khong!");
+                            Console.WriteLine("Khong tim thay Phong ban!");
+                            Console.WriteLine("Ban co muon them vao danh sach Phong Ban khong!");
                             do
                             {
                                 Console.WriteLine("----------------");
@@ -52,7 +50,7 @@ namespace SchoolManager.QLGiangVien
                                 switch (chon)
                                 {
                                     case 1:
-                                        k.inputKhoa(MaKhoa);
+                                        pb.inputPB(MaPB);
                                         break;
                                     case 2:
                                         break;
@@ -66,27 +64,27 @@ namespace SchoolManager.QLGiangVien
                     case 2:
                         do
                         {
-                            Console.WriteLine("--------DANH SACH GIANG VIEN--------");
-                            Console.WriteLine("1.Danh sach giang vien theo khoa");
-                            Console.WriteLine("2.Danh sach tat ca giang vien");
+                            Console.WriteLine("--------DANH SACH NHAN VIEN--------");
+                            Console.WriteLine("1.Danh sach nhan vien theo phong ban");
+                            Console.WriteLine("2.Danh sach tat ca nhan vien");
                             Console.WriteLine("------------------------------------");
                             Console.Write("Chon tinh nang: ");
                             chon = int.Parse(Console.ReadLine());
                             switch (chon)
                             {
                                 case 1:
-                                    Console.Write("Nhap Ma Khoa: ");
-                                    MaKhoa = Console.ReadLine();
-                                    KHOA khoa1 = managerKhoa.checkkhoa(MaKhoa);
-                                    if (khoa1 != null)
+                                    Console.Write("Nhap Ma Phong Ban: ");
+                                    MaPB = Console.ReadLine();
+                                    PhongBan pban1 = managerPhongBan.checkPB(MaPB);
+                                    if (pban1 != null)
                                     {
-                                        managerGiangVien.printGV(khoa1);
+                                        managerNhanVien.printNV(pban1);
                                     }
                                     else
-                                        Console.WriteLine("Ma Khoa khong hop le!");
+                                        Console.WriteLine("Ma Phong Ban khong hop le!");
                                     break;
                                 case 2:
-                                    gv.print();
+                                    nv.print();
                                     break;
                                 default:
                                     Console.WriteLine("Chi duoc nhap tu 1-2!");
@@ -97,27 +95,27 @@ namespace SchoolManager.QLGiangVien
                     case 3:
                         do
                         {
-                            Console.WriteLine("--------TIM KIEM GIANG VIEN--------");
-                            Console.WriteLine("1.Tim kiem giang vien theo khoa");
-                            Console.WriteLine("2.Tim kiem giang vien cua tat ca cac khoa");
+                            Console.WriteLine("--------TIM KIEM NHAN VIEN--------");
+                            Console.WriteLine("1.Tim kiem nhan vien theo phong ban");
+                            Console.WriteLine("2.Tim kiem nhan vien cua tat ca cac phong ban");
                             Console.WriteLine("------------------------------------");
                             Console.Write("Chon tinh nang: ");
                             chon = int.Parse(Console.ReadLine());
                             switch (chon)
                             {
                                 case 1:
-                                    Console.Write("Nhap Ma Khoa: ");
-                                    MaKhoa = Console.ReadLine();
-                                    KHOA khoa2 = managerKhoa.checkkhoa(MaKhoa);
-                                    if (khoa2 != null)
+                                    Console.Write("Nhap Ma Phong Ban: ");
+                                    MaPB = Console.ReadLine();
+                                    PhongBan pban2 = managerPhongBan.checkPB(MaPB);
+                                    if (pban2 != null)
                                     {
-                                        managerGiangVien.searchIDGV(khoa2);
+                                        managerNhanVien.searchIDNV(pban2);
                                     }
                                     else
-                                        Console.WriteLine("Ma Khoa khong hop le!");
+                                        Console.WriteLine("Ma Phong Ban khong hop le!");
                                     break;
                                 case 2:
-                                    gv.search();
+                                    nv.search();
                                     break;
                                 default:
                                     Console.WriteLine("Chi duoc nhap tu 1-2!");
@@ -126,40 +124,40 @@ namespace SchoolManager.QLGiangVien
                         } while (chon != 1 && chon != 2);
                         break;
                     case 4:
-                        Console.Write("Nhap Ma Khoa: ");
-                        MaKhoa = Console.ReadLine();
-                        KHOA khoa3 = managerKhoa.checkkhoa(MaKhoa);
-                        if (khoa3 != null)
+                        Console.Write("Nhap Ma Phong ban: ");
+                        MaPB = Console.ReadLine();
+                        PhongBan pban3 = managerPhongBan.checkPB(MaPB);
+                        if (pban3 != null)
                         {
-                            managerGiangVien.deleteGV(khoa3);
+                            managerNhanVien.deleteNV(pban3);
                         }
                         else
-                            Console.WriteLine("Ma Khoa khong hop le!");
+                            Console.WriteLine("Ma Phong Ban khong hop le!");
                         break;
                     case 5:
                         do
                         {
-                            Console.WriteLine("--------SAP XEP GIANG VIEN--------");
-                            Console.WriteLine("1.Sap xep giang vien theo khoa");
-                            Console.WriteLine("2.Sap xep giang vien cua tat ca cac khoa");
+                            Console.WriteLine("--------SAP XEP NHAN VIEN--------");
+                            Console.WriteLine("1.Sap xep nhan vien theo phong ban");
+                            Console.WriteLine("2.Sap xep nhan vien cua tat ca cac phong ban");
                             Console.WriteLine("------------------------------------");
                             Console.Write("Chon tinh nang: ");
                             chon = int.Parse(Console.ReadLine());
                             switch (chon)
                             {
                                 case 1:
-                                    Console.Write("Nhap Ma Khoa: ");
-                                    MaKhoa = Console.ReadLine();
-                                    KHOA khoa4 = managerKhoa.checkkhoa(MaKhoa);
-                                    if (khoa4 != null)
+                                    Console.Write("Nhap Ma Phong Ban: ");
+                                    MaPB = Console.ReadLine();
+                                    PhongBan pban4 = managerPhongBan.checkPB(MaPB);
+                                    if (pban4 != null)
                                     {
-                                        managerGiangVien.sortIDGV(khoa4);
+                                        managerNhanVien.sortIDNV(pban4);
                                     }
                                     else
-                                        Console.WriteLine("Ma Khoa khong hop le!");
+                                        Console.WriteLine("Ma Phong Ban khong hop le!");
                                     break;
                                 case 2:
-                                    gv.sort();
+                                    nv.sort();
                                     break;
                                 default:
                                     Console.WriteLine("Chi duoc nhap tu 1-2!");
@@ -170,29 +168,29 @@ namespace SchoolManager.QLGiangVien
                     case 6:
                         do
                         {
-                            Console.WriteLine("--------SO LUONG GIANG VIEN--------");
-                            Console.WriteLine("1.So luong giang vien theo khoa");
-                            Console.WriteLine("2.So luong tat ca giang vien");
+                            Console.WriteLine("--------SO LUONG NHAN VIEN--------");
+                            Console.WriteLine("1.So luong nhan vien theo phong ban");
+                            Console.WriteLine("2.So luong tat ca nhan vien");
                             Console.WriteLine("------------------------------------");
                             Console.Write("Chon tinh nang: ");
                             chon = int.Parse(Console.ReadLine());
                             switch (chon)
                             {
                                 case 1:
-                                    Console.Write("Nhap Ma Khoa: ");
-                                    MaKhoa = Console.ReadLine();
-                                    KHOA khoa5 = managerKhoa.checkkhoa(MaKhoa);
-                                    if (khoa5 != null)
+                                    Console.Write("Nhap Ma Phong Ban: ");
+                                    MaPB = Console.ReadLine();
+                                    PhongBan pban5 = managerPhongBan.checkPB(MaPB);
+                                    if (pban5 != null)
                                     {
                                         Console.Write("So luong: ");
-                                        Console.WriteLine(managerGiangVien.slGV_khoa(khoa5));
+                                        Console.WriteLine(managerNhanVien.slNV_pb(pban5));
                                     }
                                     else
-                                        Console.WriteLine("Ma Khoa khong hop le!");
+                                        Console.WriteLine("Ma Phong ban khong hop le!");
                                     break;
                                 case 2:
                                     Console.Write("So luong: ");
-                                    Console.WriteLine(managerGiangVien.slGV());
+                                    Console.WriteLine(managerNhanVien.slNV());
                                     break;
                                 default:
                                     Console.WriteLine("Chi duoc nhap tu 1-2!");
@@ -208,7 +206,6 @@ namespace SchoolManager.QLGiangVien
                 }
             } while (chon != 7);
             Console.WriteLine();
-        }
+        }   
     }
 }
-

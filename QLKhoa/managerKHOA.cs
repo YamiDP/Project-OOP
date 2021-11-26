@@ -19,7 +19,7 @@ namespace SchoolManager.QLKhoa
             }
             return null;
         }
-        public void add(string makhoa)
+        public void inputKhoa(string makhoa)
         {
             KHOA k;
             MAKHOA = makhoa;
@@ -29,7 +29,7 @@ namespace SchoolManager.QLKhoa
             listkhoa.Add(k);
             Console.WriteLine("Them Khoa thanh cong!");
         }
-        public static void xuat()
+        public static void printKhoa()
         {
             Console.WriteLine("{0, -7} {1, -20}",
                   "MaKhoa", "TenKhoa");

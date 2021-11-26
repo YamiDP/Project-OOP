@@ -21,7 +21,7 @@ namespace SchoolManager.QLCuuSinhVien
         {
             CuuSinhVien csv;
             do
-            {
+            { 
                 Console.Write("Ma Cuu Sinh Vien: ");
                 MA = Convert.ToString(Console.ReadLine());
                 csv = checkCSV(MA);
@@ -90,7 +90,7 @@ namespace SchoolManager.QLCuuSinhVien
                 return false;
             return true;
         }
-        public static void sortID(KHOA k)
+        public static void sortIDCSV(KHOA k)
         {
             DelSort d = new DelSort(compareRise);
             if (k.Listcsv1.Count == 0)
@@ -111,7 +111,7 @@ namespace SchoolManager.QLCuuSinhVien
 
             }
         }
-        public static void delete(KHOA h)
+        public static void deleteCSV(KHOA h)
         {
             CuuSinhVien c;
             Console.Write("Nhap Ma Sinh Vien: ");
@@ -128,11 +128,11 @@ namespace SchoolManager.QLCuuSinhVien
             }
             Console.WriteLine("Da xoa thanh cong !");
         }
-        public static int sl_khoa(KHOA k)
+        public static int slCSV_khoa(KHOA k)
         {
             return k.Listcsv1.Count;
         }
-        public static int sl()
+        public static int slCSV()
         {
             return listcsv.Count;
         }
