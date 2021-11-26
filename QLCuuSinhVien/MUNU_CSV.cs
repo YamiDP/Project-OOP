@@ -1,6 +1,6 @@
 namespace SchoolManager.QLCuuSinhVien
 {
-    public class MUNU_CSV
+    public class MENU_CSV
     {
         
     }
