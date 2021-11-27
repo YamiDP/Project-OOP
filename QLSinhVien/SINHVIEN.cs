@@ -6,17 +6,18 @@ namespace SchoolManager.QLSinhVien
 {
     public class SinhVien : Person
     {
-        private string khoahoc;
-        public string KHOAHOC
-        {
-            set { khoahoc = value; }
-            get { return khoahoc; }
-        }
         private string nganh;
         public string NGANH
         {
             set { nganh = value; }
             get { return nganh; }
+
+        }
+        private int namnhaphoc;
+        public int NAMNHAPHOC
+        {
+            set { namnhaphoc = value; }
+            get { return namnhaphoc; }
 
         }
         struct DIEM
@@ -50,14 +51,14 @@ namespace SchoolManager.QLSinhVien
         public override void sort()
         {
         }
-        public SinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, string khoahoc)
+        public SinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, int namnhaphoc)
             : base(ma, ten, ngsinh, gtinh, diachi, sdt)
         {
             this.nganh = nganh;
-            this.khoahoc = khoahoc;
+            this.namnhaphoc = namnhaphoc;
         }
         public SinhVien(SinhVien sv)
-            : this(sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.KHOAHOC)
+            : this(sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.NAMNHAPHOC)
         {
 
         }
@@ -65,7 +66,7 @@ namespace SchoolManager.QLSinhVien
             : base()
         {
             this.nganh = "";
-            this.khoahoc = "";
+            this.namnhaphoc = 2000;
         }
     }
 }

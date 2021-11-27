@@ -29,14 +29,14 @@ namespace SchoolManager.QLCuuSinhVien
         public override void sort()
         {
         }
-        public CuuSinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, string khoahoc, string thanhtich, string nghenghiep)
-            : base(ma, ten, ngsinh, gtinh, diachi, sdt, nganh, khoahoc)
+        public CuuSinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, int namnhaphoc, string thanhtich, string nghenghiep)
+            : base(ma, ten, ngsinh, gtinh, diachi, sdt, nganh, namnhaphoc)
         {
             this.thanhtich = thanhtich;
             this.nghenghiep = nghenghiep;
         }
         public CuuSinhVien(CuuSinhVien csv)
-            : this(csv.MA, csv.TEN, csv.NGSINH, csv.GTINH, csv.DIACHI, csv.SDT, csv.NGANH, csv.KHOAHOC, csv.THANHTICH, csv.NGHENGHIEP)
+            : this(csv.MA, csv.TEN, csv.NGSINH, csv.GTINH, csv.DIACHI, csv.SDT, csv.NGANH, csv.NAMNHAPHOC, csv.THANHTICH, csv.NGHENGHIEP)
         {
         }
         public CuuSinhVien()

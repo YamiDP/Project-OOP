@@ -34,13 +34,13 @@ namespace SchoolManager.QLCuuSinhVien
             base.input();
             Console.Write("Nhap nganh hoc cua cuu sinh vien: ");
             NGANH = Convert.ToString(Console.ReadLine());
-            Console.Write("Nhap khoa hoc cua cuu sinh vien: ");
-            KHOAHOC = Convert.ToString(Console.ReadLine());
+            Console.Write("Nhap nam nhap hoc cua cuu sinh vien: ");
+            NAMNHAPHOC = Convert.ToInt32(Console.ReadLine());
             Console.Write("Nhap thanh tich cua cuu sinh vien: ");
             THANHTICH = Convert.ToString(Console.ReadLine());
             Console.Write("Nhap nghe nghiep cua cuu sinh vien: ");
             NGHENGHIEP = Convert.ToString(Console.ReadLine());
-            csv = new CuuSinhVien(MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, KHOAHOC, THANHTICH, NGHENGHIEP);
+            csv = new CuuSinhVien(MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, NAMNHAPHOC, THANHTICH, NGHENGHIEP);
             listcsv.Add(csv);
             Console.WriteLine("Them Cuu Sinh Vien thanh cong !");
         }
@@ -52,7 +52,7 @@ namespace SchoolManager.QLCuuSinhVien
             foreach (CuuSinhVien csv in k.Listcsv1)
             {
                 Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -15} {6, -15} {7, -15} {8, -15} {9, -15}",
-                                  csv.MA, csv.TEN, csv.NGSINH, csv.GTINH, csv.DIACHI, csv.SDT, csv.NGANH, csv.KHOAHOC, csv.THANHTICH, csv.NGHENGHIEP);
+                                  csv.MA, csv.TEN, csv.NGSINH, csv.GTINH, csv.DIACHI, csv.SDT, csv.NGANH, csv.NAMNHAPHOC, csv.THANHTICH, csv.NGHENGHIEP);
             }
             if (k.Listcsv1.Count == 0)
             {
@@ -74,7 +74,7 @@ namespace SchoolManager.QLCuuSinhVien
                     if (String.Compare(csv.MA, MaSV, false) == 0)
                     {
                         Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -15} {6, -15} {7, -15} {8, -15} {9, -15}",
-                                      csv.MA, csv.TEN, csv.NGSINH, csv.GTINH, csv.DIACHI, csv.SDT, csv.NGANH, csv.KHOAHOC, csv.THANHTICH, csv.NGHENGHIEP);
+                                      csv.MA, csv.TEN, csv.NGSINH, csv.GTINH, csv.DIACHI, csv.SDT, csv.NGANH, csv.NAMNHAPHOC, csv.THANHTICH, csv.NGHENGHIEP);
                     }
                 }
                 if (k.Listcsv1.Count == 0)

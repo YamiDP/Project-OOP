@@ -6,7 +6,7 @@ using SchoolManager.QLKhoa;
 
 namespace SchoolManager.QLSinhVien
 {
-    class managerSinhVien : SinhVien
+    public class managerSinhVien : SinhVien
     {
         public static List<SinhVien> listsv = new List<SinhVien>();
         public static SinhVien checkSV(string MaSV)
@@ -36,8 +36,8 @@ namespace SchoolManager.QLSinhVien
             Console.Write("Nhap nganh hoc cua sinh vien: ");
             NGANH = Convert.ToString(Console.ReadLine());
             Console.Write("Nhap khoa hoc cua sinh vien: ");
-            KHOAHOC = Convert.ToString(Console.ReadLine());
-            sv = new SinhVien(MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, KHOAHOC);
+            NAMNHAPHOC = Convert.ToInt32(Console.ReadLine());
+            sv = new SinhVien(MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, NAMNHAPHOC);
             listsv.Add(sv);
             Console.WriteLine("Them Sinh Vien thanh cong !");
         }
@@ -66,7 +66,7 @@ namespace SchoolManager.QLSinhVien
             foreach (SinhVien sv in k.Listsv1)
             {
                 Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -15} {6, -15} {7, -15}",
-                                  sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.KHOAHOC);
+                                  sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.NAMNHAPHOC);
             }
             if (k.Listsv1.Count == 0)
             {
@@ -88,7 +88,7 @@ namespace SchoolManager.QLSinhVien
                     if (String.Compare(sv.MA, MaSV, false) == 0)
                     {
                         Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -15} {6, -15} {7, -15}",
-                                      sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.KHOAHOC);
+                                      sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.NAMNHAPHOC);
                     }
                 }
                 if (k.Listsv1.Count == 0)
@@ -112,7 +112,7 @@ namespace SchoolManager.QLSinhVien
                     if (String.Compare(sv.MA, MaSV, false) == 0)
                     {
                         Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20}{5, -15} {6, -15} {7, -15}",
-                                      sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.KHOAHOC);
+                                      sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.NAMNHAPHOC);
                     }
                 }
                 if (listsv.Count == 0)

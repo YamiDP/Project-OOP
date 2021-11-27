@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using SchoolManager;
+using SchoolManager.QLCuuSinhVien;
+using SchoolManager.QLSinhVien;
 namespace SchoolManager.QLKhoahoc
 {
     public class KhoaHoc{
