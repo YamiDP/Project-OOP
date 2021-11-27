@@ -3,6 +3,7 @@ using SchoolManager.QLGiangVien;
 using SchoolManager.QLKhoa;
 using SchoolManager.QLSinhVien;
 using SchoolManager.QLTuyenSinh;
+
 namespace SchoolManager
 {       
     class QLSchool
@@ -27,13 +28,13 @@ namespace SchoolManager
                 switch (chon)
                 {
                     case 1:
-                        MENU_QLGV.MENU();
+                        //MENU_QLGV.MENU();
                         break;
                     case 2:
-                        MENU_QLSV.MENU();
+                        //MENU_QLSV.MENU();
                         break;
                     case 3:
-                        MENU_TUYENSINH.MENU();
+                        //MENU_TUYENSINH.MENU();
                         break;
                     case 4:
                         break;

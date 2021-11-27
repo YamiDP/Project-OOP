@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Text;
+
 namespace SchoolManager
 {
     public abstract class Person
@@ -41,8 +44,6 @@ namespace SchoolManager
             get { return diachi; }
         }
 
-
-        // constractor
         public Person(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt)
         {
             this.ma = ma;
@@ -52,22 +53,20 @@ namespace SchoolManager
             this.diachi = diachi;
             this.sdt = sdt;
         }
-        public Person(Person ps)
-        :this(ps.ma, ps.ten, ps.ngsinh, ps.gtinh, ps.diachi, ps.sdt)
+        public Person(Person ps) 
+            : this(ps.MA, ps.TEN, ps.NGSINH, ps.GTINH, ps.DIACHI, ps.SDT)
         {
-
         }
         public Person()
         {
-            ma = "";
-            ten = "";
-            ngsinh = "dd/mm/yyyy";
-            gtinh = "unknown";
-            diachi = "not given";
-            sdt = "0xxxxxxxxxx";
+            this.ma = "";
+            this.ten = "";
+            this.ngsinh = "dd/mm/yyyy";
+            this.gtinh = "unknown";
+            this.diachi = "";
+            this.sdt = "0xxxxxxxxx";
         }
-        // các phương thức chung nhằm để tối ưu việc quản lý
-        public virtual void input()
+        public virtual void input()  // đăng kí
         {
             Console.Write("Ten: ");
             TEN = Convert.ToString(Console.ReadLine());
@@ -80,8 +79,8 @@ namespace SchoolManager
             Console.Write("So dien thoai: ");
             SDT = Convert.ToString(Console.ReadLine());
         }
-        public abstract void search();
-        public abstract void sort();
         public abstract void print();
+        public abstract void sort();
+        public abstract void search();
     }
 }

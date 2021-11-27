@@ -1,20 +1,22 @@
 ﻿using System;
-using SchoolManager.QLTuyenSinh;
+using System.Collections.Generic;
+using System.Text;
+
 namespace SchoolManager.QLTuyenSinh
 {
-    public class MENU_TUYENSINH
+    class menuTuyenSinh
     {
         public static void MENU()
         {
             managerHocSinh hs = new managerHocSinh();
             int chon;
             do
-            {   //Hello World
+            {
                 Console.WriteLine("------------QUAN LY TUYEN SINH------------");
-                Console.WriteLine("1.Ghi danh hoc sinh");  //Thêm giảng viên vào Danh của khoa
+                Console.WriteLine("1.Ghi danh hoc sinh");
                 Console.WriteLine("2.Xuat danh sach hoc sinh");
                 Console.WriteLine("3.Tim kiem hoc sinh");
-                Console.WriteLine("4.Xoa hoc sinh ra khoi danh sach");  //Xóa giảng viên khỏi danh sách của khoa
+                Console.WriteLine("4.Xoa hoc sinh ra khoi danh sach"); 
                 Console.WriteLine("5.Sap xep hoc sinh");
                 Console.WriteLine("6.Thoat");
                 Console.WriteLine("----------------------------");
@@ -23,8 +25,8 @@ namespace SchoolManager.QLTuyenSinh
                 switch (chon)
                 {
                     case 1:
-                        hs.input();
-                            break;
+                        hs.inputHS();
+                        break;
                     case 2:
                         Console.WriteLine("Danh sach hoc sinh da dang ki:");
                         hs.print();
@@ -33,11 +35,11 @@ namespace SchoolManager.QLTuyenSinh
                         hs.search();
                         break;
                     case 4:
-                        hs.delete();
+                        hs.deleteHS();
                         break;
                     case 5:
-                       hs.sort();
-                       break;
+                        hs.sort();
+                        break;
                     case 6:
                         break;
                     default:

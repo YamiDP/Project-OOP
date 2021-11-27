@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using SchoolManager.QLGiangVien;
+using SchoolManager.QLSinhVien;
+using SchoolManager.QLCuuSinhVien;
+
 namespace SchoolManager.QLKhoa
 {
     public class KHOA
@@ -9,6 +12,8 @@ namespace SchoolManager.QLKhoa
         private string makhoa;
         private string tenkhoa;
         List<GiangVien> listgv1;
+        List<SinhVien> listsv1;
+        List<CuuSinhVien> listcsv1;
         public string MAKHOA
         {
             set { makhoa = value; }
@@ -19,20 +24,31 @@ namespace SchoolManager.QLKhoa
             set { tenkhoa = value; }
             get { return tenkhoa; }
         }
-        internal List<GiangVien> Listgv1
+        public List<GiangVien> Listgv1
         {
             set { listgv1 = value; }
             get { return listgv1; }
         }
-
-        public KHOA(string makhoa, string tenkhoa, List<GiangVien> listgv1)
+        public List<SinhVien> Listsv1
+        {
+            set { listsv1 = value; }
+            get { return listsv1; }
+        }
+        public List<CuuSinhVien> Listcsv1
+        {
+            set { listcsv1 = value; }
+            get { return listcsv1; }
+        }
+        public KHOA(string makhoa, string tenkhoa, List<GiangVien> listgv1, List<SinhVien> listsv1, List<CuuSinhVien> listcsv1)
         {
             this.makhoa = makhoa;
             this.tenkhoa = tenkhoa;
             this.listgv1 = listgv1;
+            this.listsv1 = listsv1;
+            this.listcsv1 = listcsv1;
         }
         public KHOA(KHOA khoa)
-            : this(khoa.MAKHOA, khoa.TENKHOA, khoa.Listgv1)
+            : this(khoa.MAKHOA, khoa.TENKHOA, khoa.Listgv1, khoa.Listsv1, khoa.Listcsv1)
         {
         }
         public KHOA()
@@ -40,6 +56,8 @@ namespace SchoolManager.QLKhoa
             this.makhoa = "";
             this.tenkhoa = "";
             this.listgv1 = null;
+            this.listsv1 = null;
+            this.listcsv1 = null;
         }
     }
 }

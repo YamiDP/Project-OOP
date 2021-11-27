@@ -1,17 +1,16 @@
 using System;
-using System.Text;
 using System.Collections.Generic;
-using SchoolManager;
+using System.Text;
+
 namespace SchoolManager.QLSinhVien
 {
     public class SinhVien : Person
     {
-    //    private List<SinhVien> ListSinhVien = null;
         private string khoahoc;
         public string KHOAHOC
         {
-            set {khoahoc = value;}
-            get {return khoahoc;}
+            set { khoahoc = value; }
+            get { return khoahoc; }
         }
         private string nganh;
         public string NGANH
@@ -22,7 +21,7 @@ namespace SchoolManager.QLSinhVien
         }
         struct DIEM
         {
-            
+
         }
         struct TKB
         {
@@ -44,29 +43,26 @@ namespace SchoolManager.QLSinhVien
         }
         public override void print()
         {
-
         }
         public override void search()
         {
-            
         }
         public override void sort()
         {
-            
         }
-        public SinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, string khoa)
+        public SinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, string khoahoc)
             : base(ma, ten, ngsinh, gtinh, diachi, sdt)
         {
             this.nganh = nganh;
-            this.khoahoc = khoa;
+            this.khoahoc = khoahoc;
         }
-        public SinhVien(SinhVien sv) 
+        public SinhVien(SinhVien sv)
             : this(sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.KHOAHOC)
         {
 
-        }    
+        }
         public SinhVien()
-            : base ()
+            : base()
         {
             this.nganh = "";
             this.khoahoc = "";
