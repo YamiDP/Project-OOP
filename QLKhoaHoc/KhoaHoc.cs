@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using SchoolManager;
-using SchoolManager.QLCuuSinhVien;
-using SchoolManager.QLSinhVien;
+
 namespace SchoolManager.QLKhoahoc
 {
-    public class KhoaHoc{
+    public class KhoaHoc
+    {
         private int nambatdau;
         private int namdukienkt;
         public int NAMBATDAU
@@ -29,7 +29,6 @@ namespace SchoolManager.QLKhoahoc
         {
         }    
         public KhoaHoc()
-            : base ()
         {
             this.nambatdau = 2000;
             this.namdukienkt = 2004;

@@ -28,13 +28,13 @@ namespace SchoolManager
                 switch (chon)
                 {
                     case 1:
-                        //MENU_QLGV.MENU();
+                        menuQlyGiangVien.MENU();
                         break;
                     case 2:
-                        //MENU_QLSV.MENU();
+                        menuQLySinhVien.MENU();
                         break;
                     case 3:
-                        //MENU_TUYENSINH.MENU();
+                        menuTuyenSinh.MENU();
                         break;
                     case 4:
                         break;

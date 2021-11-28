@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SchoolManager.QLTuyenSinh
 {
-    class menuTuyenSinh
+    public class menuTuyenSinh
     {
         public static void MENU()
         {

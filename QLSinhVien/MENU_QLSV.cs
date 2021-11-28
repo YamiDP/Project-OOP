@@ -5,7 +5,7 @@ using SchoolManager.QLKhoa;
 
 namespace SchoolManager.QLSinhVien
 {
-    class menuQLySinhVien
+    public class menuQLySinhVien
     {
         public static void MENU()
         {

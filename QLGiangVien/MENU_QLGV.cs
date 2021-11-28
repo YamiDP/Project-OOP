@@ -80,7 +80,7 @@ namespace SchoolManager.QLGiangVien
                                     KHOA khoa1 = managerKhoa.checkkhoa(MaKhoa);
                                     if (khoa1 != null)
                                     {
-                                        managerGiangVien.printGV(khoa1);
+                                        managerGiangVien.EventprintGV(khoa1);
                                     }
                                     else
                                         Console.WriteLine("Ma Khoa khong hop le!");
@@ -153,7 +153,7 @@ namespace SchoolManager.QLGiangVien
                                     KHOA khoa4 = managerKhoa.checkkhoa(MaKhoa);
                                     if (khoa4 != null)
                                     {
-                                        managerGiangVien.sortIDGV(khoa4);
+                                        managerGiangVien.EventsortidGV(khoa4);
                                     }
                                     else
                                         Console.WriteLine("Ma Khoa khong hop le!");

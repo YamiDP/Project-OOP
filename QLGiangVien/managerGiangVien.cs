@@ -5,9 +5,11 @@ using SchoolManager.QLKhoa;
 
 namespace SchoolManager.QLGiangVien
 {
+    public delegate void printDel(KHOA K);
     public class managerGiangVien : GiangVien
     {
         public static List<GiangVien> listgv = new List<GiangVien>();
+        public static List<MonHoc> listmh = new List<MonHoc>(); // luu cac mon hoc ma giang vien da dang ky mo lop
         public static GiangVien checkGV(string MaGV)
         {
             foreach (GiangVien gv in listgv)
@@ -17,24 +19,17 @@ namespace SchoolManager.QLGiangVien
             }
             return null;
         }
-        public void eventprint(GiangVien gv)
-        {
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10} {10, -10}",
-                                  gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.LOPDAY, gv.HOCVI);
-        }
-        public delegate void printDel(GiangVien gv);
-        public event printDel printgv;
         public void inputGV(KHOA h)
         {
             GiangVien gv;         
             do
             {
-                Console.Write("Ma Giao Vien: ");
+                Console.Write("Ma Giang Vien: ");
                 MA = Convert.ToString(Console.ReadLine());
                 gv = checkGV(MA);
                 if (gv != null)
                 {
-                    Console.WriteLine("Ma Giao Vien da ton tai!");
+                    Console.WriteLine("Ma Giang Vien da ton tai!");
                     Console.WriteLine("Vui long nhap lai!!!");
                 }
             } while (gv != null);
@@ -71,15 +66,21 @@ namespace SchoolManager.QLGiangVien
                 Console.WriteLine("Da xoa thanh cong!");
             }
         }
-
-        public static void printGV(KHOA k)
+        static event printDel printgv;
+        public static void EventprintGV(KHOA k)
         {
+            printgv = new printDel(printGV);
+            printgv?.Invoke(k);
+        }
+        static void printGV(KHOA k)
+        { 
             Console.WriteLine("Khoa {0}", k.TENKHOA);
             Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10} {10, -10}",
                   "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Lop Day" , "Hoc Vi");
             foreach (GiangVien gv in k.Listgv1)
             {
-                //printgv?.Invoke(gv);
+                Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10} {10, -10}",
+                                  gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.LOPDAY, gv.HOCVI);
             }
             if(k.Listgv1.Count == 0)
             {
@@ -87,6 +88,7 @@ namespace SchoolManager.QLGiangVien
             }    
             Console.WriteLine();
         }
+
         public override void print()
         {
             Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10} {10, -10}",
@@ -143,16 +145,20 @@ namespace SchoolManager.QLGiangVien
             }
         }
 
-        public delegate bool DelSort(GiangVien gv1, GiangVien gv2);
+        static event printDel sortidgv;
+        public static void EventsortidGV(KHOA k)
+        {
+            sortidgv = new printDel(sortIDGV);
+            sortidgv?.Invoke(k);
+        }
         public static bool compareRise(GiangVien gv1, GiangVien gv2)
         {
             if (String.Compare(gv1.TEN, gv2.TEN, false) > 0)
                 return false;
             return true;
         }
-        public static void sortIDGV(KHOA k)
+        static void sortIDGV(KHOA k)
         {
-            DelSort d = new DelSort(compareRise);
             if (k.Listgv1.Count == 0)   
             {
                 Console.WriteLine("Danh sach rong!");
@@ -162,7 +168,7 @@ namespace SchoolManager.QLGiangVien
                 GiangVien gv;
                 for(int i = 0; i < k.Listgv1.Count - 1; i++)
                     for (int j = i + 1; j < k.Listgv1.Count; j++)
-                        if (!d(k.Listgv1[i], k.Listgv1[j])) 
+                        if (!compareRise(k.Listgv1[i], k.Listgv1[j])) 
                         {
                             gv = k.Listgv1[i];
                             k.Listgv1[i] = k.Listgv1[j];
@@ -172,7 +178,6 @@ namespace SchoolManager.QLGiangVien
         }
         public override void sort()
         {
-            DelSort d1 = new DelSort(compareRise);
             if (listgv.Count == 0)
             {
                 Console.WriteLine("Danh sach rong!");
@@ -182,7 +187,7 @@ namespace SchoolManager.QLGiangVien
                 GiangVien gv;
                 for (int i = 0; i < listgv.Count - 1; i++)
                     for (int j = i + 1; j < listgv.Count; j++)
-                        if (!d1(listgv[i], listgv[j]))
+                        if (!compareRise(listgv[i], listgv[j]))
                         {
                             gv = listgv[i];
                             listgv[i] = listgv[j];
@@ -201,7 +206,31 @@ namespace SchoolManager.QLGiangVien
         }
         public void dkimolop()
         {
-
+            MonHoc mh;         
+            do
+            {
+                Console.Write("Nhap Ma Giang Vien muon dang ki mo lop: ");
+                string MaGV = Console.ReadLine();
+                gv = checkGV(MaGV);
+                if (gv == null)
+                {
+                    Console.WriteLine("Khong co Giang Vien nay!");
+                    Console.WriteLine("Vui long nhap lai Ma Giang Vien!!!");
+                }
+            } while (gv == null);
+            Console.Write("Ten mon hoc: ");
+            string Tenmh = Console.ReadLine();
+            Console.Write("Loai hoc phan: ");
+            string LoaiHP = Console.ReadLine();
+            Console.Write("Lop hoc phan: ");
+            string LopHP = Console.ReadLine();
+            Console.Write("So tin chi: ");
+            int STC = Console.ReadLine();
+            Console.Write("Gioi han: ");
+            int GH = Console.ReadLine();
+            Console.Write("Lich hoc: ");
+            string Lichhoc = Console.ReadLine();
+            Console.WriteLine("Dang ki mo lop thanh cong!!!");
         }
     }
 }
