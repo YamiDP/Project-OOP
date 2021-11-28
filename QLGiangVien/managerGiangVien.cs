@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using SchoolManager.QLKhoa;
-
+using SchoolManager.QLMonHoc;
 namespace SchoolManager.QLGiangVien
 {
     public delegate void printDel(KHOA K);
@@ -206,31 +206,9 @@ namespace SchoolManager.QLGiangVien
         }
         public void dkimolop()
         {
-            MonHoc mh;         
-            do
-            {
-                Console.Write("Nhap Ma Giang Vien muon dang ki mo lop: ");
-                string MaGV = Console.ReadLine();
-                gv = checkGV(MaGV);
-                if (gv == null)
-                {
-                    Console.WriteLine("Khong co Giang Vien nay!");
-                    Console.WriteLine("Vui long nhap lai Ma Giang Vien!!!");
-                }
-            } while (gv == null);
-            Console.Write("Ten mon hoc: ");
-            string Tenmh = Console.ReadLine();
-            Console.Write("Loai hoc phan: ");
-            string LoaiHP = Console.ReadLine();
-            Console.Write("Lop hoc phan: ");
-            string LopHP = Console.ReadLine();
-            Console.Write("So tin chi: ");
-            int STC = Console.ReadLine();
-            Console.Write("Gioi han: ");
-            int GH = Console.ReadLine();
-            Console.Write("Lich hoc: ");
-            string Lichhoc = Console.ReadLine();
-            Console.WriteLine("Dang ki mo lop thanh cong!!!");
+            managerMonHoc.dkml();
         }
     }
 }
+
+           

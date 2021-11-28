@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using SchoolManager.QLGiangVien;
+namespace SchoolManager.QLMonHoc
+{
+    public class managerMonHoc: MonHoc
+    {
+        public static void dkml()
+        {
+            
+            MonHoc mh;  
+            GiangVien gv;       
+            do
+            {
+                Console.Write("Nhap Ma Giang Vien muon dang ki mo lop: ");
+                string MaGV = Console.ReadLine();
+                gv = checkGV(MaGV);
+                if (gv == null)
+                {
+                    Console.WriteLine("Khong co Giang Vien nay!");
+                    Console.WriteLine("Vui long nhap lai Ma Giang Vien!!!");
+                }
+            } while (gv == null);
+            Console.Write("Ten mon hoc: ");
+            string Tenmh = Console.ReadLine();
+            Console.Write("Loai hoc phan: ");
+            string LoaiHP = Console.ReadLine();
+            Console.Write("Lop hoc phan: ");
+            string LopHP = Console.ReadLine();
+            Console.Write("So tin chi: ");
+            int STC = Convert.ToInt16(Console.ReadLine());
+            Console.Write("Gioi han: ");
+            int GH = Convert.ToInt16(Console.ReadLine());
+            Console.Write("Lich hoc: ");
+            string Lichhoc = Console.ReadLine();
+            Console.WriteLine("Dang ki mo lop thanh cong!!!");
+        }
+    }
+}
