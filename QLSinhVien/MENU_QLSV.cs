@@ -13,6 +13,7 @@ namespace SchoolManager.QLSinhVien
             managerSinhVien sv = new managerSinhVien();
             managerKhoa k = new managerKhoa();
             managerMonHoc mhoc = new managerMonHoc();
+            SuKien sk = new SuKien();
             int select;
             string MaKhoa;
             string MaMH;
@@ -72,7 +73,7 @@ namespace SchoolManager.QLSinhVien
                         KHOA khoa1 = managerKhoa.checkkhoa(MaKhoa);
                         if (khoa1 != null)
                         {
-                            managerSinhVien.printSV(khoa1);
+                            sv.printSV(khoa1);
                         }
                         else
                             Console.WriteLine("Ma Khoa khong hop le!");

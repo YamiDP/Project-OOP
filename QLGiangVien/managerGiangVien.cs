@@ -6,7 +6,6 @@ using SchoolManager.QLMonHoc;
 
 namespace SchoolManager.QLGiangVien
 {
-    public delegate void printDel(KHOA K);
     public class managerGiangVien : GiangVien
     {
         public static List<GiangVien> listgv = new List<GiangVien>();
@@ -64,13 +63,12 @@ namespace SchoolManager.QLGiangVien
                 Console.WriteLine("Da xoa thanh cong!");
             }
         }
-        static event printDel printgv;
-        public static void EventprintGV(KHOA k)
+
+        public void EventprintGV(SuKien sk)
         {
-            printgv = new printDel(printGV);
-            printgv?.Invoke(k);
+            sk.print += printGV;
         }
-        static void printGV(KHOA k)
+        public void printGV(KHOA k)
         { 
             Console.WriteLine("Khoa {0}", k.TENKHOA);
             Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
@@ -143,19 +141,18 @@ namespace SchoolManager.QLGiangVien
             }
         }
 
-        static event printDel sortidgv;
-        public static void EventsortidGV(KHOA k)
+        // nhan sk
+        /*public static void EventsortidGV(SuKien sk)
         {
-            sortidgv = new printDel(sortIDGV);
-            sortidgv?.Invoke(k);
-        }
-        public static bool compareRise(GiangVien gv1, GiangVien gv2)
+            sk.print += sortIDGV;
+        }*/
+        static bool compareRise(GiangVien gv1, GiangVien gv2)
         {
             if (String.Compare(gv1.TEN, gv2.TEN, false) > 0)
                 return false;
             return true;
         }
-        static void sortIDGV(KHOA k)
+        public static void sortIDGV(KHOA k)
         {
             if (k.Listgv1.Count == 0)   
             {

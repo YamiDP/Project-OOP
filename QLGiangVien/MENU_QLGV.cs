@@ -14,6 +14,7 @@ namespace SchoolManager.QLGiangVien
             managerGiangVien gv = new managerGiangVien();
             managerKhoa k = new managerKhoa();
             managerMonHoc mhoc = new managerMonHoc();
+            SuKien sk = new SuKien();
             int chon;
             string MaKhoa;
             string MaMH;
@@ -84,7 +85,7 @@ namespace SchoolManager.QLGiangVien
                                     KHOA khoa1 = managerKhoa.checkkhoa(MaKhoa);
                                     if (khoa1 != null)
                                     {
-                                        managerGiangVien.EventprintGV(khoa1);
+                                        gv.printGV(khoa1);
                                     }
                                     else
                                         Console.WriteLine("Ma Khoa khong hop le!");
@@ -157,7 +158,7 @@ namespace SchoolManager.QLGiangVien
                                     KHOA khoa4 = managerKhoa.checkkhoa(MaKhoa);
                                     if (khoa4 != null)
                                     {
-                                        managerGiangVien.EventsortidGV(khoa4);
+                                        sk.Send(khoa4);
                                     }
                                     else
                                         Console.WriteLine("Ma Khoa khong hop le!");
