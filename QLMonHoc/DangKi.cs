@@ -81,7 +81,7 @@ namespace SchoolManager.QLMonHoc
             }
             return null;
         }
-        public static void dkimolop(MonHoc mh)
+        public static void DKiMoLop(MonHoc mh)
         {
             GiangVien gv; 
             DangKi dk;  
@@ -116,7 +116,7 @@ namespace SchoolManager.QLMonHoc
             mh.Listdk.Add(dk);
             Console.WriteLine("Dang ki mo lop thanh cong!!!");
         }
-        public static void dkimhoc(MonHoc mh)
+        public static void DKiMonHoc(MonHoc mh)
         {
             SinhVien sv;
             string MaSV;
