@@ -166,6 +166,7 @@ namespace SchoolManager.QLMonHoc
                     dk.SoLuongDKi++;
                 }
             }
+            // bị trùng mã lớp hp vẫn đki đc
             //sv.ListmhSV.Add(mh);
             Console.WriteLine("Dang ki Mon Hoc thanh cong!!!");
         }

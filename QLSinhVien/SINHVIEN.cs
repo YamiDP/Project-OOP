@@ -63,6 +63,7 @@ namespace SchoolManager.QLSinhVien
         {
             this.nganh = nganh;
             this.namnhaphoc = namnhaphoc;
+            this.listmhsv = listmhsv;
         }
         public SinhVien(SinhVien sv)
             : this(sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.NAMNHAPHOC, sv.ListmhSV)

@@ -40,6 +40,7 @@ namespace SchoolManager.QLSinhVien
             NAMNHAPHOC = Convert.ToInt32(Console.ReadLine());
             sv = new SinhVien(MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, NAMNHAPHOC, new List<MonHoc>());
             listsv.Add(sv);
+            h.Listsv1.Add(sv);
             Console.WriteLine("Them Sinh Vien thanh cong !");
         }
         public static void deleteSV(KHOA h)

@@ -53,8 +53,8 @@ namespace SchoolManager.QLKhoa
         }
         public KHOA()
         {
-            this.makhoa = "";
-            this.tenkhoa = "";
+            this.makhoa = "123";
+            this.tenkhoa = "DTCLC";
             this.listgv1 = null;
             this.listsv1 = null;
             this.listcsv1 = null;
