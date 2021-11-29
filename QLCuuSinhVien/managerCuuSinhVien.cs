@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using SchoolManager.QLKhoa;
+using SchoolManager.QLMonHoc;
 
 namespace SchoolManager.QLCuuSinhVien
 {
@@ -40,7 +41,7 @@ namespace SchoolManager.QLCuuSinhVien
             THANHTICH = Convert.ToString(Console.ReadLine());
             Console.Write("Nhap nghe nghiep cua cuu sinh vien: ");
             NGHENGHIEP = Convert.ToString(Console.ReadLine());
-            csv = new CuuSinhVien(MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, NAMNHAPHOC, THANHTICH, NGHENGHIEP, NAMKETTHUC);
+            csv = new CuuSinhVien(MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, NAMNHAPHOC, new List<MonHoc>(),THANHTICH, NGHENGHIEP, NAMKETTHUC);
             listcsv.Add(csv);
             Console.WriteLine("Them Cuu Sinh Vien thanh cong !");
         }

@@ -6,18 +6,12 @@ namespace SchoolManager.QLMonHoc
 {
     public class MonHoc
     {
-        private int stt;
         private string mamh;
         private string tenmh;
-        private int soTC;
-        private int solop;
-        private int gioihan;
+        private int sotc;
+        private string loaimon; // thực hành hay lý thuyết
+        List<DangKi> listdki;       // danh sách quản lí giảng viên đã dki mở môn học này
         
-        public int STT
-        {
-            set{ stt = value;}
-            get{return stt;}
-        }
         public string Mamh
         {
             set{ mamh = value;}
@@ -30,40 +24,33 @@ namespace SchoolManager.QLMonHoc
         }
         public int SoTC
         {
-            set{soTC = value;}
-            get{return soTC;}
+            set{sotc = value;}
+            get{return sotc;}
         }
-        public int SoLop
+        public string LoaiMon
         {
-            set{solop = value;}
-            get{return solop;}
+            set{loaimon = value;}
+            get{return loaimon;}
         }
-        public int GioiHan
+        public List<DangKi> Listdk
         {
-            set{ gioihan = value;}
-            get{return gioihan;}
+            set {listdki = value; }
+            get { return listdki; }
         }
         public MonHoc()
-        {
-
+        {      
         }
-        public MonHoc(int stt, string mamh, string tenmh, int soTC, int solop, int gioihan)
+        public MonHoc(string mamh, string tenmh, int sotc, string loaimon, List<DangKi> listdki)
         {
-            this.stt = stt;
             this.mamh = mamh;
             this.tenmh = tenmh;
-            this.soTC = soTC;
-            this.solop = solop;
-            this.gioihan = gioihan;
+            this.sotc = sotc;
+            this.loaimon = loaimon;
+            this.listdki = listdki;
         }
         public MonHoc(MonHoc mh)
+            : this (mh.mamh,mh.tenmh, mh.sotc, mh.loaimon, mh.listdki)
         {
-            this.stt = mh.stt;
-            this.mamh = mh.mamh;
-            this.tenmh = mh.tenmh;
-            this.soTC = mh.soTC;
-            this.solop = mh.solop;
-            this.gioihan = mh.gioihan;
         }
     }
 }

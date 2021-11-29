@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using SchoolManager.QLMonHoc;
 
 namespace SchoolManager.QLSinhVien
 {
@@ -19,6 +20,12 @@ namespace SchoolManager.QLSinhVien
             set { namnhaphoc = value; }
             get { return namnhaphoc; }
 
+        }
+        List<MonHoc> listmhsv;
+        public List<MonHoc> ListmhSV
+        {
+            set { listmhsv = value; }
+            get { return listmhsv; }
         }
         struct DIEM
         {
@@ -51,14 +58,14 @@ namespace SchoolManager.QLSinhVien
         public override void sort()
         {
         }
-        public SinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, int namnhaphoc)
+        public SinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, int namnhaphoc, List<MonHoc> listmhsv)
             : base(ma, ten, ngsinh, gtinh, diachi, sdt)
         {
             this.nganh = nganh;
             this.namnhaphoc = namnhaphoc;
         }
         public SinhVien(SinhVien sv)
-            : this(sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.NAMNHAPHOC)
+            : this(sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.NAMNHAPHOC, sv.ListmhSV)
         {
 
         }
@@ -67,6 +74,7 @@ namespace SchoolManager.QLSinhVien
         {
             this.nganh = "";
             this.namnhaphoc = 2000;
+            this.listmhsv = null;
         }
     }
 }

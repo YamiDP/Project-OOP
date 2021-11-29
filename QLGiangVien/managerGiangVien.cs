@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using SchoolManager.QLKhoa;
 using SchoolManager.QLMonHoc;
+
 namespace SchoolManager.QLGiangVien
 {
     public delegate void printDel(KHOA K);
     public class managerGiangVien : GiangVien
     {
         public static List<GiangVien> listgv = new List<GiangVien>();
-        public static List<MonHoc> listmh = new List<MonHoc>(); // luu cac mon hoc ma giang vien da dang ky mo lop
         public static GiangVien checkGV(string MaGV)
         {
             foreach (GiangVien gv in listgv)
@@ -40,11 +40,9 @@ namespace SchoolManager.QLGiangVien
             BOMON = Convert.ToString(Console.ReadLine());
             Console.Write("Luong: ");
             LUONG = Convert.ToString(Console.ReadLine());
-            Console.Write("Lop day: ");
-            LOPDAY = Convert.ToString(Console.ReadLine());
             Console.Write("Hoc vi: ");
             HOCVI = Convert.ToString(Console.ReadLine());
-            gv = new GiangVien(MA, TEN, NGSINH, GTINH, DIACHI, SDT, CHNGANG, BOMON, LUONG, LOPDAY, HOCVI);
+            gv = new GiangVien(MA, TEN, NGSINH, GTINH, DIACHI, SDT, CHNGANG, BOMON, LUONG, HOCVI);
             listgv.Add(gv);
             h.Listgv1.Add(gv);
             Console.WriteLine("Them Giang Vien thanh cong!");
@@ -75,12 +73,12 @@ namespace SchoolManager.QLGiangVien
         static void printGV(KHOA k)
         { 
             Console.WriteLine("Khoa {0}", k.TENKHOA);
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10} {10, -10}",
-                  "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Lop Day" , "Hoc Vi");
+            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
+                  "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong" , "Hoc Vi");
             foreach (GiangVien gv in k.Listgv1)
             {
-                Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10} {10, -10}",
-                                  gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.LOPDAY, gv.HOCVI);
+                Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
+                                  gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.HOCVI);
             }
             if(k.Listgv1.Count == 0)
             {
@@ -91,12 +89,12 @@ namespace SchoolManager.QLGiangVien
 
         public override void print()
         {
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10} {10, -10}",
-                  "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Lop Day", "Hoc Vi");
+            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
+                  "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
             foreach (GiangVien gv in listgv)
             {
-                Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10} {10, -10}",
-                                  gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.LOPDAY, gv.HOCVI);
+                Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
+                                  gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.HOCVI);
             }
             if (listgv.Count == 0)
             {
@@ -110,14 +108,14 @@ namespace SchoolManager.QLGiangVien
 
             Console.Write("Nhap Ma Giang Vien: ");
             string MaGV = Console.ReadLine();
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10} {10, -10}",
-              "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Lop Day", "Hoc Vi");
+            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
+              "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
             foreach (GiangVien gv in k.Listgv1)
             {
                 if (String.Compare(gv.MA, MaGV, false) == 0)
                 {
-                    Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10} {10, -10}",
-                                  gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.LOPDAY, gv.HOCVI);
+                    Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
+                                  gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.HOCVI);
                 }
             }
             if (k.Listgv1.Count == 0)
@@ -129,14 +127,14 @@ namespace SchoolManager.QLGiangVien
         {
             Console.Write("Nhap Ma Giang Vien: ");
             string MaGV = Console.ReadLine();
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10} {10, -10}",
-              "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Lop Day", "Hoc Vi");
+            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
+              "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
             foreach (GiangVien gv in listgv)
             {
                 if (String.Compare(gv.MA, MaGV, false) == 0)
                 {
-                    Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10} {10, -10}",
-                                  gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.LOPDAY, gv.HOCVI);
+                    Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
+                                  gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.HOCVI);
                 }
             }
             if (listgv.Count == 0)
@@ -206,7 +204,7 @@ namespace SchoolManager.QLGiangVien
         }
         public void dkimolop()
         {
-            managerMonHoc.dkml();
+            
         }
     }
 }

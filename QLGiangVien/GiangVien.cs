@@ -9,7 +9,6 @@ namespace SchoolManager.QLGiangVien
         private string chnganh;
         private string bomon;
         private string luong;
-        private string lopday;
         private string hocvi;
 
         public string CHNGANG
@@ -27,11 +26,6 @@ namespace SchoolManager.QLGiangVien
             set { luong = value; }
             get { return luong; }
         }
-        public string LOPDAY
-        {
-            set { lopday = value; }
-            get { return lopday; }
-        }
         public string HOCVI
         {
             set { hocvi = value; }
@@ -46,17 +40,16 @@ namespace SchoolManager.QLGiangVien
         public override void search()
         {
         }
-        public GiangVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string chnganh, string bomon, string luong, string lopday, string hocvi)
+        public GiangVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string chnganh, string bomon, string luong, string hocvi)
             : base(ma, ten, ngsinh, gtinh, diachi, sdt)
         {
             this.chnganh = chnganh;
             this.bomon = bomon;
             this.luong = luong;
-            this.lopday = lopday;
             this.hocvi = hocvi;
         }
         public GiangVien(GiangVien gv) 
-            : this(gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.LOPDAY, gv.HOCVI)
+            : this(gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.HOCVI)
         {
         }    
         public GiangVien()
@@ -65,7 +58,6 @@ namespace SchoolManager.QLGiangVien
             this.chnganh = "";
             this.bomon = "";
             this.luong = "0";
-            this.lopday = "";
             this.hocvi = "";
         }
     }

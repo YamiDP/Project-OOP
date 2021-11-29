@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using SchoolManager.QLKhoa;
+using SchoolManager.QLMonHoc;
 
 namespace SchoolManager.QLSinhVien
 {
@@ -37,7 +38,7 @@ namespace SchoolManager.QLSinhVien
             NGANH = Convert.ToString(Console.ReadLine());
             Console.Write("Nhap khoa hoc cua sinh vien: ");
             NAMNHAPHOC = Convert.ToInt32(Console.ReadLine());
-            sv = new SinhVien(MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, NAMNHAPHOC);
+            sv = new SinhVien(MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, NAMNHAPHOC, new List<MonHoc>());
             listsv.Add(sv);
             Console.WriteLine("Them Sinh Vien thanh cong !");
         }

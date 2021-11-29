@@ -3,6 +3,7 @@ using SchoolManager.QLGiangVien;
 using SchoolManager.QLKhoa;
 using SchoolManager.QLSinhVien;
 using SchoolManager.QLTuyenSinh;
+using SchoolManager.QLMonHoc;
 
 namespace SchoolManager
 {       
@@ -41,6 +42,7 @@ namespace SchoolManager
                     case 5:
                        break;
                     case 6:
+                        MENU_QLMH.MENU();
                         break;
                     case 7:
                         break;
