@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using SchoolManager.QLGiangVien;
 using SchoolManager.QLKhoa;
+using SchoolManager.QLMonHoc;
 
 namespace SchoolManager.QLGiangVien
 {
@@ -12,18 +13,21 @@ namespace SchoolManager.QLGiangVien
         {
             managerGiangVien gv = new managerGiangVien();
             managerKhoa k = new managerKhoa();
+            managerMonHoc mhoc = new managerMonHoc();
             int chon;
             string MaKhoa;
+            string MaMH;
             do
             {
                 Console.WriteLine("--------QUAN LY GIANG VIEN--------");
-                Console.WriteLine("1.Ky hop dong voi giang vien");  //Thêm giảng viên vào danh sách của khoa
-                Console.WriteLine("2.Danh sach giang vien");
-                Console.WriteLine("3.Tim kiem giang vien");
-                Console.WriteLine("4.Huy hop dong giang vien");  //Xóa giảng viên khỏi danh sách của khoa
-                Console.WriteLine("5.Sap xep giang vien");
-                Console.WriteLine("6.So luong giang vien");
-                Console.WriteLine("7.Thoat");
+                Console.WriteLine("1.Ky hop dong voi Giang Vien");  //Thêm giảng viên vào danh sách của khoa
+                Console.WriteLine("2.Danh sach Giang Vien");
+                Console.WriteLine("3.Tim kiem Giang Vien");
+                Console.WriteLine("4.Huy hop dong Giang Vien");  //Xóa giảng viên khỏi danh sách của khoa
+                Console.WriteLine("5.Sap xep Giang Vien");
+                Console.WriteLine("6.So luong Giang Vien");
+                Console.WriteLine("7.Giang Vien dang ki mo lop");
+                Console.WriteLine("8.Thoat");
                 Console.WriteLine("----------------------------------");
                 Console.Write("Chon tinh nang: ");
                 chon = int.Parse(Console.ReadLine());
@@ -201,12 +205,21 @@ namespace SchoolManager.QLGiangVien
                         } while (chon != 1 && chon != 2);
                         break;
                     case 7:
+                        Console.Write("Nhap Ma Mon Hoc ma Giang Vien muon dang ki: ");
+                        MaMH = Console.ReadLine();
+                        MonHoc mh = managerMonHoc.checkmh(MaMH);
+                        if (mh != null)
+                        {
+                            managerGiangVien.dkimolop(mh);
+                        }
+                        break;
+                    case 8:
                         break;
                     default:
-                        Console.WriteLine("Chi duoc nhap tu 1-7!");
+                        Console.WriteLine("Chi duoc nhap tu 1-8!");
                         break;
                 }
-            } while (chon != 7);
+            } while (chon != 8);
             Console.WriteLine();
         }
     }

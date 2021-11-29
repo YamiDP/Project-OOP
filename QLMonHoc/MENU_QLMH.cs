@@ -18,10 +18,9 @@ namespace SchoolManager.QLMonHoc
                 Console.WriteLine("--------QUAN LY MON HOC--------");
                 Console.WriteLine("1.Them mon hoc");  
                 Console.WriteLine("2.Huy mon hoc");
-                Console.WriteLine("3.Giang Vien dang ki mo lop");
-                Console.WriteLine("4.Sinh Vien dang ki mon hoc");
-                Console.WriteLine("5.Danh sach Giang Vien da dang ki mo lop 1 mon hoc");
-                Console.WriteLine("6.Thoat");
+                Console.WriteLine("3.Danh sach cac mon hoc");
+                Console.WriteLine("4.Danh sach cac lop hoc phan");
+                Console.WriteLine("5.Thoat");
                 Console.WriteLine("----------------------------------");
                 Console.Write("Chon tinh nang: ");
                 chon = int.Parse(Console.ReadLine());
@@ -39,51 +38,12 @@ namespace SchoolManager.QLMonHoc
                             Console.WriteLine("Mon hoc nay da co!!!");
                         break;
                     case 2:
+                        managerMonHoc.deleteMH();
                         break;
                     case 3:
-                        Console.Write("Nhap Ma Mon Hoc: ");
-                        MaMH = Console.ReadLine();
-                        MonHoc mh1 = managerMonHoc.checkmh(MaMH);
-                        if (mh1 != null)
-                        {
-                            DangKi.dkimolop(mh1);
-                        }
+                        managerMonHoc.printMonHoc();
                         break;
                     case 4:
-                        Console.Write("Nhap Ma Mon Hoc muon dang ki: ");
-                        MaMH = Console.ReadLine();
-                        MonHoc mh2 = managerMonHoc.checkmh(MaMH);
-                        if (mh2 != null)
-                        {
-                            DangKi.dkimhoc(mh2);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Khong tim thay Mon Hoc!");
-                            Console.WriteLine("Ban co muon them vao danh sach Mon Hoc khong!");
-                            do
-                            {
-                                Console.WriteLine("----------------");
-                                Console.WriteLine("1.Co");
-                                Console.WriteLine("2.Khong");
-                                Console.WriteLine("----------------");
-                                Console.Write("Chon tinh nang: ");
-                                chon = int.Parse(Console.ReadLine());
-                                switch (chon)
-                                {
-                                    case 1:
-                                        mhoc.inputMH(MaMH);
-                                        break;
-                                    case 2:
-                                        break;
-                                    default:
-                                        Console.WriteLine("Chi duoc nhap tu 1-2!");
-                                        break;
-                                }
-                            } while (chon != 1 && chon != 2);
-                        }
-                        break;
-                    case 5:
                         Console.Write("Nhap Ma Mon Hoc: ");
                         MaMH = Console.ReadLine();
                         MonHoc mh3 = managerMonHoc.checkmh(MaMH);
@@ -92,10 +52,13 @@ namespace SchoolManager.QLMonHoc
                             managerMonHoc.printMHMoLop(mh3);
                         }
                         break;
-                    case 6:
+                    case 5:
+                        break;
+                    default:
+                        Console.WriteLine("Chi duoc nhap tu 1-5!");
                         break;
                 }
-            }while(chon != 6);
+            }while(chon != 5);
         }
     }
 }

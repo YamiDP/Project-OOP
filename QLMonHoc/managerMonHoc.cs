@@ -30,7 +30,37 @@ namespace SchoolManager.QLMonHoc
             listmh.Add(mh);
             Console.WriteLine("Them Mon hoc thanh cong!");
         }
-
+        public static void deleteMH()
+        {
+            MonHoc monHoc;
+            do{
+                Console.Write("Nhap Ma mon hoc muon huy: ");
+                string MaMH = Console.ReadLine();
+                monHoc = checkmh(MaMH);
+                if (monHoc == null)
+                {
+                    Console.WriteLine("Khong tim thay mon hoc!");
+                    Console.WriteLine("Vui long nhap lai Ma moi!!!");
+                }
+            }while(monHoc == null);
+            listmh.Remove(monHoc);
+            Console.WriteLine("Da xoa thanh cong!");
+        }
+        public static void printMonHoc()
+        {
+            Console.WriteLine("{0, -7} {1, -20}",
+                  "MaMH", "TenMH");
+            foreach (MonHoc mh in listmh)
+            {
+                Console.WriteLine("{0, -7} {1, -20}",
+                                  mh.Mamh, mh.TenMH);
+            }
+            if (listmh.Count == 0)
+            {
+                Console.WriteLine("Khong co Mon Hoc de hien thi!");
+            }
+            Console.WriteLine();
+        }
         public static void printMHMoLop(MonHoc mh)
         {
             Console.WriteLine("Mon hoc: {0}", mh.TenMH);

@@ -202,9 +202,9 @@ namespace SchoolManager.QLGiangVien
         {
             return listgv.Count;
         }
-        public void dkimolop()
+        public void dkimolop(MonHoc mh)
         {
-            
+            DangKi.DKiMoLop(mh);
         }
     }
 }

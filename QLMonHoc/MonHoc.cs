@@ -10,7 +10,7 @@ namespace SchoolManager.QLMonHoc
         private string tenmh;
         private int sotc;
         private string loaimon; // thực hành hay lý thuyết
-        List<DangKi> listdki;       // danh sách quản lí giảng viên đã dki mở môn học này
+        List<DangKi> listdki;       // Danh sach cac lop hoc phan
         
         public string Mamh
         {

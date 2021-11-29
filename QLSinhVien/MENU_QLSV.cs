@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using SchoolManager.QLKhoa;
+using SchoolManager.QLMonHoc;
 
 namespace SchoolManager.QLSinhVien
 {
@@ -11,18 +12,21 @@ namespace SchoolManager.QLSinhVien
         {
             managerSinhVien sv = new managerSinhVien();
             managerKhoa k = new managerKhoa();
+            managerMonHoc mhoc = new managerMonHoc();
             int select;
             string MaKhoa;
+            string MaMH;
             do
             {
                 Console.WriteLine("--------QUAN LY SINH VIEN--------");
                 Console.WriteLine("1.Sinh Vien dang ki hoc theo khoa");
-                Console.WriteLine("2.Danh sach sinh vien");
-                Console.WriteLine("3.Tim kiem sinh vien theo khoa");
-                Console.WriteLine("4.Huy sinh vien");
-                Console.WriteLine("5.Sap xep sinh vien theo khoa");
-                Console.WriteLine("6.Danh sach so luong sinh vien");
-                Console.WriteLine("7.Thoat");
+                Console.WriteLine("2.Danh sach Sinh Vien");
+                Console.WriteLine("3.Tim kiem Sinh Vien theo khoa");
+                Console.WriteLine("4.Huy Sinh Vien");
+                Console.WriteLine("5.Sap xep Sinh Vien theo khoa");
+                Console.WriteLine("6.Danh sach so luong Sinh Vien");
+                Console.WriteLine("7.Sinh Vien dang ki mon hoc");
+                Console.WriteLine("8.Thoat");
                 Console.WriteLine("---------------------------------");
                 Console.Write("Chon tinh nang: ");
                 select = int.Parse(Console.ReadLine());
@@ -177,12 +181,46 @@ namespace SchoolManager.QLSinhVien
                     }while (select != 1 && select != 2);
                         break;
                     case 7:
+                        Console.Write("Nhap Ma Mon Hoc muon dang ki: ");
+                        MaMH = Console.ReadLine();
+                        MonHoc mh = managerMonHoc.checkmh(MaMH);
+                        if (mh != null)
+                        {
+                            managerSinhVien.dkimh(mh);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Khong tim thay Mon Hoc!");
+                            Console.WriteLine("Ban co muon them vao danh sach Mon Hoc khong!");
+                            do
+                            {
+                                Console.WriteLine("----------------");
+                                Console.WriteLine("1.Co");
+                                Console.WriteLine("2.Khong");
+                                Console.WriteLine("----------------");
+                                Console.Write("Chon tinh nang: ");
+                                select = int.Parse(Console.ReadLine());
+                                switch (select)
+                                {
+                                    case 1:
+                                        mhoc.inputMH(MaMH);
+                                        break;
+                                    case 2:
+                                        break;
+                                    default:
+                                        Console.WriteLine("Chi duoc nhap tu 1-2!");
+                                        break;
+                                }
+                            } while (select != 1 && select != 2);
+                        }
+                        break;
+                    case 8:
                         break;
                     default:
                         Console.WriteLine("Chi duoc nhap tu 1-7!");
                         break;
                 }
-            } while (select != 7);
+            } while (select != 8);
             Console.WriteLine();
         }
     }
