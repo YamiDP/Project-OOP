@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SchoolManager.QLNhanVienHanhChinh
 {
-    public class MENU_NVHC
+    public class menuQLyNVHC
     {
         public static void MENU()
         {
