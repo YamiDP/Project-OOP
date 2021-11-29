@@ -212,6 +212,31 @@ namespace SchoolManager.QLGiangVien
                         {
                             managerGiangVien.dkimolop(mh);
                         }
+                        else
+                        {
+                            Console.WriteLine("Khong tim thay Mon Hoc!");
+                            Console.WriteLine("Ban co muon them vao danh sach Mon Hoc khong!");
+                            do
+                            {
+                                Console.WriteLine("----------------");
+                                Console.WriteLine("1.Co");
+                                Console.WriteLine("2.Khong");
+                                Console.WriteLine("----------------");
+                                Console.Write("Chon tinh nang: ");
+                                chon = int.Parse(Console.ReadLine());
+                                switch (chon)
+                                {
+                                    case 1:
+                                        mhoc.inputMH(MaMH);
+                                        break;
+                                    case 2:
+                                        break;
+                                    default:
+                                        Console.WriteLine("Chi duoc nhap tu 1-2!");
+                                        break;
+                                }
+                            } while (chon != 1 && chon != 2);
+                        }
                         break;
                     case 8:
                         break;

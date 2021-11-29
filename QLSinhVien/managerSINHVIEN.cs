@@ -172,5 +172,9 @@ namespace SchoolManager.QLSinhVien
         {
             return listsv.Count;
         }
+        public static void dkimh(MonHoc mh)
+        {
+            DangKi.DKiMonHoc(mh);
+        }
     }
 }
