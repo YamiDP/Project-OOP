@@ -7,6 +7,7 @@ using SchoolManager.QLSinhVien;
 using SchoolManager.QLTuyenSinh;
 using SchoolManager.QLMonHoc;
 using SchoolManager.QLCuuSinhVien;
+using SchoolManager.QLNhanVienHanhChinh;
 
 namespace SchoolManager
 {       
@@ -39,7 +40,8 @@ namespace SchoolManager
                 Console.WriteLine("5.Quan ly nhan vien hanh chinh");
                 Console.WriteLine("6.Quan ly mon hoc");
                 Console.WriteLine("7.Quan ly diem");
-                Console.WriteLine("8.Thoat");
+                Console.WriteLine("8.Quan ly thoi khoa bieu");
+                Console.WriteLine("9.Thoat");
                 Console.WriteLine("----------------------------");
                 Console.Write("Chon tinh nang: ");
                 chon = int.Parse(Console.ReadLine());
@@ -57,6 +59,7 @@ namespace SchoolManager
                     case 4:
                         break;
                     case 5:
+                        menuQLyNVHC.MENU();
                        break;
                     case 6:
                         MENU_QLMH.MENU();
@@ -64,12 +67,15 @@ namespace SchoolManager
                     case 7:
                         break;
                     case 8:
+                        
+                        break;
+                    case 9:
                         break;
                     default:
-                        Console.WriteLine("Chi duoc nhap tu 1-8!");
+                        Console.WriteLine("Chi duoc nhap tu 1-9!");
                         break;
                 }
-            } while (chon != 8);
+            } while (chon != 9);
         }
     }
 }
