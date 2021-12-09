@@ -66,6 +66,11 @@ namespace SchoolManager
             this.diachi = "";
             this.sdt = "0xxxxxxxxx";
         }
+        // Bo sung ham huy
+        ~Person()
+        {
+
+        }
         public virtual void input()  // đăng kí
         {
             Console.Write("Ten: ");
