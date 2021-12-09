@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SchoolManager.QLGiangVien;
-using SchoolManager.QLSinhVien;
-using SchoolManager.QLCuuSinhVien;
-
-namespace SchoolManager.QLKhoa
+namespace SchoolManager
 {
     public class KHOA
     {

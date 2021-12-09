@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using SchoolManager.QLMonHoc;
-namespace SchoolManager.QLThoiKhoaBieu
+namespace SchoolManager
 {
     public class TKB
     {

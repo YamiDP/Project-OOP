@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using SchoolManager;
 
-namespace SchoolManager.QLKhoahoc
+namespace SchoolManager
 {
     public class KhoaHoc
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SchoolManager.QLGiangVien
+namespace SchoolManager
 {
     public class GiangVien : Person
     {

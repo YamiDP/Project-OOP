@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using SchoolManager.QLMonHoc;
 
-namespace SchoolManager.QLSinhVien
+namespace SchoolManager
 {
     public class SinhVien : Person
     {

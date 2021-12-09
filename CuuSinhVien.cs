@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using SchoolManager.QLSinhVien;
-using SchoolManager.QLMonHoc;
-
-namespace SchoolManager.QLCuuSinhVien
+namespace SchoolManager
 {
     public class CuuSinhVien : SinhVien
     {

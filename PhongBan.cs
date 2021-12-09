@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SchoolManager.QLNhanVienHanhChinh
+namespace SchoolManager
 {
     public class PhongBan
     {

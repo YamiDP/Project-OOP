@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SchoolManager.QLTuyenSinh
+namespace SchoolManager
 {
     public class HocSinh : Person
     {

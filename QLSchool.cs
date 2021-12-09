@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SchoolManager.QLGiangVien;
-using SchoolManager.QLKhoa;
-using SchoolManager.QLSinhVien;
-using SchoolManager.QLTuyenSinh;
-using SchoolManager.QLMonHoc;
-using SchoolManager.QLCuuSinhVien;
-using SchoolManager.QLNhanVienHanhChinh;
 
 namespace SchoolManager
 {       
