@@ -60,7 +60,12 @@ namespace SchoolManager.QLSinhVien
             }
             Console.WriteLine("Da xoa thanh cong !");
         }
-        public static void printSV(KHOA k)
+
+        public void EventprintSV(SuKien sk)
+        {
+            sk.print += printSV;
+        }
+        public void printSV(KHOA k)
         {
             Console.WriteLine("Khoa {0}", k.TENKHOA);
             Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -15} {6, -15} {7, -15}",

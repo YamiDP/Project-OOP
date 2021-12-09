@@ -11,6 +11,16 @@ using SchoolManager.QLNhanVienHanhChinh;
 
 namespace SchoolManager
 {       
+    public delegate void printDel(KHOA K);
+    // phat di su kien 
+    public class SuKien
+    {
+        public event printDel print;
+        public void Send(KHOA K) 
+        {
+            print?.Invoke(K);
+        }
+    }
     class QLSchool
     {   
         static void Main(string[] args)
@@ -29,6 +39,9 @@ namespace SchoolManager
             SinhVien sv2 = new SinhVien("444", "Dat", "23/9/2002", "Nam", "Dong Xoai", "0123456789", "CNTT", 2020, null);
                 managerSinhVien.listsv.Add(sv2);
                 khoa.Listsv1.Add(sv2);
+            managerSinhVien sv = new managerSinhVien();
+            managerGiangVien gv = new managerGiangVien();
+            SuKien sk = new SuKien();
             int chon;
             do
             {   
@@ -41,7 +54,8 @@ namespace SchoolManager
                 Console.WriteLine("6.Quan ly mon hoc");
                 Console.WriteLine("7.Quan ly diem");
                 Console.WriteLine("8.Quan ly thoi khoa bieu");
-                Console.WriteLine("9.Thoat");
+                Console.WriteLine("9.Danh sach Sinh Vien và Giang Vien trong Khoa");
+                Console.WriteLine("10.Thoat");
                 Console.WriteLine("----------------------------");
                 Console.Write("Chon tinh nang: ");
                 chon = int.Parse(Console.ReadLine());
@@ -67,15 +81,27 @@ namespace SchoolManager
                     case 7:
                         break;
                     case 8:
-                        
                         break;
                     case 9:
+                        Console.Write("Nhap Ma Khoa: ");
+                        string MaKhoa = Console.ReadLine();
+                        KHOA khoa1 = managerKhoa.checkkhoa(MaKhoa);
+                        if (khoa1 != null)
+                        {
+                            gv.EventprintGV(sk); //Nhan su kien tu sk
+                            sv.EventprintSV(sk);
+                            sk.Send(khoa1);
+                        }
+                        else
+                           Console.WriteLine("Ma Khoa khong hop le!");
+                        break;
+                    case 10:
                         break;
                     default:
                         Console.WriteLine("Chi duoc nhap tu 1-9!");
                         break;
                 }
-            } while (chon != 9);
+            } while (chon != 10);
         }
     }
 }
