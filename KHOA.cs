@@ -55,12 +55,6 @@ namespace SchoolManager
             this.listsv1 = null;
             this.listcsv1 = null;
         }
-    }
-}
-/* namespace SchoolManager.QLKhoa
-{
-   public class managerKhoa :KHOA
-    {
         public static List<KHOA> listkhoa = new List<KHOA>();
         public static KHOA checkkhoa(string MaKhoa)
         {
@@ -83,6 +77,11 @@ namespace SchoolManager
         }
         public static void printKhoa()
         {
+            if (listkhoa.Count == 0)
+            {
+                Console.WriteLine("Khong co Khoa de hien thi!");
+                return;
+            }
             Console.WriteLine("{0, -7} {1, -20}",
                   "MaKhoa", "TenKhoa");
             foreach (KHOA khoa in listkhoa)
@@ -90,12 +89,7 @@ namespace SchoolManager
                 Console.WriteLine("{0, -7} {1, -20}",
                                   khoa.MAKHOA, khoa.TENKHOA);
             }
-            if (listkhoa.Count == 0)
-            {
-                Console.WriteLine("Khong co Khoa de hien thi!");
-            }
             Console.WriteLine();
         }
     }
 }
- */

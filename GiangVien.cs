@@ -31,15 +31,6 @@ namespace SchoolManager
             set { hocvi = value; }
             get { return hocvi; }
         }
-        public override void print()
-        {
-        }
-        public override void sort()
-        {
-        }
-        public override void search()
-        {
-        }
         public GiangVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string chnganh, string bomon, string luong, string hocvi)
             : base(ma, ten, ngsinh, gtinh, diachi, sdt)
         {
@@ -60,13 +51,6 @@ namespace SchoolManager
             this.luong = "0";
             this.hocvi = "";
         }
-    }
-}
-
-/* namespace SchoolManager.QLGiangVien
-{
-    public class managerGiangVien : GiangVien
-    {
         public static List<GiangVien> listgv = new List<GiangVien>();
         public static GiangVien checkGV(string MaGV)
         {
@@ -105,47 +89,13 @@ namespace SchoolManager
             h.Listgv1.Add(gv);
             Console.WriteLine("Them Giang Vien thanh cong!");
         }
-        public static void deleteGV(KHOA h)
-        {
-            GiangVien k;
-            Console.Write("Nhap Ma Giang Vien: ");
-            string MaGV = Console.ReadLine();
-            k = checkGV(MaGV);
-            if (k == null)
-            {
-                Console.WriteLine("Khong tim thay giang vien!");
-            }
-            else
-            {
-                listgv.Remove(k);
-                h.Listgv1.Remove(k);
-                Console.WriteLine("Da xoa thanh cong!");
-            }
-        }
-
-        public void EventprintGV(SuKien sk)
-        {
-            sk.print += printGV;
-        }
-        public void printGV(KHOA k)
-        { 
-            Console.WriteLine("Khoa {0}", k.TENKHOA);
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
-                  "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong" , "Hoc Vi");
-            foreach (GiangVien gv in k.Listgv1)
-            {
-                Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
-                                  gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.HOCVI);
-            }
-            if(k.Listgv1.Count == 0)
-            {
-                Console.WriteLine("Khong co Giang Vien nao trong Khoa!");
-            }    
-            Console.WriteLine();
-        }
-
         public override void print()
         {
+            if (listgv.Count == 0)
+            {
+                Console.WriteLine("Khong co Giang Vien nao trong danh sach!");
+                return;
+            }
             Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
                   "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
             foreach (GiangVien gv in listgv)
@@ -153,83 +103,13 @@ namespace SchoolManager
                 Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
                                   gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.HOCVI);
             }
-            if (listgv.Count == 0)
-            {
-                Console.WriteLine("Khong co Giang Vien nao trong danh sach!");
-            }
             Console.WriteLine();
         }
-
-        public static void searchIDGV(KHOA k)
-        {
-
-            Console.Write("Nhap Ma Giang Vien: ");
-            string MaGV = Console.ReadLine();
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
-              "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
-            foreach (GiangVien gv in k.Listgv1)
-            {
-                if (String.Compare(gv.MA, MaGV, false) == 0)
-                {
-                    Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
-                                  gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.HOCVI);
-                }
-            }
-            if (k.Listgv1.Count == 0)
-            {
-                Console.WriteLine("Khong co Giang Vien!");
-            }
-        }
-        public override void search()
-        {
-            Console.Write("Nhap Ma Giang Vien: ");
-            string MaGV = Console.ReadLine();
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
-              "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
-            foreach (GiangVien gv in listgv)
-            {
-                if (String.Compare(gv.MA, MaGV, false) == 0)
-                {
-                    Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
-                                  gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.HOCVI);
-                }
-            }
-            if (listgv.Count == 0)
-            {
-                Console.WriteLine("Khong co Giang Vien!");
-            }
-        }
-
-        // nhan sk
-        /*public static void EventsortidGV(SuKien sk)
-        {
-            sk.print += sortIDGV;
-        }*/
-        /*
         static bool compareRise(GiangVien gv1, GiangVien gv2)
         {
             if (String.Compare(gv1.TEN, gv2.TEN, false) > 0)
                 return false;
             return true;
-        }
-        public static void sortIDGV(KHOA k)
-        {
-            if (k.Listgv1.Count == 0)   
-            {
-                Console.WriteLine("Danh sach rong!");
-            }
-            else
-            {
-                GiangVien gv;
-                for(int i = 0; i < k.Listgv1.Count - 1; i++)
-                    for (int j = i + 1; j < k.Listgv1.Count; j++)
-                        if (!compareRise(k.Listgv1[i], k.Listgv1[j])) 
-                        {
-                            gv = k.Listgv1[i];
-                            k.Listgv1[i] = k.Listgv1[j];
-                            k.Listgv1[j] = gv;
-                        }
-            }
         }
         public override void sort()
         {
@@ -251,6 +131,41 @@ namespace SchoolManager
             }
         }
 
+        public static void deleteGV(KHOA h)
+        {
+            GiangVien k;
+            Console.Write("Nhap Ma Giang Vien: ");
+            string MaGV = Console.ReadLine();
+            k = checkGV(MaGV);
+            if (k == null)
+            {
+                Console.WriteLine("Khong tim thay giang vien!");
+                return;
+            }
+                listgv.Remove(k);
+                h.Listgv1.Remove(k);
+                Console.WriteLine("Da xoa thanh cong!");
+        }
+        public override void search()
+        {
+            Console.Write("Nhap Ma Giang Vien: ");
+            string MaGV = Console.ReadLine();
+            if (listgv.Count == 0)
+            {
+                Console.WriteLine("Khong co Giang Vien!");
+                return;
+            }
+            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
+              "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
+            foreach (GiangVien gv in listgv)
+            {
+                if (String.Compare(gv.MA, MaGV, false) == 0)
+                {
+                    Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
+                                  gv.MA, gv.TEN, gv.NGSINH, gv.GTINH, gv.DIACHI, gv.SDT, gv.CHNGANG, gv.BOMON, gv.LUONG, gv.HOCVI);
+                }
+            }
+        }
         public static int slGV_khoa(KHOA k)
         {
             return k.Listgv1.Count;
@@ -259,11 +174,28 @@ namespace SchoolManager
         {
             return listgv.Count;
         }
-        public static void dkimolop(MonHoc mh)
+        /*public static void dkimolop(MonHoc mh)
         {
             DangKi.DKiMoLop(mh);
-        }
+        }*/
     }
+}
+
+/* namespace SchoolManager.QLGiangVien
+
+        
+
+        public void EventprintGV(SuKien sk)
+        {
+            sk.print += printGV;
+        }
+
+        // nhan sk
+        /*public static void EventsortidGV(SuKien sk)
+        {
+            sk.print += sortIDGV;
+        }*/
+        /*
 } 
 */
 

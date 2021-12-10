@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SchoolManager
 {       
-    public delegate void printDel(KHOA K);
+    /*public delegate void printDel(KHOA K);
     // phat di su kien 
     public class SuKien
     {
@@ -13,11 +13,13 @@ namespace SchoolManager
         {
             print?.Invoke(K);
         }
-    }
+    }*/
     class QLSchool
     {   
         static void Main(string[] args)
         {
+            List<GiangVien> listgv = new List<GiangVien>();
+            List<KHOA> listkhoa = new List<KHOA>();
             KHOA khoa = new KHOA("000", "DTCLC", new List<GiangVien>(), new List<SinhVien>(), new List<CuuSinhVien>());
                 managerKhoa.listkhoa.Add(khoa);
             GiangVien gv1 = new GiangVien("111", "tran quoc tuan", "11/10/1992", "Nam", "TPHCM", "0337981963", "ktpm", "OOP", "150000000", "Thac si");

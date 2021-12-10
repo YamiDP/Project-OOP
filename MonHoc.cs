@@ -10,7 +10,6 @@ namespace SchoolManager
         private string tenmh;
         private int sotc;
         private string loaimon; // thực hành hay lý thuyết
-        List<DangKi> listdki;       // Danh sach cac lop hoc phan
         
         public string Mamh
         {
@@ -32,32 +31,21 @@ namespace SchoolManager
             set{loaimon = value;}
             get{return loaimon;}
         }
-        public List<DangKi> Listdk
-        {
-            set {listdki = value; }
-            get { return listdki; }
-        }
         public MonHoc()
         {      
         }
-        public MonHoc(string mamh, string tenmh, int sotc, string loaimon, List<DangKi> listdki)
+        public MonHoc(string mamh, string tenmh, int sotc, string loaimon)
         {
             this.mamh = mamh;
             this.tenmh = tenmh;
             this.sotc = sotc;
             this.loaimon = loaimon;
-            this.listdki = listdki;
         }
         public MonHoc(MonHoc mh)
-            : this (mh.mamh,mh.tenmh, mh.sotc, mh.loaimon, mh.listdki)
+            : this (mh.mamh,mh.tenmh, mh.sotc, mh.loaimon)
         {
         }
-    }
-}
-/* namespace SchoolManager.QLMonHoc
-{
-    public class managerMonHoc: MonHoc
-    {
+
         public static List<MonHoc> listmh = new List<MonHoc>();
         public static MonHoc checkmh(string MaMH)
         {
@@ -78,7 +66,7 @@ namespace SchoolManager
             SoTC = Convert.ToInt32(Console.ReadLine());
             Console.Write("Loai mon : ");
             LoaiMon = Convert.ToString(Console.ReadLine());
-            mh = new MonHoc(Mamh, TenMH, SoTC, LoaiMon, new List<DangKi>());
+            mh = new MonHoc(Mamh, TenMH, SoTC, LoaiMon);
             listmh.Add(mh);
             Console.WriteLine("Them Mon hoc thanh cong!");
         }
@@ -130,7 +118,7 @@ namespace SchoolManager
             Console.WriteLine();
         }
     }
-} */
+} 
 
 /* namespace SchoolManager.QLMonHoc
 {
