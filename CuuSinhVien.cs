@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+
 namespace SchoolManager
 {
     public class CuuSinhVien : SinhVien
@@ -23,25 +24,21 @@ namespace SchoolManager
             set { namketthuc = value; }
             get { return namketthuc; }
         }
-
-        public override void print()
-        {
-        }
         public override void search()
         {
         }
         public override void sort()
         {
         }
-        public CuuSinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, int namnhaphoc, List<MonHoc> listmhsv, string thanhtich, string nghenghiep, int namketthuc)
-            : base(ma, ten, ngsinh, gtinh, diachi, sdt, nganh, namnhaphoc, listmhsv)
+        public CuuSinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, int namnhaphoc, string thanhtich, string nghenghiep, int namketthuc)
+            : base(ma, ten, ngsinh, gtinh, diachi, sdt, nganh, namnhaphoc)
         {
             this.thanhtich = thanhtich;
             this.nghenghiep = nghenghiep;
             this.namketthuc = namketthuc;
         }
         public CuuSinhVien(CuuSinhVien csv)
-            : this(csv.MA, csv.TEN, csv.NGSINH, csv.GTINH, csv.DIACHI, csv.SDT, csv.NGANH, csv.NAMNHAPHOC, csv.ListmhSV,csv.THANHTICH, csv.NGHENGHIEP, csv.NAMKETTHUC)
+            : this(csv.MA, csv.TEN, csv.NGSINH, csv.GTINH, csv.DIACHI, csv.SDT, csv.NGANH, csv.NAMNHAPHOC, csv.THANHTICH, csv.NGHENGHIEP, csv.NAMKETTHUC)
         {
         }
         public CuuSinhVien()
@@ -51,12 +48,6 @@ namespace SchoolManager
             this.nghenghiep = "";
             this.namketthuc = 2004;
         }
-    }
-}
-/* namespace SchoolManager.QLCuuSinhVien
-{
-    public class managerCuuSinhVien : CuuSinhVien
-    {
         public static List<CuuSinhVien> listcsv = new List<CuuSinhVien>();
         public static CuuSinhVien checkCSV(string MaSV)
         {
@@ -67,7 +58,7 @@ namespace SchoolManager
             }
             return null;
         }
-        public void inputCSV(KHOA h)
+        public void input() // Hàm nhập sinh viên
         {
             CuuSinhVien csv;
             do
@@ -90,102 +81,19 @@ namespace SchoolManager
             THANHTICH = Convert.ToString(Console.ReadLine());
             Console.Write("Nhap nghe nghiep cua cuu sinh vien: ");
             NGHENGHIEP = Convert.ToString(Console.ReadLine());
-            csv = new CuuSinhVien(MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, NAMNHAPHOC, new List<MonHoc>(),THANHTICH, NGHENGHIEP, NAMKETTHUC);
+            csv = new CuuSinhVien(MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, NAMNHAPHOC,THANHTICH, NGHENGHIEP, NAMKETTHUC);
             listcsv.Add(csv);
             Console.WriteLine("Them Cuu Sinh Vien thanh cong !");
         }
-        public static void printCSV(KHOA k)
+        public override void print() // Hàm xuất sinh viên
         {
-            Console.WriteLine("Khoa {0}", k.TENKHOA);
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -15} {6, -15} {7, -15} {8, -15} {9, -15}",
+            Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -15} {6, -10} {7, -10} {8, -15} {9, -10}",
                   "MaSV", "TenSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh hoc", "Khoa hoc", "Thanh tich", "Nghe Nghiep");
-            foreach (CuuSinhVien csv in k.Listcsv1)
+            foreach (CuuSinhVien csv in listcsv)
             {
-                Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -15} {6, -15} {7, -15} {8, -15} {9, -15}",
+                Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -10} {6, -10} {7, -10} {8, -10} {9, -10}",
                                   csv.MA, csv.TEN, csv.NGSINH, csv.GTINH, csv.DIACHI, csv.SDT, csv.NGANH, csv.NAMNHAPHOC, csv.THANHTICH, csv.NGHENGHIEP, csv.NAMKETTHUC);
             }
-            if (k.Listcsv1.Count == 0)
-            {
-                Console.WriteLine("Khong co Cuu Sinh Vien nao trong Khoa!");
-            }
-        }
-        public static void searchIDCSV(KHOA k)
-        {
-            if (k.Listcsv1 == null)
-                Console.WriteLine("Danh sach rong!");
-            else
-            {
-                Console.Write("Nhap Ma Sinh Vien: ");
-                string MaSV = Console.ReadLine();
-                Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -15} {6, -15} {7, -15} {8, -15} {9, -15}",
-                  "MaSV", "TenSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh hoc", "Khoa hoc", "Thanh tich", "Nghe Nghiep");
-                foreach (CuuSinhVien csv in k.Listcsv1)
-                {
-                    if (String.Compare(csv.MA, MaSV, false) == 0)
-                    {
-                        Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -15} {6, -15} {7, -15} {8, -15} {9, -15}",
-                                      csv.MA, csv.TEN, csv.NGSINH, csv.GTINH, csv.DIACHI, csv.SDT, csv.NGANH, csv.NAMNHAPHOC, csv.THANHTICH, csv.NGHENGHIEP, csv.NAMKETTHUC);
-                    }
-                }
-                if (k.Listcsv1.Count == 0)
-                {
-                    Console.WriteLine("Khong co Sinh Vien nao trong danh sach!");
-                }
-            }
-        }
-        public delegate bool DelSort(CuuSinhVien csv1, CuuSinhVien csv2);
-        public static bool compareRise(CuuSinhVien csv1, CuuSinhVien csv2)
-        {
-            if (String.Compare(csv1.TEN, csv2.TEN, false) > 0)
-                return false;
-            return true;
-        }
-        public static void sortIDCSV(KHOA k)
-        {
-            DelSort d = new DelSort(compareRise);
-            if (k.Listcsv1.Count == 0)
-            {
-                Console.WriteLine("Danh sach rong!");
-            }
-            else
-            {
-                CuuSinhVien csv;
-                for (int i = 0; i < k.Listcsv1.Count - 1; i++)
-                    for (int j = i + 1; j < k.Listcsv1.Count; j++)
-                        if (!d(k.Listcsv1[i], k.Listcsv1[j]))
-                        {
-                            csv = k.Listcsv1[i];
-                            k.Listcsv1[i] = k.Listcsv1[j];
-                            k.Listcsv1[j] = csv;
-                        }
-
-            }
-        }
-        public static void deleteCSV(KHOA h)
-        {
-            CuuSinhVien c;
-            Console.Write("Nhap Ma Sinh Vien: ");
-            string MaSV = Console.ReadLine();
-            c = checkCSV(MaSV);
-            if (c == null)
-            {
-                Console.WriteLine("Khong tim thay cuu sinh vien !");
-            }
-            else
-            {
-                listcsv.Remove(c);
-                h.Listcsv1.Remove(c);
-            }
-            Console.WriteLine("Da xoa thanh cong !");
-        }
-        public static int slCSV_khoa(KHOA k)
-        {
-            return k.Listcsv1.Count;
-        }
-        public static int slCSV()
-        {
-            return listcsv.Count;
         }
     }
 }
- */

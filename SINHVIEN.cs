@@ -20,12 +20,12 @@ namespace SchoolManager
             get { return namnhaphoc; }
 
         }
-        List<MonHoc> listmhsv;
+        /* List<MonHoc> listmhsv;
         public List<MonHoc> ListmhSV
         {
             set { listmhsv = value; }
             get { return listmhsv; }
-        }
+        } */
         struct DIEM
         {
 
@@ -48,24 +48,21 @@ namespace SchoolManager
         {
             throw new NotImplementedException();
         }
-        public override void print()
-        {
-        }
         public override void search()
         {
         }
         public override void sort()
         {
         }
-        public SinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, int namnhaphoc, List<MonHoc> listmhsv)
+        public SinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, int namnhaphoc)
             : base(ma, ten, ngsinh, gtinh, diachi, sdt)
         {
             this.nganh = nganh;
             this.namnhaphoc = namnhaphoc;
-            this.listmhsv = listmhsv;
+            //this.listmhsv = listmhsv;
         }
         public SinhVien(SinhVien sv)
-            : this(sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.NAMNHAPHOC, sv.ListmhSV)
+            : this(sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.NAMNHAPHOC)
         {
 
         }
@@ -74,15 +71,8 @@ namespace SchoolManager
         {
             this.nganh = "";
             this.namnhaphoc = 2000;
-            this.listmhsv = null;
+            //this.listmhsv = null;
         }
-    }
-}
-
-/* namespace SchoolManager.QLSinhVien
-{
-    public class managerSinhVien : SinhVien
-    {
         public static List<SinhVien> listsv = new List<SinhVien>();
         public static SinhVien checkSV(string MaSV)
         {
@@ -93,7 +83,7 @@ namespace SchoolManager
             }
             return null;
         }
-        public void inputSV(KHOA h)
+        public void inputSV() // Hàm nhập sinh viên
         {
             SinhVien sv;
             do
@@ -112,11 +102,21 @@ namespace SchoolManager
             NGANH = Convert.ToString(Console.ReadLine());
             Console.Write("Nhap khoa hoc cua sinh vien: ");
             NAMNHAPHOC = Convert.ToInt32(Console.ReadLine());
-            sv = new SinhVien(MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, NAMNHAPHOC, new List<MonHoc>());
+            sv = new SinhVien(MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, NAMNHAPHOC);
             listsv.Add(sv);
-            h.Listsv1.Add(sv);
             Console.WriteLine("Them Sinh Vien thanh cong !");
         }
+        public override void print() // Hàm xuất sinh viên
+        {
+            Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -15} {6, -10} {7, -10} {8, -15} {9, -10}",
+                  "MaSV", "TenSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh hoc", "Khoa hoc", "Thanh tich", "Nghe Nghiep");
+            foreach (SinhVien sv in listsv)
+            {
+                Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -10} {6, -10} {7, -10} {8, -10} {9, -10}",
+                                  sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.NAMNHAPHOC);
+            }
+        }
+        /*
         public static void deleteSV(KHOA h)
         {
             SinhVien k;
@@ -133,11 +133,6 @@ namespace SchoolManager
                 h.Listsv1.Remove(k);
             }
             Console.WriteLine("Da xoa thanh cong !");
-        }
-
-        public void EventprintSV(SuKien sk)
-        {
-            sk.print += printSV;
         }
         public void printSV(KHOA k)
         {
@@ -177,39 +172,15 @@ namespace SchoolManager
                     Console.WriteLine("Khong co Sinh Vien nao trong danh sach!");
                 }
             }
-        }
-        public override void search()
-        {
-            if (listsv == null)
-                Console.WriteLine("Danh sach rong!");
-            else
-            {
-                Console.Write("Nhap Ma Sinh Vien: ");
-                string MaSV = Console.ReadLine();
-                Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {5, -15} {6, -15} {7, -15}",
-                  "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh", "Khoa hoc");
-                foreach (SinhVien sv in listsv)
-                {
-                    if (String.Compare(sv.MA, MaSV, false) == 0)
-                    {
-                        Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20}{5, -15} {6, -15} {7, -15}",
-                                      sv.MA, sv.TEN, sv.NGSINH, sv.GTINH, sv.DIACHI, sv.SDT, sv.NGANH, sv.NAMNHAPHOC);
-                    }
-                }
-                if (listsv.Count == 0)
-                {
-                    Console.WriteLine("Khong co Sinh Vien nao trong danh sach!");
-                }
-            }
-        }
-        public delegate bool DelSort(SinhVien sv1, SinhVien sv2);
+        } */
+        /* public delegate bool DelSort(SinhVien sv1, SinhVien sv2);
         public static bool compareRise(SinhVien sv1, SinhVien sv2)
         {
             if (String.Compare(sv1.TEN, sv2.TEN, false) > 0)
                 return false;
             return true;
-        }
-        public static void sortIDSV(KHOA k)
+        } */
+        /* public static void sortIDSV(KHOA k)
         {
             DelSort d = new DelSort(compareRise);
             if (k.Listsv1.Count == 0)
@@ -229,32 +200,17 @@ namespace SchoolManager
                         }
             }
         }
-        public override void sort()
-        {
-            if (listsv.Count == 0)
-            {
-                Console.WriteLine("Danh sach rong!");
-            }
-            else
-            {
-                listsv.Sort(delegate (SinhVien sv1, SinhVien sv2)
-                {
-                    return sv1.TEN.CompareTo(sv2.TEN);
-                });
-            }
-        }
         public static int slSV_khoa(KHOA k)
         {
             return k.Listsv1.Count;
         }
-        public static int slSV()
+ */      /*   public static int slSV()
         {
             return listsv.Count;
-        }
-        public static void dkimh(MonHoc mh)
+        } */
+        /* public static void dkimh(MonHoc mh)
         {
-            DangKi.DKiMonHoc(mh);
-        }
+            DKiMonHoc(mh);
+        } */
     }
 }
- */
