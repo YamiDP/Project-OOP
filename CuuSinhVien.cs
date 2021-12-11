@@ -24,12 +24,6 @@ namespace SchoolManager
             set { namketthuc = value; }
             get { return namketthuc; }
         }
-        public override void search()
-        {
-        }
-        public override void sort()
-        {
-        }
         public CuuSinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, int namnhaphoc, string thanhtich, string nghenghiep, int namketthuc)
             : base(ma, ten, ngsinh, gtinh, diachi, sdt, nganh, namnhaphoc)
         {
@@ -58,7 +52,7 @@ namespace SchoolManager
             }
             return null;
         }
-        public void input() // Hàm nhập sinh viên
+        public void inputCSV() // Hàm nhập sinh viên
         {
             CuuSinhVien csv;
             do

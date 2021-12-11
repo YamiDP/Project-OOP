@@ -14,21 +14,20 @@ namespace SchoolManager
             print?.Invoke(K);
         }
     }*/
-    class QLSchool
+    public class QLSchool
     {   
         static void Main(string[] args)
         {
-            List<GiangVien> listgv = new List<GiangVien>();
-            List<KHOA> listkhoa = new List<KHOA>();
             KHOA khoa = new KHOA("000", "DTCLC", new List<GiangVien>(), new List<SinhVien>(), new List<CuuSinhVien>());
-                managerKhoa.listkhoa.Add(khoa);
+                KHOA.listkhoa.Add(khoa);
             GiangVien gv1 = new GiangVien("111", "tran quoc tuan", "11/10/1992", "Nam", "TPHCM", "0337981963", "ktpm", "OOP", "150000000", "Thac si");
-                managerGiangVien.listgv.Add(gv1);
+                DSGiangVien.listgv.Add(gv1);
                 khoa.Listgv1.Add(gv1);
             GiangVien gv2 = new GiangVien("222", "tran quoc anh", "11/9/1992", "Nu", "TPHCM", "0337981963", "ktpm", "OOP", "150000000", "Thac si");
-                managerGiangVien.listgv.Add(gv2);
+                DSGiangVien.listgv.Add(gv2);
                 khoa.Listgv1.Add(gv2);
-            SinhVien sv1 = new SinhVien("333", "Phuong", "23/10/2002", "Nam", "Dong Xoai", "0123456789", "CNTT", 2020, null);
+            DSGiangVien.printGV();
+            /*SinhVien sv1 = new SinhVien("333", "Phuong", "23/10/2002", "Nam", "Dong Xoai", "0123456789", "CNTT", 2020, null);
                 managerSinhVien.listsv.Add(sv1);
                 khoa.Listsv1.Add(sv1);
             SinhVien sv2 = new SinhVien("444", "Dat", "23/9/2002", "Nam", "Dong Xoai", "0123456789", "CNTT", 2020, null);
@@ -96,7 +95,7 @@ namespace SchoolManager
                         Console.WriteLine("Chi duoc nhap tu 1-9!");
                         break;
                 }
-            } while (chon != 10);
+            } while (chon != 10);*/
         }
     }
 }

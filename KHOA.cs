@@ -89,7 +89,6 @@ namespace SchoolManager
                 Console.WriteLine("{0, -7} {1, -20}",
                                   khoa.MAKHOA, khoa.TENKHOA);
             }
-            Console.WriteLine();
         }
     }
 }

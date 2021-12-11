@@ -20,7 +20,7 @@ namespace SchoolManager
             get { return namnhaphoc; }
 
         }
-        /* List<MonHoc> listmhsv;
+        /*List<MonHoc> listmhsv;
         public List<MonHoc> ListmhSV
         {
             set { listmhsv = value; }
@@ -47,12 +47,6 @@ namespace SchoolManager
         public void TTHOCPHI()
         {
             throw new NotImplementedException();
-        }
-        public override void search()
-        {
-        }
-        public override void sort()
-        {
         }
         public SinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, int namnhaphoc)
             : base(ma, ten, ngsinh, gtinh, diachi, sdt)

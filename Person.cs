@@ -71,8 +71,10 @@ namespace SchoolManager
         {
 
         }
-        public virtual void input()  // đăng kí
+        public virtual void input()
         {
+            Console.Write("Nhap Ma: ");
+            MA = Convert.ToString(Console.ReadLine());
             Console.Write("Ten: ");
             TEN = Convert.ToString(Console.ReadLine());
             Console.Write("Ngay Sinh: ");
@@ -84,8 +86,10 @@ namespace SchoolManager
             Console.Write("So dien thoai: ");
             SDT = Convert.ToString(Console.ReadLine());
         }
-        public abstract void print();
-        public abstract void sort();
-        public abstract void search();
+        public virtual void print()
+        {
+            Console.Write("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20}",
+                                MA, TEN, NGSINH, GTINH, DIACHI, SDT);
+        }
     }
 }

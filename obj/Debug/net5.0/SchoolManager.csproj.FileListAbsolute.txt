@@ -70,3 +70,19 @@ C:\Users\Yami\ForWork\Program\Project\C# Project\Pull Project OOP\Project-OOP\ob
 C:\Users\Yami\ForWork\Program\Project\C# Project\Pull Project OOP\Project-OOP\obj\Debug\net5.0\SchoolManager.dll
 C:\Users\Yami\ForWork\Program\Project\C# Project\Pull Project OOP\Project-OOP\obj\Debug\net5.0\ref\SchoolManager.dll
 C:\Users\Yami\ForWork\Program\Project\C# Project\Pull Project OOP\Project-OOP\obj\Debug\net5.0\SchoolManager.pdb
+C:\Users\pc\Desktop\copy2\Project-OOP\obj\Debug\net5.0\SchoolManager.csproj.AssemblyReference.cache
+C:\Users\pc\Desktop\copy2\Project-OOP\obj\Debug\net5.0\SchoolManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\Desktop\copy2\Project-OOP\obj\Debug\net5.0\SchoolManager.AssemblyInfoInputs.cache
+C:\Users\pc\Desktop\copy2\Project-OOP\obj\Debug\net5.0\SchoolManager.AssemblyInfo.cs
+C:\Users\pc\Desktop\copy2\Project-OOP\obj\Debug\net5.0\SchoolManager.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\copy2\Project-OOP\obj\Debug\net5.0\SchoolManager.dll
+C:\Users\pc\Desktop\copy2\Project-OOP\obj\Debug\net5.0\ref\SchoolManager.dll
+C:\Users\pc\Desktop\copy2\Project-OOP\obj\Debug\net5.0\SchoolManager.pdb
+C:\Users\pc\Desktop\copy2\Project-OOP\bin\Debug\net5.0\SchoolManager.exe
+C:\Users\pc\Desktop\copy2\Project-OOP\bin\Debug\net5.0\SchoolManager.deps.json
+C:\Users\pc\Desktop\copy2\Project-OOP\bin\Debug\net5.0\SchoolManager.runtimeconfig.json
+C:\Users\pc\Desktop\copy2\Project-OOP\bin\Debug\net5.0\SchoolManager.runtimeconfig.dev.json
+C:\Users\pc\Desktop\copy2\Project-OOP\bin\Debug\net5.0\SchoolManager.dll
+C:\Users\pc\Desktop\copy2\Project-OOP\bin\Debug\net5.0\ref\SchoolManager.dll
+C:\Users\pc\Desktop\copy2\Project-OOP\bin\Debug\net5.0\SchoolManager.pdb
+C:\Users\pc\Desktop\copy2\Project-OOP\obj\Debug\net5.0\SchoolManager.genruntimeconfig.cache
