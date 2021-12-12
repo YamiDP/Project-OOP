@@ -6,6 +6,7 @@ namespace SchoolManager
 {
     public class DSSinhVien 
     {
+        // Hàm tạo danh sách sinh viên
         public static List<SinhVien> listsv = new List<SinhVien>();
         public static SinhVien checkSV(string MaSV)
         {
@@ -16,14 +17,14 @@ namespace SchoolManager
             }
             return null;
         }
-        public static void inputSV()
+        public static void inputSV() // Hàm nhập sinh viên vào danh sách
         {
             SinhVien sv = new SinhVien();  
             sv.addSV();       
             listsv.Add(sv);
             Console.WriteLine("Them Sinh Vien thanh cong!");
         }
-        public static void printSV()
+        public static void printSV() // Hàm xuất sinh viên trong danh sách
         {
             if (listsv.Count == 0)
             {
@@ -38,7 +39,7 @@ namespace SchoolManager
             }
         }
 
-        public static void sort()
+        public static void sort() // Hàm sắp xếp sinh viên trong danh sách
         {
             if (listsv.Count == 0)
             {
@@ -53,7 +54,7 @@ namespace SchoolManager
                 sv.printSV();
             }
         }
-        public static void deleteSV()
+        public static void deleteSV() // Hàm xóa sinh viên trong danh sách
         {
             SinhVien k;
             Console.Write("Nhap Ma Sinh Vien: ");
@@ -67,7 +68,7 @@ namespace SchoolManager
                 listsv.Remove(k);
                 Console.WriteLine("Da xoa thanh cong!");
         }
-        public static void searchSV()
+        public static void searchSV() // Hàm tìm kiếm sinh viên trong danh sách
         {
             Console.Write("Nhap Ma Sinh Vien: ");
             string MaSV = Console.ReadLine();

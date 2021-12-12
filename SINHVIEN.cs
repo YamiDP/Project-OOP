@@ -48,6 +48,7 @@ namespace SchoolManager
         {
             throw new NotImplementedException();
         }
+        // Hàm khởi tạo sinh viên
         public SinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, int namnhaphoc)
             : base(ma, ten, ngsinh, gtinh, diachi, sdt)
         {
@@ -67,7 +68,11 @@ namespace SchoolManager
             this.namnhaphoc = 2000;
             //this.listmhsv = null;
         }
-        public void addSV()
+        ~SinhVien() // Hàm hủy sinh viên
+        {
+
+        }
+        public void addSV() // Hàm nhập sinh viên
         {      
             base.input();
             Console.Write("Nganh hoc: ");
@@ -75,7 +80,7 @@ namespace SchoolManager
             Console.Write("Nam nhap hoc: ");
             NAMNHAPHOC = Convert.ToInt32(Console.ReadLine());
         }
-        public void printSV()
+        public void printSV() // Hàm xuất sinh viên
         {
             print();
             Console.WriteLine("{0, -15} {1, -15}",
