@@ -58,8 +58,8 @@ namespace SchoolManager
         }
         public override void print() // Hàm xuất cựu sinh viên
         {
-            Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -15} {6, -10} {7, -10} {8, -15}",
-                                 MA, TEN, NGSINH, GTINH, DIACHI, SDT, THANHTICH, NGHENGHIEP, NAMKETTHUC);
+            Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -15} {6, -10} {7, -10} {8, -15} {9, -15} {10, -10}",
+                                 MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, NAMNHAPHOC, THANHTICH, NGHENGHIEP, NAMKETTHUC);
         }
     }
 }
