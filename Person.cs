@@ -43,7 +43,7 @@ namespace SchoolManager
             set { diachi = value; }
             get { return diachi; }
         }
-
+        //cac ham khoi tao
         public Person(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt)
         {
             this.ma = ma;
@@ -66,11 +66,12 @@ namespace SchoolManager
             this.diachi = "";
             this.sdt = "0xxxxxxxxx";
         }
-        // Bo sung ham huy
+        // Ham huy
         ~Person()
         {
 
         }
+        //Ham nhap thong tin
         public virtual void input()
         {
             Console.Write("Nhap Ma: ");
@@ -86,6 +87,7 @@ namespace SchoolManager
             Console.Write("So dien thoai: ");
             SDT = Convert.ToString(Console.ReadLine());
         }
+        //Phuong thuc thuan ao, ham in thong tin
         public abstract void print();
     }
 }
