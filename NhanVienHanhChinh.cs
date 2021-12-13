@@ -38,7 +38,10 @@ namespace SchoolManager
             this.cviec = "";
             this.luong = "";
         }
-        public void addNVHC()
+        ~NhanVienHanhChinh()
+        {          
+        }
+        public override void input()
         {      
             base.input();
             Console.Write("Cong viec: ");
@@ -46,11 +49,10 @@ namespace SchoolManager
             Console.Write("Luong: ");
             LUONG = Convert.ToString(Console.ReadLine());
         }
-        public void priNVHC()
+        public override void print()
         {
-            print();
-            Console.WriteLine("{0, -15} {1, -10}",
-                                  CVIEC, LUONG);
+            Console.WriteLine("{0, -7} {1, -20} {2, -10} {3, -10} {4, -15} {5,-15} {6, -15} {7, -10}",
+                                 MA, TEN, NGSINH, GTINH, DIACHI, SDT, CVIEC, LUONG);
         }
           
     }

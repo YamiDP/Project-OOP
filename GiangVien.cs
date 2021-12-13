@@ -52,7 +52,11 @@ namespace SchoolManager
             this.luong = "";
             this.hocvi = "";
         }
-        public void addGV()
+        ~GiangVien()
+        {
+            
+        }
+        public override void input()
         {      
             base.input();
             Console.Write("Chuyen nganh: ");
@@ -64,11 +68,10 @@ namespace SchoolManager
             Console.Write("Hoc vi: ");
             HOCVI = Convert.ToString(Console.ReadLine());
         }
-        public void priGV()
+        public override void print()
         {
-            print();
-            Console.WriteLine("{0, -15} {1, -15} {2, -15} {3, -10}",
-                                  CHNGANG, BOMON, LUONG, HOCVI);
+            Console.WriteLine("{0, -7} {1, -20} {2, -10} {3, -10} {4, -15} {5,-15} {6, -15} {7, -15} {8, -15} {9, -10}",
+                                 MA, TEN, NGSINH, GTINH, DIACHI, SDT, CHNGANG, BOMON, LUONG, HOCVI);
         }
 
     }

@@ -70,9 +70,8 @@ namespace SchoolManager
         }
         ~SinhVien() // Hàm hủy sinh viên
         {
-
         }
-        public void addSV() // Hàm nhập sinh viên
+        public override void input() // Hàm nhập sinh viên
         {      
             base.input();
             Console.Write("Nganh hoc: ");
@@ -80,11 +79,10 @@ namespace SchoolManager
             Console.Write("Nam nhap hoc: ");
             NAMNHAPHOC = Convert.ToInt32(Console.ReadLine());
         }
-        public void printSV() // Hàm xuất sinh viên
+        public override void print() // Hàm xuất sinh viên
         {
-            print();
-            Console.WriteLine("{0, -15} {1, -15}",
-                                  NGANH, NAMNHAPHOC);
+            Console.WriteLine("{0, -7} {1, -20} {2, -10} {3, -10} {4, -15} {5,-15} {6, -15} {7, -15}",
+                                 MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, NAMNHAPHOC);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace SchoolManager
         public static void inputCSV() // Hàm nhập cựu sinh viên vào danh sách
         {
             CuuSinhVien csv = new CuuSinhVien();  
-            csv.addSV();       
+            csv.input();       
             listcsv.Add(csv);
             Console.WriteLine("Them Cuu Sinh Vien thanh cong!");
         }
@@ -35,7 +35,7 @@ namespace SchoolManager
                   "MaCSV", "TenCSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh Hoc", "Khoa Hoc", "Thanh Tich", "Nghe Nghiep", "Nam Ket Thuc");
             foreach (CuuSinhVien csv in listcsv)
             {
-                csv.printCSV();
+                csv.print();
             }
         }
         public static void sort() // Hàm sắp xếp cựu sinh viên trong danh sách
@@ -50,7 +50,7 @@ namespace SchoolManager
                   "MaCSV", "TenCSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh Hoc", "Khoa Hoc", "Thanh Tich", "Nghe Nghiep", "Nam Ket Thuc");
             foreach (CuuSinhVien csv in DSCSV)
             {
-                csv.printSV();
+                csv.print();
             }
         }
         public static void deleteCSV() // Hàm xóa cựu sinh viên trong danh sách
@@ -79,7 +79,7 @@ namespace SchoolManager
             }
             Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -15} {6, -10} {7, -10} {8, -15} {9, -10} {10, -10}",
                   "MaCSV", "TencSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh Hoc", "Khoa Hoc", "Thanh Tich", "Nghe Nghiep", "Nam Ket Thuc");
-            csv.printCSV();
+            csv.print();
         }
         public static int slCSV() 
         {

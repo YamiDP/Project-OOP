@@ -20,7 +20,7 @@ namespace SchoolManager
         public static void inputSV() // Hàm nhập sinh viên vào danh sách
         {
             SinhVien sv = new SinhVien();  
-            sv.addSV();       
+            sv.input();       
             listsv.Add(sv);
             Console.WriteLine("Them Sinh Vien thanh cong!");
         }
@@ -35,7 +35,7 @@ namespace SchoolManager
                   "MaSV", "TenSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh hoc", "Khoa hoc");
             foreach (SinhVien sv in listsv)
             {
-                sv.printSV();
+                sv.print();
             }
         }
 
@@ -51,7 +51,7 @@ namespace SchoolManager
                   "MaSV", "TenSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh hoc", "Khoa hoc");
             foreach (SinhVien sv in DSSV)
             {
-                sv.printSV();
+                sv.print();
             }
         }
         public static void deleteSV() // Hàm xóa sinh viên trong danh sách
@@ -80,7 +80,7 @@ namespace SchoolManager
             }
             Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -15} {6, -10} {7, -10}",
               "MaSV", "TenSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh hoc", "Khoa hoc");
-            sv.printSV();
+            sv.print();
         }
         public static int slSV() 
         {

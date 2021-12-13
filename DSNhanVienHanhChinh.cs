@@ -19,6 +19,7 @@ namespace SchoolManager
         public static void inputNVHC(PhongBan pb)
         {
             NhanVienHanhChinh nv = new NhanVienHanhChinh();
+            nv.input();
             listnv.Add(nv);
             pb.Listnv1.Add(nv);
             Console.WriteLine("Them Nhan Vien thanh cong!");
@@ -34,7 +35,7 @@ namespace SchoolManager
                   "MaNV", "TenNV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "Cong Viec", "Luong");
             foreach (NhanVienHanhChinh nv in listnv)
             {
-                nv.priNVHC();
+                nv.print();
             }
         }
         public static void deleteNVHC(PhongBan p)
@@ -65,7 +66,7 @@ namespace SchoolManager
                   "MaNV", "TenNV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "Cong Viec", "Luong");
             foreach (NhanVienHanhChinh nv in DSNVHC)
             {
-                nv.priNVHC();
+                nv.print();
             }
         } 
         public static void search()
@@ -80,7 +81,7 @@ namespace SchoolManager
             }
             Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -10}",
               "MaNV", "TenNV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Cong Viec", "Luong");
-            nv.priNVHC();
+            nv.print();
         }
         public static int slNVHC()
         {

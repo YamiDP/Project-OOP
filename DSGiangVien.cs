@@ -19,7 +19,7 @@ namespace SchoolManager
         public static void inputGV(KHOA h)
         {
             GiangVien gv = new GiangVien();  
-            gv.addGV();       
+            gv.input();       
             listgv.Add(gv);
             h.Listgv1.Add(gv);
             Console.WriteLine("Them Giang Vien thanh cong!");
@@ -35,7 +35,7 @@ namespace SchoolManager
                   "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
             foreach (GiangVien gv in listgv)
             {
-                gv.priGV();
+                gv.print();
             }
         }
 
@@ -51,7 +51,7 @@ namespace SchoolManager
                   "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
             foreach (GiangVien gv in DSGV)
             {
-                gv.priGV();
+                gv.print();
             }
         }
         public static void deleteGV(KHOA h)
@@ -81,7 +81,7 @@ namespace SchoolManager
             }
             Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
               "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
-            gv.priGV();
+            gv.print();
         }
         public static int slGV() 
         {

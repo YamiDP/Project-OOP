@@ -47,7 +47,7 @@ namespace SchoolManager
         {
 
         }
-        public void addCSV() // Hàm nhập cựu sinh viên
+        public override void input() // Hàm nhập cựu sinh viên
         {      
             base.input();
             Console.Write("Thanh tich: ");
@@ -57,11 +57,10 @@ namespace SchoolManager
             Console.Write("Nam ket thuc: ");
             NAMKETTHUC = Convert.ToInt32(Console.ReadLine());
         }
-        public void printCSV() // Hàm xuất cựu sinh viên
+        public override void print() // Hàm xuất cựu sinh viên
         {
-            print();
-            Console.WriteLine("{0, -15} {1, -15} {2, -15}",
-                                  THANHTICH, NGHENGHIEP, NAMKETTHUC);
+            Console.WriteLine("{0, -7} {1, -20} {2, -10} {3, -10} {4, -15} {5,-15} {6, -15} {7, -15} {8s, -15}",
+                                 MA, TEN, NGSINH, GTINH, DIACHI, SDT, THANHTICH, NGHENGHIEP, NAMKETTHUC);
         }
     }
 }
