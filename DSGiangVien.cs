@@ -6,7 +6,9 @@ namespace SchoolManager
 {
     public class DSGiangVien 
     {
+        //khoi tao danh sach giang vien
         public static List<GiangVien> listgv = new List<GiangVien>();
+        //kiem tra giang vien co trong danh sach hay khong
         public static GiangVien checkGV(string MaGV)
         {
             foreach (GiangVien gv in listgv)
@@ -16,6 +18,7 @@ namespace SchoolManager
             }
             return null;
         }
+        //them giang vien theo khoa vao danh sach
         public static void inputGV(KHOA h)
         {
             GiangVien gv = new GiangVien();  
@@ -24,6 +27,7 @@ namespace SchoolManager
             h.Listgv1.Add(gv);
             Console.WriteLine("Them Giang Vien thanh cong!");
         }
+        //in giang vien trong danh sach
         public static void printGV()
         {
             if (listgv.Count == 0)
@@ -31,14 +35,14 @@ namespace SchoolManager
                 Console.WriteLine("Khong co Giang Vien nao trong danh sach!");
                 return;
             }
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -19} {6, -15} {7, -15} {8, -15} {9, -10}",
+            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -15} {9, -10}",
                   "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
             foreach (GiangVien gv in listgv)
             {
                 gv.print();
             }
         }
-
+        //Sap xep danh sach giang vien theo ten
         public static void sort()
         {
             if (listgv.Count == 0)
@@ -46,14 +50,15 @@ namespace SchoolManager
                 Console.WriteLine("Khong co Giang Vien nao trong danh sach!");
                 return;
             }
-            var DSGV = listgv.OrderByDescending(gv => gv.TEN);
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -19} {6, -15} {7, -15} {8, -15} {9, -10}",
+            var DSGV = listgv.OrderBy(gv => gv.TEN);
+            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -15} {9, -10}",
                   "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
             foreach (GiangVien gv in DSGV)
             {
                 gv.print();
             }
         }
+        //xoa giang vien theo khoa khoi danh sach
         public static void deleteGV(KHOA h)
         {
             GiangVien k;
@@ -69,6 +74,7 @@ namespace SchoolManager
                 h.Listgv1.Remove(k);
                 Console.WriteLine("Da xoa thanh cong!");
         }
+        // tim kiem giang vien trong danh sach
         public static void searchGV()
         {
             Console.Write("Nhap Ma Giang Vien: ");
@@ -83,6 +89,7 @@ namespace SchoolManager
               "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
             gv.print();
         }
+        //so luong giang vien trong danh sach
         public static int slGV() 
         {
             return listgv.Count;

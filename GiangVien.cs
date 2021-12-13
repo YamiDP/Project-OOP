@@ -52,10 +52,10 @@ namespace SchoolManager
             this.luong = "";
             this.hocvi = "";
         }
-        ~GiangVien()
-        {
-            
+        ~GiangVien() // ham huy
+        {    
         }
+        // nhap thong tin cua 1 giang vien
         public override void input()
         {      
             base.input();
@@ -68,12 +68,12 @@ namespace SchoolManager
             Console.Write("Hoc vi: ");
             HOCVI = Convert.ToString(Console.ReadLine());
         }
+        // in thong tin cua 1 giang vien
         public override void print()
         {
-            Console.WriteLine("{0, -7} {1, -20} {2, -10} {3, -10} {4, -15} {5,-15} {6, -15} {7, -15} {8, -15} {9, -10}",
+            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -15} {9, -10}",
                                  MA, TEN, NGSINH, GTINH, DIACHI, SDT, CHNGANG, BOMON, LUONG, HOCVI);
         }
-
     }
 }
 

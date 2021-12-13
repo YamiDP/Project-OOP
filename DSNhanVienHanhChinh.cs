@@ -6,7 +6,9 @@ namespace SchoolManager
 {
     public class DSNhanVienHanhChinh
     {
+        //khoi tao danh sach nhan vien hanh chinh
         public static List<NhanVienHanhChinh> listnv = new List<NhanVienHanhChinh>();
+        //kiem nhan vien hanh chinh co trong danh sach hay khong
         public static NhanVienHanhChinh checkNV(string MaNV)
         {
             foreach (NhanVienHanhChinh nv in listnv)
@@ -16,6 +18,7 @@ namespace SchoolManager
             }
             return null;
         }
+        // them nhan vien hanh chinh theo khoa vao danh sach
         public static void inputNVHC(PhongBan pb)
         {
             NhanVienHanhChinh nv = new NhanVienHanhChinh();
@@ -24,6 +27,7 @@ namespace SchoolManager
             pb.Listnv1.Add(nv);
             Console.WriteLine("Them Nhan Vien thanh cong!");
         }
+        //in danh sach nhan vien hanh chinh
         public static void printNVHC()
         {
             if (listnv.Count == 0)
@@ -31,13 +35,14 @@ namespace SchoolManager
                 Console.WriteLine("Khong co Nhan Vien nao trong Phong Ban!");
                 return;
             }
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -15} {6, -10}",
-                  "MaNV", "TenNV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "Cong Viec", "Luong");
+            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -10}",
+                  "MaNV", "TenNV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Cong Viec", "Luong");
             foreach (NhanVienHanhChinh nv in listnv)
             {
                 nv.print();
             }
         }
+        // xoa nhan vien hanh chinh theo phong ban khoi danh sach 
         public static void deleteNVHC(PhongBan p)
         {
             NhanVienHanhChinh k;
@@ -53,7 +58,7 @@ namespace SchoolManager
                 p.Listnv1.Remove(k);
             Console.WriteLine("Da xoa thanh cong!");
         }
-
+        //Sap xep danh sach giang vien hanh chinh theo ten
         public static void sort()
         {
             if (listnv.Count == 0)
@@ -61,14 +66,15 @@ namespace SchoolManager
                 Console.WriteLine("Khong co Nhan Vien Hanh Chinh nao trong danh sach!");
                 return;
             }
-            var DSNVHC = listnv.OrderByDescending(nv => nv.TEN);
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -15} {6, -10}",
-                  "MaNV", "TenNV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "Cong Viec", "Luong");
+            var DSNVHC = listnv.OrderBy(nv => nv.TEN);
+            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -10}",
+                  "MaNV", "TenNV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Cong Viec", "Luong");
             foreach (NhanVienHanhChinh nv in DSNVHC)
             {
                 nv.print();
             }
         } 
+        //tim kiem nhan vien hanh chinh trong danh sach
         public static void search()
         {
             Console.Write("Nhap Ma Giang Vien: ");
@@ -83,6 +89,7 @@ namespace SchoolManager
               "MaNV", "TenNV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Cong Viec", "Luong");
             nv.print();
         }
+        // so luong nhan vien hanh chinh trong danh sach
         public static int slNVHC()
         {
             return listnv.Count;

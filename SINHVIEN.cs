@@ -81,7 +81,7 @@ namespace SchoolManager
         }
         public override void print() // Hàm xuất sinh viên
         {
-            Console.WriteLine("{0, -7} {1, -20} {2, -10} {3, -10} {4, -15} {5,-15} {6, -15} {7, -15}",
+            Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -15} {6, -10} {7, -10}",
                                  MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, NAMNHAPHOC);
         }
     }

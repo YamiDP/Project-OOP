@@ -6,7 +6,7 @@ namespace SchoolManager
 {
     public class DSCuuCuuSinhVien 
     {
-        // Hàm tạo danh sách cựu sinh viên
+        // Tạo danh sách cựu sinh viên
         public static List<CuuSinhVien> listcsv = new List<CuuSinhVien>();
         public static CuuSinhVien checkSV(string MaCSV)
         {
@@ -31,14 +31,14 @@ namespace SchoolManager
                 Console.WriteLine("Khong co Cuu Sinh Vien nao trong danh sach!");
                 return;
             }
-            Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -15} {6, -10} {7, -10} {8, -15} {9, -10} {10, -10}",
-                  "MaCSV", "TenCSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh Hoc", "Khoa Hoc", "Thanh Tich", "Nghe Nghiep", "Nam Ket Thuc");
+            Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -15} {6, -10} {7, -10} {8, -15}",
+                  "MaCSV", "TenCSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Thanh Tich", "Nghe Nghiep", "Nam Ket Thuc");
             foreach (CuuSinhVien csv in listcsv)
             {
                 csv.print();
             }
         }
-        public static void sort() // Hàm sắp xếp cựu sinh viên trong danh sách
+        public static void sort() // Hàm sắp xếp cựu sinh viên theo tên trong danh sách
         {
             if (listcsv.Count == 0)
             {
@@ -46,8 +46,8 @@ namespace SchoolManager
                 return;
             }
             var DSCSV = listcsv.OrderByDescending(csv => csv.TEN);
-            Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -15} {6, -10} {7, -10} {8, -15} {9, -10} {10, -10}",
-                  "MaCSV", "TenCSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh Hoc", "Khoa Hoc", "Thanh Tich", "Nghe Nghiep", "Nam Ket Thuc");
+            Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -15} {6, -10} {7, -10} {8, -15}",
+                  "MaCSV", "TenCSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Thanh Tich", "Nghe Nghiep", "Nam Ket Thuc");
             foreach (CuuSinhVien csv in DSCSV)
             {
                 csv.print();
@@ -77,8 +77,8 @@ namespace SchoolManager
                 Console.WriteLine("Khong tim thay Cuu Sinh Vien!");
                 return;
             }
-            Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -15} {6, -10} {7, -10} {8, -15} {9, -10} {10, -10}",
-                  "MaCSV", "TencSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh Hoc", "Khoa Hoc", "Thanh Tich", "Nghe Nghiep", "Nam Ket Thuc");
+            Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -15} {6, -10} {7, -10} {8, -15}",
+                  "MaCSV", "TencSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Thanh Tich", "Nghe Nghiep", "Nam Ket Thuc");
             csv.print();
         }
         public static int slCSV() 
