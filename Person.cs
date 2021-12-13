@@ -86,10 +86,6 @@ namespace SchoolManager
             Console.Write("So dien thoai: ");
             SDT = Convert.ToString(Console.ReadLine());
         }
-        public virtual void print()
-        {
-            Console.Write("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20}",
-                                MA, TEN, NGSINH, GTINH, DIACHI, SDT);
-        }
+        public abstract void print();
     }
 }

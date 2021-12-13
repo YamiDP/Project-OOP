@@ -1,4 +1,4 @@
-/*using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -42,14 +42,27 @@ namespace SchoolManager
             set { phuongthucxettuyen = value; }
             get { return phuongthucxettuyen; }
         }
-        public override void sort()
+        public override void input()
         {
+            base.input();
+            Console.Write("Diem thi: ");
+            Diemthi = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Khoi thi: ");
+            Khoithi = Convert.ToString(Console.ReadLine());
+            Console.Write("Nganh: ");
+            Nganh = Convert.ToString(Console.ReadLine());
+            Console.Write("Dien uu tien: ");
+            DienUT = Convert.ToInt16(Console.ReadLine());
+            Console.Write("So luong nguyen vong: ");
+            SoluongNV = Convert.ToInt16(Console.ReadLine());
+            Console.Write("Phuong thuc xet tuyen: ");
+            Phuongthucxettuyen = Convert.ToString(Console.ReadLine());
         }
-        public override void search()
-        {
-        }
+  
         public override void print()
         {
+            Console.WriteLine("{0, -7} {1, -20} {2, -10} {3, -10} {4, -15} {5,-15} {6,-10} {7,-9} {8,-10} {9,-10} {10,-12} {11,-10}",
+                                   MA, TEN, NGSINH, GTINH, DIACHI, SDT, Diemthi, Khoithi, Nganh, DienUT, SoluongNV, Phuongthucxettuyen);
         }
 
 
@@ -77,6 +90,10 @@ namespace SchoolManager
             dienUT = 0;
             soluongNV = 0;
             phuongthucxettuyen = "N/A";
+        }
+        ~HocSinh()
+        {
+            
         }
     }
 }
