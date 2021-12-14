@@ -8,7 +8,24 @@ namespace SchoolManager
     {
         //khoi tao danh sach giang vien
         public static List<GiangVien> listgv = new List<GiangVien>();
-        //kiem tra giang vien co trong danh sach hay khong
+        //tao du lieu danh sach giang vien co ban
+        public static void base_listGV()
+        {
+            List<KHOA> listk = DSKhoa.base_listkhoa();
+            GiangVien gv1 = new GiangVien("100","Tran Quoc Tuan","11/10/2002","Nam","TP HCM","0337981963", "Phan mem", 20000000, "Thac si");
+            listgv.Add(gv1);
+            listk[0].Listgv1.Add(gv1);
+            GiangVien gv2 = new GiangVien("101","Huynh Thuy An","23/01/2002","Nu","TP HCM","0337981452", "Kien truc", 15000000, "Thac si");
+            listgv.Add(gv2);
+            listk[1].Listgv1.Add(gv2);
+            GiangVien gv3 = new GiangVien("102","Phan Tan Hung","05/02/2002","Nam","Binh Duong","0335301963", "Phan mem", 22000000, "Thac si");
+            listgv.Add(gv3);
+            listk[0].Listgv1.Add(gv3);
+            GiangVien gv4 = new GiangVien("103","Tran Tuan Minh","02/03/2002","Nam","TP HCM","0337981103", "Kien Truc", 17000000, "Thac si");
+            listgv.Add(gv4);
+            listk[1].Listgv1.Add(gv4);
+        }
+        //ham kiem tra giang vien co trong danh sach hay khong
         public static GiangVien checkGV(string MaGV)
         {
             foreach (GiangVien gv in listgv)
@@ -18,7 +35,7 @@ namespace SchoolManager
             }
             return null;
         }
-        //them giang vien theo khoa vao danh sach
+        //ham them giang vien theo khoa vao danh sach
         public static void inputGV(KHOA h)
         {
             GiangVien gv = new GiangVien();  
@@ -27,7 +44,7 @@ namespace SchoolManager
             h.Listgv1.Add(gv);
             Console.WriteLine("Them Giang Vien thanh cong!");
         }
-        //in giang vien trong danh sach
+        //ham in giang vien trong danh sach
         public static void printGV()
         {
             if (listgv.Count == 0)
@@ -42,7 +59,7 @@ namespace SchoolManager
                 gv.print();
             }
         }
-        //Sap xep danh sach giang vien theo ten
+        //ham Sap xep danh sach giang vien theo ten
         public static void sort()
         {
             if (listgv.Count == 0)
@@ -58,7 +75,7 @@ namespace SchoolManager
                 gv.print();
             }
         }
-        //xoa giang vien theo khoa khoi danh sach
+        //ham xoa giang vien theo khoa khoi danh sach
         public static void deleteGV(KHOA h)
         {
             GiangVien k;
@@ -74,7 +91,7 @@ namespace SchoolManager
                 h.Listgv1.Remove(k);
                 Console.WriteLine("Da xoa thanh cong!");
         }
-        // tim kiem giang vien trong danh sach
+        //ham tim kiem giang vien trong danh sach
         public static void searchGV()
         {
             Console.Write("Nhap Ma Giang Vien: ");
@@ -89,7 +106,7 @@ namespace SchoolManager
               "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
             gv.print();
         }
-        //so luong giang vien trong danh sach
+        //ham tinh so luong giang vien trong danh sach
         public static int slGV() 
         {
             return listgv.Count;
