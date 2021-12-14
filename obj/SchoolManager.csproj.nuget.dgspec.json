@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pc\\Desktop\\copy2\\Project-OOP\\SchoolManager.csproj": {}
+    "C:\\Users\\pc\\Desktop\\copy3\\Project-OOP\\SchoolManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pc\\Desktop\\copy2\\Project-OOP\\SchoolManager.csproj": {
+    "C:\\Users\\pc\\Desktop\\copy3\\Project-OOP\\SchoolManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pc\\Desktop\\copy2\\Project-OOP\\SchoolManager.csproj",
+        "projectUniqueName": "C:\\Users\\pc\\Desktop\\copy3\\Project-OOP\\SchoolManager.csproj",
         "projectName": "SchoolManager",
-        "projectPath": "C:\\Users\\pc\\Desktop\\copy2\\Project-OOP\\SchoolManager.csproj",
+        "projectPath": "C:\\Users\\pc\\Desktop\\copy3\\Project-OOP\\SchoolManager.csproj",
         "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pc\\Desktop\\copy2\\Project-OOP\\obj\\",
+        "outputPath": "C:\\Users\\pc\\Desktop\\copy3\\Project-OOP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
