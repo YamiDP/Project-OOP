@@ -35,7 +35,7 @@ namespace SchoolManager
             }
             return null;
         }
-        //ham them nhan vien hanh chinh theo khoa vao danh sach
+        //ham them nhan vien hanh chinh theo phong ban vao danh sach
         public static void inputNVHC(PhongBan pb)
         {
             NhanVienHanhChinh nv = new NhanVienHanhChinh();
@@ -106,7 +106,7 @@ namespace SchoolManager
               "MaNV", "TenNV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Cong Viec", "Luong");
             nv.print();
         }
-        //ham so luong nhan vien hanh chinh trong danh sach
+        //ham tinh so luong nhan vien hanh chinh trong danh sach
         public static int slNVHC()
         {
             return listnv.Count;
