@@ -34,6 +34,25 @@ namespace SchoolManager
             }
             return null;
         }
+        //
+        public static bool checkMHGV(string MaMH, GiangVien gv)
+        {
+            foreach (MonHoc mh in gv.Listmh1)
+            {
+                if (String.Compare(mh.Mamh, MaMH, false) == 0)
+                    return false;
+            }
+            return true;
+        }
+        public static bool checkMHSV(string MaMH, SinhVien sv)
+        {
+            foreach (MonHoc mh in sv.ListmhSV)
+            {
+                if (String.Compare(mh.Mamh, MaMH, false) == 0)
+                    return false;
+            }
+            return true;
+        }
         //them mon hoc vao danh sach
         public static void addMH()
         {
@@ -57,6 +76,36 @@ namespace SchoolManager
                 Console.WriteLine("Khong co Mon Hoc de hien thi!");
             }
             Console.WriteLine();
+        }
+        //ham in danh sach mon hoc cua 1 giang vien da dang ki mo lop
+        public static void printMHGVDKiML(GiangVien gv)
+        {
+            if (gv.Listmh1.Count == 0)
+            {
+                Console.WriteLine("Khong co Mon Hoc nao trong danh sach!");
+                return;
+            }
+            Console.WriteLine("{0, -7} {1, -20} {2,-10}{3,-15}",
+                  "Ma MH", "Ten MH","So TC","Loai mon");
+            foreach (MonHoc mh in gv.Listmh1)
+            {
+                mh.print();
+            }
+        }
+        //ham in danh sach mon hoc cua 1 sinh da dang ki
+        public static void printMHSVdki(SinhVien sv)
+        {
+            if (sv.ListmhSV.Count == 0)
+            {
+                Console.WriteLine("Khong co Mon Hoc nao trong danh sach!");
+                return;
+            }
+            Console.WriteLine("{0, -7} {1, -20} {2,-10}{3,-15}",
+                  "Ma MH", "Ten MH","So TC","Loai mon");
+            foreach (MonHoc mh in sv.ListmhSV)
+            {
+                mh.print();
+            }
         }
         //xoa mon hoc ra khoi danh sach
         public static void deleteMH()

@@ -12,16 +12,16 @@ namespace SchoolManager
         public static void base_listGV()
         {
             List<KHOA> listk = DSKhoa.base_listkhoa();
-            GiangVien gv1 = new GiangVien("100","Tran Quoc Tuan","11/10/2002","Nam","TP HCM","0337981963", "Phan mem", 20000000, "Thac si");
+            GiangVien gv1 = new GiangVien("100","Tran Quoc Tuan","11/10/1983","Nam","TP HCM","0337981963", "Phan mem", 20000000, "Thac si", new List<MonHoc>());
             listgv.Add(gv1);
             listk[0].Listgv1.Add(gv1);
-            GiangVien gv2 = new GiangVien("101","Huynh Thuy An","23/01/2002","Nu","TP HCM","0337981452", "Kien truc", 15000000, "Thac si");
+            GiangVien gv2 = new GiangVien("101","Huynh Thuy An","23/01/1984","Nu","TP HCM","0337981452", "Kien truc", 15000000, "Thac si", new List<MonHoc>());
             listgv.Add(gv2);
             listk[1].Listgv1.Add(gv2);
-            GiangVien gv3 = new GiangVien("102","Phan Tan Hung","05/02/2002","Nam","Binh Duong","0335301963", "Phan mem", 22000000, "Thac si");
+            GiangVien gv3 = new GiangVien("102","Phan Tan Hung","05/02/1985","Nam","Binh Duong","0335301963", "Phan mem", 22000000, "Thac si", new List<MonHoc>());
             listgv.Add(gv3);
             listk[0].Listgv1.Add(gv3);
-            GiangVien gv4 = new GiangVien("103","Tran Tuan Minh","02/03/2002","Nam","TP HCM","0337981103", "Kien Truc", 17000000, "Thac si");
+            GiangVien gv4 = new GiangVien("103","Tran Tuan Minh","02/03/1986","Nam","TP HCM","0337981103", "Kien Truc", 17000000, "Thac si", new List<MonHoc>());
             listgv.Add(gv4);
             listk[1].Listgv1.Add(gv4);
         }
@@ -52,8 +52,8 @@ namespace SchoolManager
                 Console.WriteLine("Khong co Giang Vien nao trong danh sach!");
                 return;
             }
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -15} {9, -10}",
-                  "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
+            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -15}",
+                  "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Luong", "Hoc Vi");
             foreach (GiangVien gv in listgv)
             {
                 gv.print();
@@ -68,8 +68,8 @@ namespace SchoolManager
                 return;
             }
             var DSGV = listgv.OrderBy(gv => gv.TEN);
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -15} {9, -10}",
-                  "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
+            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -15}",
+                  "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Luong", "Hoc Vi");
             foreach (GiangVien gv in DSGV)
             {
                 gv.print();
@@ -102,8 +102,8 @@ namespace SchoolManager
                 Console.WriteLine("Khong tim thay Giang Vien!");
                 return;
             }
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10} {9, -10}",
-              "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Bo mon", "Luong", "Hoc Vi");
+            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -15} {8, -10}",
+              "MaGV", "TenGV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Chuyen Nganh", "Luong", "Hoc Vi");
             gv.print();
         }
         //ham tinh so luong giang vien trong danh sach

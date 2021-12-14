@@ -25,15 +25,17 @@ namespace SchoolManager
             get { return namketthuc; }
         }
         // Hàm khởi tạo cựu sinh viên
-        public CuuSinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, int namnhaphoc, string thanhtich, string nghenghiep, int namketthuc)
-            : base(ma, ten, ngsinh, gtinh, diachi, sdt, nganh, namnhaphoc)
+        public CuuSinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, int namnhaphoc, List<MonHoc> listmhsv,
+                             string thanhtich, string nghenghiep, int namketthuc)
+            : base(ma, ten, ngsinh, gtinh, diachi, sdt, nganh, namnhaphoc, listmhsv)
         {
             this.thanhtich = thanhtich;
             this.nghenghiep = nghenghiep;
             this.namketthuc = namketthuc;
         }
         public CuuSinhVien(CuuSinhVien csv)
-            : this(csv.MA, csv.TEN, csv.NGSINH, csv.GTINH, csv.DIACHI, csv.SDT, csv.NGANH, csv.NAMNHAPHOC, csv.THANHTICH, csv.NGHENGHIEP, csv.NAMKETTHUC)
+            : this(csv.MA, csv.TEN, csv.NGSINH, csv.GTINH, csv.DIACHI, csv.SDT, csv.NGANH, csv.NAMNHAPHOC, csv.ListmhSV,
+             csv.THANHTICH, csv.NGHENGHIEP, csv.NAMKETTHUC)
         {
         }
         public CuuSinhVien()
