@@ -8,7 +8,20 @@ namespace SchoolManager
     {
         // Tạo danh sách cựu sinh viên
         public static List<CuuSinhVien> listcsv = new List<CuuSinhVien>();
-        public static CuuSinhVien checkSV(string MaCSV)
+        // Tạo dữ liệu danh sách cựu sinh viên cơ bản
+        public static void base_list()
+        {
+            CuuSinhVien csv1 = new CuuSinhVien("191","Long","24/04/2001","Nam","Binh Phuoc","032342342","CNTT",2019,"GIOI","KI SU", 2024);
+            listcsv.Add(csv1);
+            CuuSinhVien csv2 = new CuuSinhVien("192","Hoang","08/03/2001","Nam","Dong Nai","032342656","DDT",2019,"KHA","THO DIEN", 2024);
+            listcsv.Add(csv1);
+            CuuSinhVien csv3 = new CuuSinhVien("193","Hai","02/04/2001","Nam","Binh Dinh","0343564342","CNTT",2019,"GIOI","GIANG VIEN", 2024);
+            listcsv.Add(csv3);
+            CuuSinhVien csv4 = new CuuSinhVien("194","Minh","11/02/2001","Nam","Vung Tau","032323642","XD",2019,"KHA","KI SU", 2024);
+            listcsv.Add(csv4);
+        }
+        // Hàm kiểm tra mã cựu sinh viên trong danh sách
+        public static CuuSinhVien checkCSV(string MaCSV)
         {
             foreach (CuuSinhVien csv in listcsv)
             {
@@ -17,14 +30,16 @@ namespace SchoolManager
             }
             return null;
         }
-        public static void inputCSV() // Hàm nhập cựu sinh viên vào danh sách
+        // Hàm nhập cựu sinh viên vào danh sách
+        public static void inputCSV()
         {
             CuuSinhVien csv = new CuuSinhVien();  
             csv.input();       
             listcsv.Add(csv);
             Console.WriteLine("Them Cuu Sinh Vien thanh cong!");
         }
-        public static void printCSV() // Hàm xuất cựu sinh viên trong danh sách
+        // Hàm xuất cựu sinh viên trong danh sách
+        public static void printCSV()
         {
             if (listcsv.Count == 0)
             {
@@ -38,7 +53,8 @@ namespace SchoolManager
                 csv.print();
             }
         }
-        public static void sort() // Hàm sắp xếp cựu sinh viên theo tên trong danh sách
+        // Hàm sắp xếp cựu sinh viên theo tên trong danh sách
+        public static void sort()
         {
             if (listcsv.Count == 0)
             {
@@ -53,12 +69,13 @@ namespace SchoolManager
                 csv.print();
             }
         }
-        public static void deleteCSV() // Hàm xóa cựu sinh viên trong danh sách
+        // Hàm xóa cựu sinh viên trong danh sách
+        public static void deleteCSV()
         {
             CuuSinhVien k;
             Console.Write("Nhap Ma Cuu Sinh Vien: ");
             string MaCSV = Console.ReadLine();
-            k = checkSV(MaCSV);
+            k = checkCSV(MaCSV);
             if (k == null)
             {
                 Console.WriteLine("Khong co Cuu Sinh Vien!");
@@ -67,11 +84,12 @@ namespace SchoolManager
                 listcsv.Remove(k);
                 Console.WriteLine("Da xoa thanh cong!");
         }
-        public static void searchCSV() // Hàm tìm kiếm cựu sinh viên trong danh sách
+        // Hàm tìm kiếm cựu sinh viên trong danh sách
+        public static void searchCSV()
         {
             Console.Write("Nhap Ma Cuu Sinh Vien: ");
             string MaCSV = Console.ReadLine();
-            CuuSinhVien csv = checkSV(MaCSV);
+            CuuSinhVien csv = checkCSV(MaCSV);
             if (listcsv.Count == 0 || csv == null)
             {
                 Console.WriteLine("Khong tim thay Cuu Sinh Vien!");
@@ -81,6 +99,7 @@ namespace SchoolManager
                   "MaCSV", "TencSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh hoc", "Khoa hoc", "Thanh Tich", "Nghe Nghiep", "Nam Ket Thuc");
             csv.print();
         }
+        // Hàm trả về số lượng cựu sinh viên trong danh sách
         public static int slCSV() 
         {
             return listcsv.Count;
