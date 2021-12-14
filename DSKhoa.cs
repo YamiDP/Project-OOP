@@ -13,7 +13,7 @@ namespace SchoolManager
         {
             KHOA cntt = new KHOA("111","CNTT", new List<GiangVien>(), new List<SinhVien>(), new List<CuuSinhVien>());
             listkhoa.Add(cntt);
-            KHOA xaydung = new KHOA("111","CNTT", new List<GiangVien>(), new List<SinhVien>(), new List<CuuSinhVien>());
+            KHOA xaydung = new KHOA("112","Xay Dung", new List<GiangVien>(), new List<SinhVien>(), new List<CuuSinhVien>());
             listkhoa.Add(xaydung);
             return listkhoa;
         }

@@ -4,7 +4,7 @@ using System.Text;
 using System.Linq;
 namespace SchoolManager
 {
-    public class DSCuuCuuSinhVien 
+    public class DSCuuSinhVien 
     {
         // Tạo danh sách cựu sinh viên
         public static List<CuuSinhVien> listcsv = new List<CuuSinhVien>();
