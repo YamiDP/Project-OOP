@@ -55,7 +55,7 @@ namespace SchoolManager
         //ham in thong tin 1 phong ban
         public void printPB()
         {
-                Console.WriteLine("{0, -7} {1, -20}",
+                Console.WriteLine("{0, -7} {1, -25}",
                                   MAPB, TENPB);
         }
     }

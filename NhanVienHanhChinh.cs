@@ -7,21 +7,21 @@ namespace SchoolManager
     public class NhanVienHanhChinh : Person
     {
         private string cviec;
-        private string luong;
+        private int luong;
 
         public string CVIEC
         {
             set { cviec = value; }
             get { return cviec; }
         }
-        public string LUONG
+        public int LUONG
         {
             set { luong = value; }
             get { return luong; }
         }
-
+        // cac ham khoi tao
         public NhanVienHanhChinh(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt,
-                                 string cviec, string luong)
+                                 string cviec, int luong)
             : base(ma, ten, ngsinh, gtinh, diachi, sdt)
         {
             this.cviec = cviec;
@@ -36,7 +36,7 @@ namespace SchoolManager
             : base()
         {
             this.cviec = "";
-            this.luong = "";
+            this.luong = 0;
         }
         ~NhanVienHanhChinh() // ham huy
         {          
@@ -48,12 +48,12 @@ namespace SchoolManager
             Console.Write("Cong viec: ");
             CVIEC = Convert.ToString(Console.ReadLine());
             Console.Write("Luong: ");
-            LUONG = Convert.ToString(Console.ReadLine());
+            LUONG = Convert.ToInt32(Console.ReadLine());
         }
         // in thong tin cua 1 nhan vien hanh chinh
         public override void print()
         {
-            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -15} {7, -10}",
+            Console.WriteLine("{0, -7} {1, -20} {2, -15} {3, -15} {4, -15} {5, -20} {6, -25} {7, -10}",
                                  MA, TEN, NGSINH, GTINH, DIACHI, SDT, CVIEC, LUONG);
         }
           
