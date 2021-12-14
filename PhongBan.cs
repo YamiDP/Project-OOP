@@ -24,7 +24,7 @@ namespace SchoolManager
             set { listnv1 = value; }
             get { return listnv1; }
         }
-
+        // cac ham khoi tao
         public PhongBan(string mapb, string tenpb, List<NhanVienHanhChinh> listnv2)
         {
             this.mapb = mapb;
@@ -41,41 +41,22 @@ namespace SchoolManager
             this.tenpb = "";
             this.listnv1 = null;
         }
-        public static List<PhongBan> listpban = new List<PhongBan>();
-        public static PhongBan checkPB(string MaPban)
+        ~PhongBan() //ham huy
         {
-            foreach (PhongBan pb in listpban)
-            {
-                if (String.Compare(pb.MAPB, MaPban, false) == 0)
-                    return pb;
-            }
-            return null;
         }
-        public void inputPB(string mapban)
+        //ham nhap thong tin 1 phong ban
+        public void inputPB()
         {
-            PhongBan pb;
-            MAPB = mapban;
+            Console.Write("Ma Phong Ban: ");
+            MAPB = Convert.ToString(Console.ReadLine());
             Console.Write("Ten Phong Ban: ");
             TENPB = Convert.ToString(Console.ReadLine());
-            pb = new PhongBan(MAPB, TENPB, new List<NhanVienHanhChinh>());
-            listpban.Add(pb);
-            Console.WriteLine("Them Phong Ban thanh cong!");
         }
-        public static void printPB()
+        //ham in thong tin 1 phong ban
+        public void printPB()
         {
-            if (listpban.Count == 0)
-            {
-                Console.WriteLine("Khong co Phong Ban de hien thi!");
-                return;
-            }
-            Console.WriteLine("{0, -7} {1, -20}",
-                  "MaPB", "TenPB");
-            foreach (PhongBan pb in listpban)
-            {
                 Console.WriteLine("{0, -7} {1, -20}",
-                                  pb.MAPB, pb.TENPB);
-            }
-            Console.WriteLine();
+                                  MAPB, TENPB);
         }
     }
 }

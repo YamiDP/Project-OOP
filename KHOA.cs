@@ -35,6 +35,7 @@ namespace SchoolManager
             set { listcsv1 = value; }
             get { return listcsv1; }
         }
+        // cac ham khoi tao
         public KHOA(string makhoa, string tenkhoa, List<GiangVien> listgv1, List<SinhVien> listsv1, List<CuuSinhVien> listcsv1)
         {
             this.makhoa = makhoa;
@@ -55,40 +56,22 @@ namespace SchoolManager
             this.listsv1 = null;
             this.listcsv1 = null;
         }
-        public static List<KHOA> listkhoa = new List<KHOA>();
-        public static KHOA checkkhoa(string MaKhoa)
+        ~KHOA() // ham huy
         {
-            foreach (KHOA khoa in listkhoa)
-            {
-                if (String.Compare(khoa.MAKHOA, MaKhoa, false) == 0)
-                    return khoa;
-            }
-            return null;
         }
-        public void inputKhoa(string makhoa)
+        //ham nhap thong tin 1 khoa
+        public void inputKhoa()
         {
-            KHOA k;
-            MAKHOA = makhoa;
+            Console.Write("Ma Khoa: ");
+            MAKHOA = Convert.ToString(Console.ReadLine());
             Console.Write("Ten Khoa: ");
             TENKHOA = Convert.ToString(Console.ReadLine());
-            k = new KHOA(MAKHOA, TENKHOA, new List<GiangVien>(), new List<SinhVien>(), new List<CuuSinhVien>());
-            listkhoa.Add(k);
-            Console.WriteLine("Them Khoa thanh cong!");
         }
-        public static void printKhoa()
+        //ham in thong tin 1 khoa
+        public void printKhoa()
         {
-            if (listkhoa.Count == 0)
-            {
-                Console.WriteLine("Khong co Khoa de hien thi!");
-                return;
-            }
             Console.WriteLine("{0, -7} {1, -20}",
-                  "MaKhoa", "TenKhoa");
-            foreach (KHOA khoa in listkhoa)
-            {
-                Console.WriteLine("{0, -7} {1, -20}",
-                                  khoa.MAKHOA, khoa.TENKHOA);
-            }
+                                  MAKHOA, TENKHOA);
         }
     }
 }
