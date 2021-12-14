@@ -11,13 +11,13 @@ namespace SchoolManager
         // Tạo dữ liệu danh sách sinh viên cơ bản
         public static void base_list()
         {
-            SinhVien sv1 = new SinhVien("201","Phuong","02/02/2002","Nam","Binh Phuoc","032342342","CNTT",2020);
+            SinhVien sv1 = new SinhVien("201","Phuong","02/02/2002","Nam","Binh Phuoc","032342342","CNTT",2020, 70, 20);
             listsv.Add(sv1);
-            SinhVien sv2 = new SinhVien("202","Dat","04/03/2002","Nam","Dong Nai","032342656","DDT",2020);
+            SinhVien sv2 = new SinhVien("202","Dat","04/03/2002","Nam","Dong Nai","032342656","DDT",2020, 80, 30);
             listsv.Add(sv1);
-            SinhVien sv3 = new SinhVien("203","Tuan","02/04/2002","Nam","Binh Dinh","0343564342","CNTT",2020);
+            SinhVien sv3 = new SinhVien("203","Tuan","02/04/2002","Nam","Binh Dinh","0343564342","CNTT",2020, 90, 30);
             listsv.Add(sv3);
-            SinhVien sv4 = new SinhVien("204","Hung","11/02/2002","Nam","Vung Tau","032323642","XD",2020);
+            SinhVien sv4 = new SinhVien("204","Hung","11/02/2002","Nam","Vung Tau","032323642","XD",2020, 100, 30);
             listsv.Add(sv4);
         }
         // Hàm kiểm tra mã sinh viên trong danh sách

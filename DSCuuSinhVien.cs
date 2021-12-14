@@ -11,13 +11,13 @@ namespace SchoolManager
         // Tạo dữ liệu danh sách cựu sinh viên cơ bản
         public static void base_list()
         {
-            CuuSinhVien csv1 = new CuuSinhVien("191","Long","24/04/2001","Nam","Binh Phuoc","032342342","CNTT",2019,"GIOI","KI SU", 2024);
+            CuuSinhVien csv1 = new CuuSinhVien("191","Long","24/04/2001","Nam","Binh Phuoc","032342342","CNTT",2019,0,0,"GIOI","KI SU",2024);
             listcsv.Add(csv1);
-            CuuSinhVien csv2 = new CuuSinhVien("192","Hoang","08/03/2001","Nam","Dong Nai","032342656","DDT",2019,"KHA","THO DIEN", 2024);
+            CuuSinhVien csv2 = new CuuSinhVien("192","Hoang","08/03/2001","Nam","Dong Nai","032342656","DDT",2019,0,0,"KHA","THO DIEN",2024);
             listcsv.Add(csv1);
-            CuuSinhVien csv3 = new CuuSinhVien("193","Hai","02/04/2001","Nam","Binh Dinh","0343564342","CNTT",2019,"GIOI","GIANG VIEN", 2024);
+            CuuSinhVien csv3 = new CuuSinhVien("193","Hai","02/04/2001","Nam","Binh Dinh","0343564342","CNTT",2019,0,0,"GIOI","GIANG VIEN",2024);
             listcsv.Add(csv3);
-            CuuSinhVien csv4 = new CuuSinhVien("194","Minh","11/02/2001","Nam","Vung Tau","032323642","XD",2019,"KHA","KI SU", 2024);
+            CuuSinhVien csv4 = new CuuSinhVien("194","Minh","11/02/2001","Nam","Vung Tau","032323642","XD",2019,0,0,"KHA","KI SU",2024);
             listcsv.Add(csv4);
         }
         // Hàm kiểm tra mã cựu sinh viên trong danh sách
