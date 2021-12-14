@@ -11,8 +11,10 @@ namespace SchoolManager
         //tao du lieu dau vao cho danh sach phong ban
         public static List<PhongBan> base_listPB()
         {
-            PhongBan pTSinh = new PhongBan("222", "Cong tac sinh vien", new List<NhanVienHanhChinh>());
+            PhongBan pTSinh = new PhongBan("222", "TS va CT sinh vien", new List<NhanVienHanhChinh>());
             listpban.Add(pTSinh);
+            PhongBan pTChinh = new PhongBan("333", "Ke hoach tai chinh", new List<NhanVienHanhChinh>());
+            listpban.Add(pTChinh);
             return listpban;
         }
         // ham kiem tra phong ban co trong danh sach hay khong
@@ -41,7 +43,7 @@ namespace SchoolManager
                 Console.WriteLine("Khong co Phong Ban de hien thi!");
                 return;
             }
-            Console.WriteLine("{0, -7} {1, -20}",
+            Console.WriteLine("{0, -7} {1, -25}",
                   "MaPB", "TenPB");
             foreach (PhongBan pb in listpban)
             {
