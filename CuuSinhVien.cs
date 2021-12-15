@@ -63,5 +63,9 @@ namespace SchoolManager
             Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -15} {6, -10} {7, -10} {8, -15} {9, -15} {10, -10}",
                                  MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, NAMNHAPHOC, THANHTICH, NGHENGHIEP, NAMKETTHUC);
         }
+        public static new void DKiMonHoc()
+        {
+            Console.WriteLine("Ban khong the dang ki mon hoc");
+        }
     }
-}
+}       
