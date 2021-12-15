@@ -31,7 +31,7 @@ namespace SchoolManager
             return null;
         }
         // Hàm nhập sinh viên vào danh sách
-        public static void inputSV()
+        public static void addSV()
         {
             SinhVien sv = new SinhVien();  
             sv.input();       
@@ -62,7 +62,7 @@ namespace SchoolManager
                 Console.WriteLine("Khong co Sinh Vien nao trong danh sach!");
                 return;
             }
-            var DSSV = listsv.OrderByDescending(sv => sv.TEN);
+            var DSSV = listsv.OrderBy(sv => sv.TEN);
             Console.WriteLine("{0, -7} {1, -10} {2, -10} {3, -10} {4, -10} {5, -15} {6, -10} {7, -10}",
                   "MaSV", "TenSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh hoc", "Khoa hoc");
             foreach (SinhVien sv in DSSV)
