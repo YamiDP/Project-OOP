@@ -34,6 +34,10 @@ namespace SchoolManager
         // cac ham khoi tao
         public MonHoc()
         {      
+            this.mamh = "MHxx";
+            this.tenmh = "Unknown";
+            this.sotc = 0;
+            this.loaimon = "Unknown";
         }
         public MonHoc(string mamh, string tenmh, int sotc, string loaimon)
         {
@@ -50,7 +54,7 @@ namespace SchoolManager
         //ham huy
         ~MonHoc()
         {
-
+                
         }
         //ham nhap mot mon hoc
         public void inputMH()

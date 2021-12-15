@@ -57,10 +57,20 @@ namespace SchoolManager
         // Hàm khởi tạo bảng điểm
         public BangDiem(int stt, string mahocphan, string tenhocphan, int tinchi, string loaimon, int diem, string diemchu, string ketqua)
         {
+            this.stt = stt;
+            this.mahocphan = mahocphan;
+            this.tenhocphan = tenhocphan;
+            this.tinchi = tinchi;
+            this.loaimon = loaimon;
+            this.diem = diem;
+            this.diemchu = diemchu;
+            this.ketqua = ketqua;
+        }
+        public BangDiem(BangDiem bd):this(bd.stt,bd.mahocphan,bd.tenhocphan,bd.tinchi,bd.loaimon,bd.diem,bd.diemchu,bd.ketqua)
+        {
             
         }
         public BangDiem()
-            : base()
         {
             this.stt = 1;
             this.mahocphan = "";
