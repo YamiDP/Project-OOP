@@ -8,7 +8,7 @@ namespace SchoolManager
     {
         private string mapb;
         private string tenpb;
-        List<NhanVienHanhChinh> listnv1;
+        internal List<NhanVienHanhChinh> listnv1;
         public string MAPB
         {
             set { mapb = value; }

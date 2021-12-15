@@ -9,7 +9,7 @@ namespace SchoolManager
         private string chnganh;
         private int luong;
         private string hocvi;
-        List<MonHoc> listmh1;
+        private List<MonHoc> listmh1;
 
         public string CHNGANG
         {

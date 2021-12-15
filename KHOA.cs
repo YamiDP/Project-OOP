@@ -7,9 +7,9 @@ namespace SchoolManager
     {
         private string makhoa;
         private string tenkhoa;
-        List<GiangVien> listgv1;
-        List<SinhVien> listsv1;
-        List<CuuSinhVien> listcsv1;
+        private List<GiangVien> listgv1;
+        private List<SinhVien> listsv1;
+        private List<CuuSinhVien> listcsv1;
         public string MAKHOA
         {
             set { makhoa = value; }
