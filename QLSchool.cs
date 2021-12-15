@@ -14,6 +14,8 @@ namespace SchoolManager
             //DSHocSinh.sort_name();
             DSMonHoc.base_list();
             DSMonHoc.printDSMH();
+            DSSinhVien.base_list();
+            DSSinhVien.printSV();
             DSGiangVien.base_listGV();
             DSGiangVien.printGV();
             for(int i =0 ; i <2; i++)
@@ -21,7 +23,11 @@ namespace SchoolManager
                 GiangVien.dkimoplop();
             }
             DSMonHoc.printMHGVDKiML(DSGiangVien.listgv[0]);
-            Console.Write(DSGiangVien.listgv[0].Listmh1.Count);
+
+            SinhVien.DKiMonHoc();
+
+            Console.WriteLine("Sau khi sinh vien dang ki thi se khong con");
+            DSMonHoc.printMHGVDKiML(DSGiangVien.listgv[0]);
         }
     }
 }

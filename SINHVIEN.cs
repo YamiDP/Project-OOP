@@ -25,15 +25,12 @@ namespace SchoolManager
             set { listmhsv = value; }
             get { return listmhsv; }
         } 
-        struct DIEM
+        private int drl;
+        public int DRl
         {
-
+             set { drl = value; }
+            get { return drl; } 
         }
-        struct TKB
-        {
-
-        }
-        public int DRl { get; set; }
         public int DCTXH { get; set; }
 
         // Hàm khởi tạo sinh viên
@@ -73,7 +70,7 @@ namespace SchoolManager
                                  MA, TEN, NGSINH, GTINH, DIACHI, SDT, NGANH, NAMNHAPHOC);
         }
         // Ham dang ki mon hoc 
-        public void DKiMonHoc()
+        public static void DKiMonHoc()
         {
             SinhVien sv; 
             MonHoc mh;
@@ -102,20 +99,29 @@ namespace SchoolManager
                 }
             }while(!DSMonHoc.checkMHSV(ma, sv));
 
-            Console.WriteLine("{0, -7} {1, -20} {2,-10} {3,-15}",
-                  "Ma MH", "Ten MH","So TC","Loai mon");
+            Console.WriteLine("{0, -7} {1, -20} {2,-10} {3,-15} {4, -7} {5, -20} {6, -15}",
+                  "Ma MH", "Ten MH","So TC","Loai mon", "MaGV", "TenGV", "Chuyen Nganh");
             foreach (GiangVien gv1 in DSGiangVien.listgv)
             {
                 foreach (MonHoc mh1 in gv1.Listmh1)
                 {
-                    if (String.Compare(mh1.Mamh, MA, false) == 0)
+                    if (String.Compare(mh1.Mamh, ma, false) == 0)
                     {
-                        mh1.print();
+                        Console.WriteLine("{0, -7} {1, -20} {2,-10} {3,-15} {4, -7} {5, -20} {6, -15}",
+                                  mh1.Mamh, mh1.TenMH, mh1.SoTC, mh1.LoaiMon, gv1.MA, gv1.TEN, gv1.CHNGANG);
                     }
                 }
             }
-            sv.ListmhSV.Add(mh);
-            Console.WriteLine("Dang ki Mon Hoc thanh cong!!!");
+            Console.Write("Nhap Ma Giang Vien: ");
+            ma = Convert.ToString(Console.ReadLine());
+            foreach (GiangVien gv in DSGiangVien.listgv)
+            {
+                if (String.Compare(gv.MA, ma, false) == 0)
+                {
+                    sv.ListmhSV.Add(mh);
+                    Console.WriteLine("Dang ki Mon Hoc thanh cong!!!");
+                }
+            }
         }
     }
 }

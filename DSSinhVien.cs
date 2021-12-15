@@ -8,6 +8,19 @@ namespace SchoolManager
     {
         // Hàm tạo danh sách sinh viên
         public static List<SinhVien> listsv = new List<SinhVien>();
+        // Tạo dữ liệu danh sách sinh viên cơ bản
+        public static void base_list()
+        {
+            SinhVien sv1 = new SinhVien("201","Phuong","02/02/2002","Nam","Binh Phuoc","032342342","CNTT",2020, new List<MonHoc>());
+            listsv.Add(sv1);
+            SinhVien sv2 = new SinhVien("202","Dat","04/03/2002","Nam","Dong Nai","032342656","DDT",2020, new List<MonHoc>());
+            listsv.Add(sv1);
+            SinhVien sv3 = new SinhVien("203","Tuan","02/04/2002","Nam","Binh Dinh","0343564342","CNTT",2020, new List<MonHoc>());
+            listsv.Add(sv3);
+            SinhVien sv4 = new SinhVien("204","Hung","11/02/2002","Nam","Vung Tau","032323642","XD",2020, new List<MonHoc>());
+            listsv.Add(sv4);
+        }
+        // Hàm kiểm tra mã sinh viên trong danh sách
         public static SinhVien checkSV(string MaSV)
         {
             foreach (SinhVien sv in listsv)
@@ -17,14 +30,16 @@ namespace SchoolManager
             }
             return null;
         }
-        public static void inputSV() // Hàm nhập sinh viên vào danh sách
+        // Hàm nhập sinh viên vào danh sách
+        public static void inputSV()
         {
             SinhVien sv = new SinhVien();  
             sv.input();       
             listsv.Add(sv);
             Console.WriteLine("Them Sinh Vien thanh cong!");
         }
-        public static void printSV() // Hàm xuất sinh viên trong danh sách
+        // Hàm xuất sinh viên trong danh sách
+        public static void printSV()
         {
             if (listsv.Count == 0)
             {
@@ -37,9 +52,10 @@ namespace SchoolManager
             {
                 sv.print();
             }
+            Console.WriteLine();
         }
-
-        public static void sort() // Hàm sắp xếp sinh viên trong danh sách
+        // Hàm sắp xếp sinh viên trong danh sách
+        public static void sort()
         {
             if (listsv.Count == 0)
             {
@@ -54,7 +70,8 @@ namespace SchoolManager
                 sv.print();
             }
         }
-        public static void deleteSV() // Hàm xóa sinh viên trong danh sách
+        // Hàm xóa sinh viên trong danh sách
+        public static void deleteSV()
         {
             SinhVien k;
             Console.Write("Nhap Ma Sinh Vien: ");
@@ -68,7 +85,8 @@ namespace SchoolManager
                 listsv.Remove(k);
                 Console.WriteLine("Da xoa thanh cong!");
         }
-        public static void searchSV() // Hàm tìm kiếm sinh viên trong danh sách
+        // Hàm tìm kiếm sinh viên trong danh sách
+        public static void searchSV()
         {
             Console.Write("Nhap Ma Sinh Vien: ");
             string MaSV = Console.ReadLine();
@@ -82,6 +100,7 @@ namespace SchoolManager
               "MaSV", "TenSV", "Ngay Sinh", "Gioi Tinh", "Dia Chi", "So Dien Thoai", "Nganh hoc", "Khoa hoc");
             sv.print();
         }
+        // Hàm trả về số lượng sinh viên trong danh sách
         public static int slSV() 
         {
             return listsv.Count;
