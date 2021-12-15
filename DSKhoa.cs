@@ -51,7 +51,7 @@ namespace SchoolManager
             }
         }
         //ham xoa khoa khoi danh sach
-        public static void deleteGV()
+        public static void deleteKhoa()
         {
             KHOA k;
             Console.Write("Nhap Ma Khoa: ");
