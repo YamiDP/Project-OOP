@@ -101,16 +101,23 @@ namespace SchoolManager
 
             Console.WriteLine("{0, -7} {1, -20} {2,-10} {3,-15} {4, -7} {5, -20} {6, -15}",
                   "Ma MH", "Ten MH","So TC","Loai mon", "MaGV", "TenGV", "Chuyen Nganh");
+            int d = 0;
             foreach (GiangVien gv1 in DSGiangVien.listgv)
             {
                 foreach (MonHoc mh1 in gv1.Listmh1)
                 {
                     if (String.Compare(mh1.Mamh, ma, false) == 0)
                     {
+                        d = 1;
                         Console.WriteLine("{0, -7} {1, -20} {2,-10} {3,-15} {4, -7} {5, -20} {6, -15}",
                                   mh1.Mamh, mh1.TenMH, mh1.SoTC, mh1.LoaiMon, gv1.MA, gv1.TEN, gv1.CHNGANG);
                     }
                 }
+            }
+            if(d == 0)
+            {
+               Console.WriteLine("Dang ki Mon Hoc khong thanh cong!!!");
+               return; 
             }
             Console.Write("Nhap Ma Giang Vien: ");
             ma = Convert.ToString(Console.ReadLine());
