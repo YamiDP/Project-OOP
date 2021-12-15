@@ -36,7 +36,7 @@ namespace SchoolManager
             return null;
         }
         //ham them giang vien theo khoa vao danh sach
-        public static void inputGV(KHOA h)
+        public static void addGV(KHOA h)
         {
             GiangVien gv = new GiangVien();  
             gv.input();       
@@ -113,10 +113,3 @@ namespace SchoolManager
         }
     }
 }
-/* 
-    public static void EventprintGV(SuKien sk)
-        {
-            sk.print += printGV;
-        }   
-} 
-*/

@@ -28,9 +28,10 @@ namespace SchoolManager
         private int drl;
         public int DRl
         {
-             set { drl = value; }
+            set { drl = value; }
             get { return drl; } 
         }
+        private int dctxh;  
         public int DCTXH { get; set; }
 
         // Hàm khởi tạo sinh viên

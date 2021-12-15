@@ -31,7 +31,7 @@ namespace SchoolManager
             return null;
         }
         // Hàm nhập cựu sinh viên vào danh sách
-        public static void inputCSV()
+        public static void addCSV()
         {
             CuuSinhVien csv = new CuuSinhVien();  
             csv.input();       

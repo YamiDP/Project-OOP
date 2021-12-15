@@ -36,7 +36,7 @@ namespace SchoolManager
             return null;
         }
         //ham them nhan vien hanh chinh theo phong ban vao danh sach
-        public static void inputNVHC(PhongBan pb)
+        public static void addNVHC(PhongBan pb)
         {
             NhanVienHanhChinh nv = new NhanVienHanhChinh();
             nv.input();
