@@ -19,7 +19,7 @@ namespace SchoolManager
             get { return namnhaphoc; }
 
         }
-        List<MonHoc> listmhsv;
+        private List<MonHoc> listmhsv;
         public List<MonHoc> ListmhSV
         {
             set { listmhsv = value; }
@@ -72,7 +72,7 @@ namespace SchoolManager
         // Ham dang ki mon hoc 
         public static void DKiMonHoc()
         {
-            SinhVien sv; 
+            SinhVien sv;
             MonHoc mh;
             string ma;
             do
