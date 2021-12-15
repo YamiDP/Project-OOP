@@ -38,6 +38,10 @@ namespace SchoolManager
             listsv.Add(sv);
             Console.WriteLine("Them Sinh Vien thanh cong!");
         }
+        public void EventprintSV(DS ds)
+        {
+            ds.print += printSV; // đki sự kiện
+        }
         // Hàm xuất sinh viên trong danh sách
         public static void printSV()
         {

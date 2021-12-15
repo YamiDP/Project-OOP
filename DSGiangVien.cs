@@ -44,6 +44,10 @@ namespace SchoolManager
             h.Listgv1.Add(gv);
             Console.WriteLine("Them Giang Vien thanh cong!");
         }
+        public void EventprintGV(DS sk)
+        {
+            sk.print += printGV; // đki sự kiện 
+        }
         //ham in giang vien trong danh sach
         public static void printGV()
         {

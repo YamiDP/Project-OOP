@@ -3,7 +3,16 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SchoolManager
-{       
+{   
+    public delegate void printDel();
+    public class DS
+    {
+        public event printDel print;
+        public void printDS() 
+        {
+            print?.Invoke();
+        }
+    }
     public class QLSchool
     {   
         static void Main(string[] args)
@@ -28,6 +37,13 @@ namespace SchoolManager
 
             Console.WriteLine("Sau khi sinh vien dang ki thi se khong con");
             DSMonHoc.printMHGVDKiML(DSGiangVien.listgv[0]);
+            //ứng dụng delegate và event để in DSGV và DSSV
+            DSGiangVien gv = new DSGiangVien();
+            DSSinhVien sv = new DSSinhVien();
+            DS ds = new DS();
+            gv.EventprintGV(ds);
+            sv.EventprintSV(ds);
+            ds.printDS();
         }
     }
 }
