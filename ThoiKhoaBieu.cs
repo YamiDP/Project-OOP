@@ -55,5 +55,9 @@ namespace SchoolManager
         {
 
         }
+        ~ThoiKhoaBieu()
+        {
+            
+        }
     }       
 }
