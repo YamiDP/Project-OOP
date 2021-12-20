@@ -57,7 +57,7 @@ namespace SchoolManager
             Console.WriteLine("\t---------DANH SACH MON HOC----------");
             DSMonHoc.printDSMH();
 
-            Console.Write("So lan dang ki mo lop cua 1 giang vien: ");
+            Console.Write("So lan dang ki mo lop cua giang vien: ");
             int t = Convert.ToInt32(Console.ReadLine());
             for(int i =0 ; i <t; i++)
             {
