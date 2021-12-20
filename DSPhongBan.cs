@@ -6,7 +6,7 @@ namespace SchoolManager
 {
     public class DSPhongBan
     {
-        //khoi tao danh sach phong ban
+        // Tao danh sach phong ban
         public static List<PhongBan> listpban = new List<PhongBan>();
         //tao du lieu dau vao cho danh sach phong ban
         public static List<PhongBan> base_listPB()

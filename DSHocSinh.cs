@@ -8,7 +8,7 @@ namespace SchoolManager
     public class DSHocSinh
     {
         
-        //khoi tao danh sach hoc sinh
+        // Tao danh sach hoc sinh
         public static List<HocSinh> lisths = new List<HocSinh>();
         //tao du lieu danh sach hoc sinh co ban
         public static void base_list()

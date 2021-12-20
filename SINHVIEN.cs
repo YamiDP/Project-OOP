@@ -17,13 +17,24 @@ namespace SchoolManager
         {
             set { namnhaphoc = value; }
             get { return namnhaphoc; }
-
         }
         private List<MonHoc> listmhsv;
         public List<MonHoc> ListmhSV
         {
             set { listmhsv = value; }
             get { return listmhsv; }
+        }
+        private int drl;
+        public int DRL
+        {
+            set { drl = value; }
+            get { return drl; }
+        }
+        private int dctxh;
+        public int DCTXH
+        {
+            set { dctxh = value; }
+            get { return dctxh; }
         }
         // Hàm khởi tạo sinh viên
         public SinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, int namnhaphoc, List<MonHoc> listmhsv)

@@ -6,7 +6,7 @@ namespace SchoolManager
 {
     public class DSKhoa
     {
-        //khoi tao danh sach khoa
+        // Tao danh sach khoa
         public static List<KHOA> listkhoa = new List<KHOA>();
         //tao du lieu dau vao cho danh sach khoa
         public static List<KHOA> base_listkhoa()

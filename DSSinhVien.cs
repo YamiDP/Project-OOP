@@ -6,7 +6,7 @@ namespace SchoolManager
 {
     public class DSSinhVien 
     {
-        // Hàm tạo danh sách sinh viên
+        // Tạo danh sách sinh viên
         public static List<SinhVien> listsv = new List<SinhVien>();
         // Tạo dữ liệu danh sách sinh viên cơ bản
         public static void base_list()

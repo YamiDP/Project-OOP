@@ -6,7 +6,7 @@ namespace SchoolManager
 {
     public class DSMonHoc
     {
-        //khoi tao danh sach cac mon hoc
+        // Tao danh sach cac mon hoc
         public static List<MonHoc> listmh = new List<MonHoc>();
         //tao du lieu danh sach mon hoc co ban
         public static void base_list()

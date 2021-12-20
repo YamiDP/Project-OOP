@@ -6,7 +6,7 @@ namespace SchoolManager
 {
     public class DSNhanVienHanhChinh
     {
-        //khoi tao danh sach nhan vien hanh chinh
+        // Tao danh sach nhan vien hanh chinh
         public static List<NhanVienHanhChinh> listnv = new List<NhanVienHanhChinh>();
         //tao du lieu danh sach nhan vien hanh chinh co ban
         public static void base_listNVHC()
