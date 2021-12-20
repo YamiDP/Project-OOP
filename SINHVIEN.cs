@@ -24,16 +24,7 @@ namespace SchoolManager
         {
             set { listmhsv = value; }
             get { return listmhsv; }
-        } 
-        private int drl;
-        public int DRl
-        {
-            set { drl = value; }
-            get { return drl; } 
         }
-        private int dctxh;  
-        public int DCTXH { get; set; }
-
         // Hàm khởi tạo sinh viên
         public SinhVien(string ma, string ten, string ngsinh, string gtinh, string diachi, string sdt, string nganh, int namnhaphoc, List<MonHoc> listmhsv)
             : base(ma, ten, ngsinh, gtinh, diachi, sdt)
