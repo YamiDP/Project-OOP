@@ -46,7 +46,7 @@ namespace SchoolManager
         }
         public void EventprintGV(DS sk)
         {
-            sk.print += printGV; // đki sự kiện 
+            sk.print += printGV;  
         }
         //ham in giang vien trong danh sach
         public static void printGV()
@@ -62,6 +62,7 @@ namespace SchoolManager
             {
                 gv.print();
             }
+            Console.WriteLine();
         }
         //ham Sap xep danh sach giang vien theo ten
         public static void sort()

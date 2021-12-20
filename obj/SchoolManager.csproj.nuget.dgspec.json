@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Yami\\ForWork\\Program\\Project\\C# Project\\1_FINAL PROJECT OOPPPP\\Project-OOP\\SchoolManager.csproj": {}
+    "C:\\Users\\pc\\Desktop\\copy3\\Project-OOP\\SchoolManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Yami\\ForWork\\Program\\Project\\C# Project\\1_FINAL PROJECT OOPPPP\\Project-OOP\\SchoolManager.csproj": {
+    "C:\\Users\\pc\\Desktop\\copy3\\Project-OOP\\SchoolManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yami\\ForWork\\Program\\Project\\C# Project\\1_FINAL PROJECT OOPPPP\\Project-OOP\\SchoolManager.csproj",
+        "projectUniqueName": "C:\\Users\\pc\\Desktop\\copy3\\Project-OOP\\SchoolManager.csproj",
         "projectName": "SchoolManager",
-        "projectPath": "C:\\Users\\Yami\\ForWork\\Program\\Project\\C# Project\\1_FINAL PROJECT OOPPPP\\Project-OOP\\SchoolManager.csproj",
-        "packagesPath": "C:\\Users\\Yami\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yami\\ForWork\\Program\\Project\\C# Project\\1_FINAL PROJECT OOPPPP\\Project-OOP\\obj\\",
+        "projectPath": "C:\\Users\\pc\\Desktop\\copy3\\Project-OOP\\SchoolManager.csproj",
+        "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pc\\Desktop\\copy3\\Project-OOP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Yami\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

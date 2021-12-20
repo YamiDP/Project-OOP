@@ -51,7 +51,7 @@ namespace SchoolManager
             }
         }
         //ham xoa phong ban khoi danh sach
-        public static void deletePB()
+        public static void delete()
         {
             PhongBan pb;
             Console.Write("Nhap Ma Phong Ban: ");

@@ -14,7 +14,7 @@ namespace SchoolManager
             SinhVien sv1 = new SinhVien("201","Phuong","02/02/2002","Nam","Binh Phuoc","032342342","CNTT",2020, new List<MonHoc>());
             listsv.Add(sv1);
             SinhVien sv2 = new SinhVien("202","Dat","04/03/2002","Nam","Dong Nai","032342656","DDT",2020, new List<MonHoc>());
-            listsv.Add(sv1);
+            listsv.Add(sv2);
             SinhVien sv3 = new SinhVien("203","Tuan","02/04/2002","Nam","Binh Dinh","0343564342","CNTT",2020, new List<MonHoc>());
             listsv.Add(sv3);
             SinhVien sv4 = new SinhVien("204","Hung","11/02/2002","Nam","Vung Tau","032323642","XD",2020, new List<MonHoc>());
@@ -40,7 +40,7 @@ namespace SchoolManager
         }
         public void EventprintSV(DS ds)
         {
-            ds.print += printSV; // đki sự kiện
+            ds.print += printSV;
         }
         // Hàm xuất sinh viên trong danh sách
         public static void printSV()
